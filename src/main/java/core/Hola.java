@@ -1,9 +1,10 @@
 package core;
 
 public class Hola {
-
-	public static void main(String[] args) {
+	
+	public void imprimir() {
 		System.out.println("hola");
 
 	}
+	
 }
