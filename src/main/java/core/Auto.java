@@ -26,7 +26,7 @@ public class Auto {
     // Método para imprimir los detalles de un auto
     public void imprimirDetalles() {
         System.out.println("Nombre: " + nombre);
-        System.out.println("Anio: " + año);
+        System.out.println("Anio: " + anio);
         System.out.println("Marca: " + marca);
     }
 }
