@@ -1,40 +1,32 @@
 package core;
 
 public class Casa {
-    // Atributos
-    private int numHabitaciones;
-    private double area;
-    private String direccion;
+    // Variables de instancia para la clase Persona
+    private String nombre;
+    private int anio;
+    private String marca;
 
-    // Constructor
-    public Casa(int numHabitaciones, double area, String direccion) {
-        this.numHabitaciones = numHabitaciones;
-        this.area = area;
-        this.direccion = direccion;
+    // Constructor para crear una nueva instancia de Persona
+    public Casa(String nombre, int anio, String marca) {
+        this.nombre = nombre;
+        this.anio = anio;
+        this.marca = marca;
     }
 
-    // Métodos
-    public int getNumHabitaciones() {
-        return numHabitaciones;
+    // Métodos para obtener y establecer los valores de las variables de instancia
+    public String getNombre() {
+        return nombre;
     }
 
-    public double getArea() {
-        return area;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
 
-    public void setNumHabitaciones(int numHabitaciones) {
-        this.numHabitaciones = numHabitaciones;
-    }
-
-    public void setArea(double area) {
-        this.area = area;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    // Método para imprimir los detalles de un auto
+    public void imprimirDetalles() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Anio: " + anio);
+        System.out.println("Marca: " + marca);
     }
 }
