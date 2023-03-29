@@ -1,3 +1,5 @@
+package core;
+
 public class Casa {
     // Atributos
     private int numHabitaciones;
