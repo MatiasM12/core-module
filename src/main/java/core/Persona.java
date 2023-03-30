@@ -13,7 +13,7 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    // MÈtodos para obtener y establecer los valores de las variables de instancia
+    // M√©todos para obtener y establecer los valores de las variables de instancia
     public String getNombre() {
         return nombre;
     }
@@ -37,11 +37,15 @@ public class Persona {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    public void moverse() {
+        System.out.println("La persona " + nombre + " se est√° moviendo ");
+    }
 
-    // MÈtodo para imprimir los detalles de una persona
+    // M√©todo para imprimir los detalles de una persona
     public void imprimirDetalles() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Edad: " + edad);
-        System.out.println("DirecciÛn: " + direccion);
+        System.out.println("Direcci√≥n: " + direccion);
     }
 }
