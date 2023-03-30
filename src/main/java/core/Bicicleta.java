@@ -1,13 +1,13 @@
 package core;
 
-public class Auto {
+public class Bicicleta {
     // Variables de instancia para la clase Persona
     private String nombre;
     private int anio;
     private String marca;
 
     // Constructor para crear una nueva instancia de Persona
-    public Auto(String nombre, int anio, String marca) {
+    public Bicicleta(String nombre, int anio, String marca) {
         this.nombre = nombre;
         this.anio = anio;
         this.marca = marca;
