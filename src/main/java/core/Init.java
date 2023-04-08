@@ -9,7 +9,7 @@ public class Init {
 	public ArrayList<Observer> observers ; 	
 	public FileUpdateChecker checker ;
 
-	public Init() {
+	public Init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
 		
 		this.observers = new ArrayList<Observer>();
 		this.checker = new FileUpdateChecker("mock.text", observers);

@@ -10,5 +10,4 @@ public class AcceptanceTest {
 		this.name = name;
 		this.succeded = succeded;
 	}
-	
 }

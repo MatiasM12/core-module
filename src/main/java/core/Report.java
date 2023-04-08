@@ -13,6 +13,4 @@ public class Report extends Observable{
 		this.successRate = successRate;
 		this.testList = testList;
 	}
-
-
 }

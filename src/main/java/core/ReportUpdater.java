@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ReportUpdater implements Observer{
 	
-	Report report;
+	public Report report;
 	
 	public ReportUpdater(Report report) {
 		super();
