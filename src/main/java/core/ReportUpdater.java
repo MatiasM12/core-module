@@ -14,7 +14,7 @@ public class ReportUpdater implements Observer{
 	public Boolean updateReport() {
 		report.successRate=10;
 		report.testList= new ArrayList<AcceptanceTest>();
-		update();
+		report.notifyAll();
 		return true;
 	}
 	
