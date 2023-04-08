@@ -19,17 +19,4 @@ public class FileUpdateChecker extends Observable{
 		return true;
 	}
 	
-	public void removeObserver(Observer o) {
-		observers.remove(o);
-	}
-	
-	public void addObserver(Observer o) {
-		observers.add(o);
-	}
-	
-	public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update();
-        }
-	}
 }
