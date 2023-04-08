@@ -1,10 +1,18 @@
 package core;
 
 public class Observable {
+	
+	Observer observer;
 
-	//addObserver(Observer o)
+	public void addObserver(Observer o) {
+		
+	}
 	
-	//removeObserver(Observer o)
+	public void removeObserver(Observer o) {
+		
+	}
 	
-	//notifyObservers()
+	public void notifyObservers() {
+		
+	}
 }
