@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Main {
+public class Init {
 
-	public void init() {
+	public static void init() {
 		ArrayList<Observer> observers = new ArrayList<Observer>(); 
 		FileUpdateChecker checker = new FileUpdateChecker("mock.text", observers);
 
