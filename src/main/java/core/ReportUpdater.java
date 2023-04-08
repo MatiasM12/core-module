@@ -14,12 +14,12 @@ public class ReportUpdater implements Observer{
 	public Boolean updateReport() {
 		report.successRate=10;
 		report.testList= new ArrayList<AcceptanceTest>();
+		report.notifyObservers();
 		return true;
 	}
 	
 	public void update() {
 		updateReport();
-		report.notifyObservers();
 		System.out.println("Se actualizo");
 	}
 }
