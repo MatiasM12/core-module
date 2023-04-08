@@ -1,26 +1,34 @@
 package core;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class FileUpdateChecker extends Observable{
 	
-	String filePath;
-	Set<Observer> observers;
-	ReportUpdater updater = new ReportUpdater();
+	public String filePath;
+	public ArrayList<Observer> observers;
 	
+	public FileUpdateChecker(String filePath, ArrayList<Observer> observers) {
+		super();
+		this.filePath = filePath;
+		this.observers = observers;
+	}
+
 	public Boolean check() {
+		notifyObservers();
 		return true;
 	}
 	
 	public void removeObserver(Observer o) {
-		
+		observers.remove(o);
 	}
 	
 	public void addObserver(Observer o) {
-		
+		observers.add(o);
 	}
 	
 	public void notifyObservers() {
-		
+        for (Observer observer : observers) {
+            observer.update();
+        }
 	}
 }

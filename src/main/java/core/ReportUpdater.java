@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class ReportUpdater implements Observer{
 	
-	Report report = new Report();
+	Report report;
 	
-	public ReportUpdater() {
+	public ReportUpdater(Report report) {
 		super();
+		this.report = report;
 	}
 
 	public Boolean updateReport() {
