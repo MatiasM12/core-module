@@ -20,6 +20,7 @@ public class Report extends Observable{
 	
 	public Report(String pathFuente) {
 		this.actualizador = new ReportUpdater(this, "path");
-		
 	}
+	
+	public void actualizar() {};
 }
