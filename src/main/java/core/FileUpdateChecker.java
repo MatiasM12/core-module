@@ -15,6 +15,7 @@ public class FileUpdateChecker extends Observable{
 
 	public Boolean check() {
 		notifyObservers();
+		System.out.println("chequeo exitoso");
 		return true;
 	}
 	
