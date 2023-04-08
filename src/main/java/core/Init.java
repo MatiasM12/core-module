@@ -6,10 +6,14 @@ import java.util.TimerTask;
 
 public class Init {
 	
-	ArrayList<Observer> observers = new ArrayList<Observer>(); 
-	FileUpdateChecker checker = new FileUpdateChecker("mock.text", observers);
-	
-	public void init() {
+	public ArrayList<Observer> observers ; 	
+	public FileUpdateChecker checker ;
+
+	public Init(ArrayList<Observer> observers, FileUpdateChecker checker) {
+		
+		this.observers = new ArrayList<Observer>();
+		this.checker = new FileUpdateChecker("mock.text", observers);
+
 		//cada 5 segundos chequea cambios
 	    Timer timer = new Timer();
 	    int delay = 1000; 
