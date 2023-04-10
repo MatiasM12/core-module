@@ -12,7 +12,7 @@ public class Core {
 	public Report report; 
 	public ReportUpdater updater;
 
-	public void Init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
+	public void init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
 		
 		this.observersChecker = new ArrayList<Observer>();
 		this.observersReport = new ArrayList<Observer>();
@@ -22,18 +22,18 @@ public class Core {
 
 		checker.addObserver(updater);
 		
-		if(report.testList != null) {
-			//cada 5 segundos chequea cambios
-			Timer timer = new Timer();
-		    int delay = 1000; 
-		    int interval = 5000; 
-		    timer.scheduleAtFixedRate(new TimerTask() {
-		      public void run() {
-		        checker.check();
-		      }
-		    }, delay, interval);
-		}
-		
-	    
+  
+	}
+
+	private void initChecker() {
+		//cada 5 segundos chequea cambios
+		Timer timer = new Timer();
+		int delay = 1000; 
+		int interval = 5000; 
+		timer.scheduleAtFixedRate(new TimerTask() {
+		public void run() {
+		    checker.check();
+		  }
+		}, delay, interval);
 	}
 }
