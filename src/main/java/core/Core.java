@@ -6,16 +6,18 @@ import java.util.TimerTask;
 
 public class Core {
 	
-	public ArrayList<Observer> observers ; 	
+	public ArrayList<Observer> observersChecker ; 
+	public ArrayList<Observer> observersReport ; 
 	public FileUpdateChecker checker ;  	
 	public Report report; 
 	public ReportUpdater updater;
 
 	public void Init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
 		
-		this.observers = new ArrayList<Observer>();
-		this.checker = new FileUpdateChecker("mock.text", observers);
-		this.report = new Report(observers, 100, null);
+		this.observersChecker = new ArrayList<Observer>();
+		this.observersReport = new ArrayList<Observer>();
+		this.checker = new FileUpdateChecker("mock.text", observersChecker);
+		this.report = new Report(observersReport, 100, null);
 		this.updater = new ReportUpdater(report);
 
 		//cada 5 segundos chequea cambios
