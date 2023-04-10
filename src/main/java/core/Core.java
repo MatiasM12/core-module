@@ -20,14 +20,20 @@ public class Core {
 		this.report = new Report(observersReport, 100, null);
 		this.updater = new ReportUpdater(report);
 
-		//cada 5 segundos chequea cambios
-	    Timer timer = new Timer();
-	    int delay = 1000; 
-	    int interval = 5000; 
-	    timer.scheduleAtFixedRate(new TimerTask() {
-	      public void run() {
-	        checker.check();
-	      }
-	    }, delay, interval);
+		checker.addObserver(updater);
+		
+		if(report.testList != null) {
+			//cada 5 segundos chequea cambios
+			Timer timer = new Timer();
+		    int delay = 1000; 
+		    int interval = 5000; 
+		    timer.scheduleAtFixedRate(new TimerTask() {
+		      public void run() {
+		        checker.check();
+		      }
+		    }, delay, interval);
+		}
+		
+	    
 	}
 }
