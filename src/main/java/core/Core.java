@@ -25,7 +25,7 @@ public class Core {
   
 	}
 
-	private void initChecker() {
+	public void initChecker() {
 		//cada 5 segundos chequea cambios
 		Timer timer = new Timer();
 		int delay = 1000; 
