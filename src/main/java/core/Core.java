@@ -4,15 +4,19 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Init {
+public class Core {
 	
 	public ArrayList<Observer> observers ; 	
-	public FileUpdateChecker checker ;
+	public FileUpdateChecker checker ;  	
+	public Report report; 
+	public ReportUpdater updater;
 
-	public Init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
+	public void Init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
 		
 		this.observers = new ArrayList<Observer>();
 		this.checker = new FileUpdateChecker("mock.text", observers);
+		this.report = new Report(observers, 100, null);
+		this.updater = new ReportUpdater(report);
 
 		//cada 5 segundos chequea cambios
 	    Timer timer = new Timer();
