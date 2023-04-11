@@ -21,8 +21,9 @@ public class FileUpdateChecker extends TimerTask {
 		long timeStamp = file.lastModified();
 
 		if( this.timeStamp != timeStamp ) {
-		    this.timeStamp = timeStamp;
-		    updater.updateReport();
+//		    this.timeStamp = timeStamp;
+//		    updater.updateReport();
+			System.out.println("hola");
 		}
 	}
 	
