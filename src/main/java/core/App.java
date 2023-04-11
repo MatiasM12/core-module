@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Core {
+public class App {
 	
 	public ArrayList<Observer> observersChecker ; 
 	public ArrayList<Observer> observersReport ; 
@@ -12,17 +12,16 @@ public class Core {
 	public Report report; 
 	public ReportUpdater updater;
 
-	public void init() { //yo creo que esto esta mal pero fue la forma de probarlo en el momento jaja
+	public App(ArrayList<Observer> observersChecker,ArrayList<Observer> observersReport,FileUpdateChecker checker,Report report,ReportUpdater updater) { 
 		
-		this.observersChecker = new ArrayList<Observer>();
-		this.observersReport = new ArrayList<Observer>();
-		this.checker = new FileUpdateChecker("mock.text", observersChecker);
-		this.report = new Report(observersReport, 100, null);
-		this.updater = new ReportUpdater(report);
+		this.observersChecker = observersChecker;
+		this.observersReport = observersReport;
+		this.checker = checker;
+		this.report = report;
+		this.updater = updater;
 
 		checker.addObserver(updater);
-		
-  
+
 	}
 
 	public void initChecker() {
