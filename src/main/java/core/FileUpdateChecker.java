@@ -22,7 +22,7 @@ public class FileUpdateChecker extends TimerTask {
 		System.out.println(timeStamp);
 		System.out.println(this.timeStamp);
 		if( this.timeStamp != timeStamp ) {
-//		    this.timeStamp = timeStamp;
+			this.timeStamp = timeStamp;
 //		    updater.updateReport();
 			System.out.println("hola");
 		}
