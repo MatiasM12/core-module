@@ -38,7 +38,7 @@ public class App {
             System.out.println("Ocurrió un error al crear el archivo.");
             e.printStackTrace();
         }
-        return null;
+        return archivo;
 	}
 
 	public void initChecker() {
