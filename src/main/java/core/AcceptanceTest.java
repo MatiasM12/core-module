@@ -10,4 +10,10 @@ public class AcceptanceTest {
 		this.name = name;
 		this.succeded = succeded;
 	}
+
+	@Override
+	public String toString() {
+		return "AcceptanceTest [name=" + name + ", succeded=" + succeded + "]";
+	}
+	
 }
