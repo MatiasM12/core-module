@@ -13,7 +13,7 @@ public class AcceptanceTest {
 
 	@Override
 	public String toString() {
-		return "AcceptanceTest [name=" + name + ", succeded=" + succeded + "]";
+		return "name=" + name + ", succeded=" + succeded + "\n";
 	}
 	
 }
