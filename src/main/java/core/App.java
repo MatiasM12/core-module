@@ -12,16 +12,16 @@ public class App {
 	public Report report; 
 	public ReportUpdater updater;
 
-	public App(ArrayList<Observer> observersChecker,ArrayList<Observer> observersReport,FileUpdateChecker checker,Report report,ReportUpdater updater) { 
+	public App() { 
 		
-		this.observersChecker = observersChecker;
-		this.observersReport = observersReport;
-		this.checker = checker;
-		this.report = report;
-		this.updater = updater;
+		this.observersChecker = new ArrayList<Observer>();
+		this.observersReport = new ArrayList<Observer>();
+		this.checker = new FileUpdateChecker("mock.text", observersChecker);
+		this.report = new Report(observersReport, 100, null);
+		this.updater = new ReportUpdater(report);
 
 		checker.addObserver(updater);
-
+		
 	}
 
 	public void initChecker() {
