@@ -9,12 +9,12 @@ public class FileUpdateChecker extends TimerTask {
 	public File file;
 	public ReportUpdater updater;
 	
-	public FileUpdateChecker( File file ) {
+	public FileUpdateChecker( File file , ReportUpdater updater) {
 		super();
 		this.file = file;
+		this.updater = updater;
 		this.timeStamp = file.lastModified();
 	}
-
 
 	@Override
 	public void run() {
@@ -22,8 +22,7 @@ public class FileUpdateChecker extends TimerTask {
 		
 		if( this.timeStamp != timeStamp ) {
 			this.timeStamp = timeStamp;
-//		    updater.updateReport();
-			System.out.println("hola");
+		    updater.updateReport();
 		}
 	}
 	

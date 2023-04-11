@@ -18,10 +18,11 @@ public class App {
 	public App() { 
 		
 		this.observersReport = new ArrayList<Observer>();
-		this.checker = new FileUpdateChecker(archivo);
+		
 		this.report = new Report(observersReport, 100, null);
 		this.updater = new ReportUpdater(report);
-
+		this.checker = new FileUpdateChecker(archivo,updater);
+		
 	}
  
 	public void initChecker() {
