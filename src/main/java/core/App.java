@@ -34,7 +34,7 @@ public class App {
 		ArrayList<AcceptanceTest> list = new ArrayList<AcceptanceTest>();
 		list.add(new AcceptanceTest("Test 1", true));
 		list.add(new AcceptanceTest("Test 2", false));
-		return null;
+		return list;
 	}
 
 }
