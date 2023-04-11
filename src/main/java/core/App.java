@@ -1,8 +1,8 @@
 package core;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class App {
 	
@@ -14,25 +14,16 @@ public class App {
 
 	public App() { 
 		
-		this.observersChecker = new ArrayList<Observer>();
 		this.observersReport = new ArrayList<Observer>();
-		this.checker = new FileUpdateChecker("mock.text", observersChecker);
+		this.checker = new FileUpdateChecker(new File("mock.txt"));
 		this.report = new Report(observersReport, 100, null);
 		this.updater = new ReportUpdater(report);
 
-		checker.addObserver(updater);
-		
 	}
 
 	public void initChecker() {
 		//cada 5 segundos chequea cambios
 		Timer timer = new Timer();
-		int delay = 1000; 
-		int interval = 5000; 
-		timer.scheduleAtFixedRate(new TimerTask() {
-		public void run() {
-		    checker.check();
-		  }
-		}, delay, interval);
+		timer.schedule( this.checker , 5000 );
 	}
 }
