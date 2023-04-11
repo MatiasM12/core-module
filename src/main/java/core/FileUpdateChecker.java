@@ -1,8 +1,11 @@
 package core;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class FileUpdateChecker {
+public class FileUpdateChecker extends TimerTask {
 	
 	public String filePath;
 	
@@ -23,5 +26,10 @@ public class FileUpdateChecker {
 */
 		System.out.println("chequeo exitoso");
 		return false;
+	}
+
+	@Override
+	public void run() {
+
 	}
 }

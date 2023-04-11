@@ -1,12 +1,13 @@
 package core;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Timer;
 
 public class ReportUpdater {
 	
 	public Report report;
 	public FileUpdateChecker fileChecker;
-
 	public ReportUpdater(Report report) {
 		super();
 		this.report = report;
@@ -15,6 +16,12 @@ public class ReportUpdater {
 	public ReportUpdater(Report report, String filePath) {
 		this.report = report;
 		this.fileChecker = new FileUpdateChecker(filePath);
+		initChecker();
+	}
+
+	public void initChecker() {
+		Timer timer = new Timer();
+		timer.schedule(this.fileChecker , new Date() , 5000 );
 	}
 
 	public void update(Report reporte) {
