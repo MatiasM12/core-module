@@ -13,10 +13,9 @@ public class App {
 	public FileUpdateChecker checker ;  	
 	public Report report; 
 	public ReportUpdater updater;
+	File archivo = new File("mock.txt");
 
 	public App() { 
-		
-        File archivo = new File("mock.txt");
 		
 		this.observersReport = new ArrayList<Observer>();
 		this.checker = new FileUpdateChecker(archivo);
