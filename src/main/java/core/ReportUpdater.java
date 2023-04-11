@@ -1,7 +1,5 @@
 package core;
 
-import java.util.ArrayList;
-
 public class ReportUpdater {
 	
 	public Report report;
@@ -11,12 +9,10 @@ public class ReportUpdater {
 		this.report = report;
 	}
 
-	public Boolean updateReport() {
-		report.successRate = 10;
-		report.testList = new ArrayList<AcceptanceTest>();;
+	public void updateReport() {
+		report.successRate = 95;
+		report.testList.add(new AcceptanceTest("Test 3",true));
 		report.notifyObservers();
-		System.out.println("Se actualizo");
-		return true;
 	}
 	
 }
