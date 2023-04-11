@@ -2,7 +2,7 @@ package core;
 
 import java.util.ArrayList;
 
-public class ReportUpdater implements Observer{
+public class ReportUpdater {
 	
 	public Report report;
 	
@@ -15,11 +15,8 @@ public class ReportUpdater implements Observer{
 		report.successRate = 10;
 		report.testList = new ArrayList<AcceptanceTest>();;
 		report.notifyObservers();
+		System.out.println("Se actualizo");
 		return true;
 	}
 	
-	public void update() {
-		updateReport();
-		System.out.println("Se actualizo");
-	}
 }

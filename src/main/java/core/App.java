@@ -8,7 +8,6 @@ import java.util.Date;
 
 public class App {
 	
-	public ArrayList<Observer> observersChecker ; 
 	public ArrayList<Observer> observersReport ; 
 	public FileUpdateChecker checker ;  	
 	public Report report; 
