@@ -1,21 +1,29 @@
 package core;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.util.TimerTask;
 
-public class FileUpdateChecker extends Observable{
+public class FileUpdateChecker extends TimerTask {
 	
-	public String filePath;
+	public long timeStamp;
+	public File file;
+	public ReportUpdater updater;
 	
-	public FileUpdateChecker(String filePath, ArrayList<Observer> observers) {
+	public FileUpdateChecker( File file , ReportUpdater updater) {
 		super();
-		this.filePath = filePath;
-		super.observers = observers;
+		this.file = file;
+		this.updater = updater;
+		this.timeStamp = file.lastModified();
 	}
 
-	public Boolean check() {
-		notifyObservers();
-		System.out.println("chequeo exitoso");
-		return true;
+	@Override
+	public void run() {
+		long timeStamp = file.lastModified();
+		
+		if( this.timeStamp != timeStamp ) {
+			this.timeStamp = timeStamp;
+		    updater.updateReport();
+		}
 	}
 	
 }

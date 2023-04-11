@@ -1,8 +1,6 @@
 package core;
 
-import java.util.ArrayList;
-
-public class ReportUpdater implements Observer{
+public class ReportUpdater {
 	
 	public Report report;
 	
@@ -11,15 +9,10 @@ public class ReportUpdater implements Observer{
 		this.report = report;
 	}
 
-	public Boolean updateReport() {
-		report.successRate=10;
-		report.testList= new ArrayList<AcceptanceTest>();
+	public void updateReport() {
+		report.successRate = 95;
+		report.testList.add(new AcceptanceTest("Test 3",true));
 		report.notifyObservers();
-		return true;
 	}
 	
-	public void update() {
-		updateReport();
-		System.out.println("Se actualizo");
-	}
 }
