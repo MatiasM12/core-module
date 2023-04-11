@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
+import java.util.Date;
 
 public class App {
 	
@@ -23,10 +24,10 @@ public class App {
 		this.updater = new ReportUpdater(report);
 
 	}
-
+ 
 	public void initChecker() {
 		//cada 5 segundos chequea cambios
 		Timer timer = new Timer();
-		timer.schedule( this.checker , 5000 );
+		timer.schedule( this.checker ,new Date(), 5000 );
 	}
 }
