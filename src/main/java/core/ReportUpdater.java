@@ -1,43 +1,24 @@
 package core;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Timer;
+import java.util.Observable;
+import java.util.Observer;
 
-public class ReportUpdater {
-	
-	public Report report;
-	public FileUpdateChecker fileChecker;
-	public ReportUpdater(Report report) {
-		super();
-		this.report = report;
-	}
-	
-	public ReportUpdater(Report report, String filePath) {
-		this.report = report;
-		this.fileChecker = new FileUpdateChecker(filePath);
-		initChecker();
-	}
+public class ReportUpdater implements Observer {
+    Finder reportFinder;
+    CheckerBuilder CheckerBuilder;
+    public ReportUpdater(String path, int intervaloActualizacion, Init init) {
+        this.CheckerBuilder = new CheckerBuilder(path, intervaloActualizacion, this);
+        this.reportFinder = new ReportFinder(path);
+    }
 
-	public void initChecker() {
-		Timer timer = new Timer();
-		timer.schedule(this.fileChecker , new Date() , 5000 );
-	}
+    @Override
+    public void update(Observable o, Object arg) {
 
-	public void update(Report reporte) {
-		updateReport();
-		System.out.println("Se actualizo");
-	}
+    }
+    public void update(){
+        updateReport();
+    }
+    public void updateReport() {
 
-	public Boolean updateReport() {
-		report.successRate=10;
-		report.testList= new ArrayList<AcceptanceTest>();
-		report.notifyObservers();
-		return true;
-	}
-	
-	public void update() {
-		updateReport();
-		System.out.println("Se actualizo");
-	}
+    }
 }
