@@ -1,6 +1,5 @@
 package coreIC;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,12 +20,12 @@ public class CoreX {
 
     }
 
-    public void run(String finderEspecifico, URL link){
-        new finderEspecifico(link);
-        //como me llega un string, lo mapeo con el discovery
-
-        new ReportContainer(finderEspecifico);
-        new ReportUpdater(finderEspecifico);
-
-    }
+//    public void run(String finderEspecifico, URL link){
+//        new finderEspecifico(link);
+//        //como me llega un string, lo mapeo con el discovery
+//
+//        new ReportContainer(finderEspecifico);
+//        new ReportUpdater(finderEspecifico);
+//
+//    }
 }
