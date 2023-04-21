@@ -7,14 +7,15 @@ import java.util.TimerTask;
 public class ObservableTimer extends Timer {
     public TimerTask task;
     private Observer observador;
+    private int period;
 
-    public ObservableTimer(Observer actualizador){
+    public ObservableTimer(Observer actualizador, int period){
         this.task = new TimerTask() {
-         @Override
-         public void run() {
-             notifyObservers();
-         }
-     };
+            @Override
+            public void run() {
+                notifyObservers();
+            }
+        };
     }
 
     private void notifyObservers() {
@@ -26,7 +27,7 @@ public class ObservableTimer extends Timer {
     }
 
     public void run(){
-
+        schedule(task, 0, period);
     }
 
 

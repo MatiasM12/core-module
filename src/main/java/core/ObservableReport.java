@@ -14,5 +14,10 @@ public class ObservableReport extends Observable {
 
     public void set(ReportResult reportResult) {
         this.reporteJava = reportResult;
+        notifyObservers();
+    }
+
+    public ReportResult getReport() {
+        return this.reporteJava;
     }
 }
