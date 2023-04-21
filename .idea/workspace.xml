@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71c5caf-f13c-477b-ab0d-b5e1fdfe77d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/core/CheckerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/FileUpdateChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Finder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Init.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Observable2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Observer2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/ReportUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/ReportUpdater2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/Scheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/core/SrcChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/DefaultFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/ObservableTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/AcceptanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/CoreX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/ReportUpdater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/SourceFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/TestReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coreIC/TestSourceFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/core/AcceptanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/core/AcceptanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportsContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportsContainer.java" afterDir="false" />
-    </list>
+    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +14,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="core" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,13 +54,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Usuario/IntelliJ-Workspace/Lumina-Java-2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/IntelliJ-Workspace/Lumina-Java-2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="core" />
