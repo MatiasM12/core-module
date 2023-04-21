@@ -7,7 +7,7 @@ import java.net.URL;
 public class DefaultFinder implements Finder {
 
     @Override
-    public JSObject find(URL path) {
-        return null;
+    public ReportResult find(URL path) {
+        return ReportResultBuilder.build()
     }
 }
