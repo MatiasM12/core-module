@@ -35,8 +35,7 @@ jobs:
     - name: Clean Gradle cache
       run: ./gradlew clean
         
-    - name: Build project
-      run: ./gradlew build -Dorg.gradle.project.snapshot=true
+
       
     - name: Test with Gradle
       run: ./gradlew test
@@ -63,3 +62,6 @@ jobs:
       with:
         github_token: ${{ secrets.TOKEN }}
         publish_dir: ./test-results/
+
+    - name: Build project
+      run: ./gradlew build -Dorg.gradle.project.snapshot=true
