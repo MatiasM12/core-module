@@ -47,11 +47,12 @@ jobs:
         name: my-artifact
         path: build/libs/*.jar
         
-    - name: Archive Test Results
+    - name: Upload Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: build/reports/tests/test/
+        path: build/test-results/test
+
   
     - name: Download Test Results
       uses: actions/download-artifact@v2
