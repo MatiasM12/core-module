@@ -34,9 +34,12 @@ jobs:
       
     - name: Clean Gradle cache
       run: ./gradlew clean
-        
-
       
+    - name: Test with Gradle
+      run: ./gradlew test
+      
+    - name: Build project
+      run: ./gradlew build -Dorg.gradle.project.snapshot=true        
 
     - name: Publish artifact
       uses: actions/upload-artifact@v2
@@ -62,8 +65,4 @@ jobs:
         github_token: ${{ secrets.TOKEN }}
         publish_dir: ./test-results/
 
-    - name: Test with Gradle
-      run: ./gradlew test
-      
-    - name: Build project
-      run: ./gradlew build -Dorg.gradle.project.snapshot=true
+
