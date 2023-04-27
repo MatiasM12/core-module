@@ -4,7 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="" />
+    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/AcceptanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/CheckerBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/FileUpdateChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Finder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Init.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Observable2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Observer2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/ReportUpdater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/ReportUpdater2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/Scheduler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/core/SrcChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/CheckerTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/CheckerTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ControllerUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/PvCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/PvCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/SrcChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/SrcChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +94,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c71c5caf-f13c-477b-ab0d-b5e1fdfe77d6" name="Changes" comment="" />
+      <changelist id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="" />
       <created>1681834792976</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

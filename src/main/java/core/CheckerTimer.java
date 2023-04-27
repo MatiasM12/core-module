@@ -1,14 +1,12 @@
 package core;
 
-import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class CheckerTimer extends Timer {
     private TimerTask task;
-    //private core.Observer observador;
     private int period;
-    public CheckerTimer(Checker checker, int period){
+    public CheckerTimer(SrcChecker checker, int period){
         this.task = new TimerTask() {
             @Override
             public void run() {

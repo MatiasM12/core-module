@@ -7,19 +7,19 @@ import java.util.Observer;
 public class InitCore {
     Discovery discovery;
     Map<String, Finder> finders;
-    public InitCore(String path){
-        this.discovery = new Discovery(path);
-        this.finders = discovery.discover();
+    public InitCore(String findersImplPath){
+        this.discovery = new Discovery(findersImplPath);
+        this.finders = this.discovery.discover();
     }
-    public PvCore init(String finderImpl, URL path, int refreshPeriodms){
-        Finder finder = finders.get(finderImpl);
+    public PvCore init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
+        Finder finder = this.finders.get(finderImpl);
 
-        ObservableReport resultReports = new ObservableReport();
-        SrcChecker srcChecker = new SrcChecker();
-        ReportUpdater actualizador = new ReportUpdater(finder, path, resultReports, srcChecker);
+        ObservableReport resultReports = new ObservableReport(finder.find(reportDirectoryPath));
+        ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, resultReports);
+        SrcChecker srcChecker = new SrcChecker(reportDirectoryPath, updater);
         CheckerTimer timer = new CheckerTimer(srcChecker, refreshPeriodms);
 
-        PvCore pvcore = new PvCore(actualizador, resultReports);
+        PvCore pvcore = new PvCore(resultReports);
         timer.run();
 
         return pvcore;

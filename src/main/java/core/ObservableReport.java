@@ -1,20 +1,17 @@
 package core;
 
-import java.util.List;
-import java.util.Map;
-
 public class ObservableReport extends core.Observable{
-    public ReportResult reporteJava;
+    public ReportResult reportResult;
     //private Observer observer;
 
     public ObservableReport(ReportResult rr){
-        this.reporteJava = rr;
+        this.reportResult = rr;
     }
     public void set(ReportResult reportResult) {
-        this.reporteJava = reportResult;
+        this.reportResult = reportResult;
         notifyObservers();
     }
     public ReportResult getReport() {
-        return this.reporteJava;
+        return this.reportResult;
     }
 }

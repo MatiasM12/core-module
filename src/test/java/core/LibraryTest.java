@@ -8,5 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
+        assertTrue(false);
     }
 }

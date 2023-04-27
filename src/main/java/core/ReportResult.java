@@ -1,18 +1,16 @@
 package core;
 
-import netscape.javascript.JSObject;
-
 import java.util.Map;
 import java.util.Objects;
 
 public class ReportResult {
     public String associatedUs;
     public Map<String,Boolean> acceptanceTests;
-    public double succedRate;
+    public double successRate;
     private ReportResult(ReportResultBuilder reportResultBuilder){
         this.associatedUs = reportResultBuilder.associatedUs;
         this.acceptanceTests = reportResultBuilder.acceptanceTests;
-        this.succedRate = reportResultBuilder.successRate;
+        this.successRate = reportResultBuilder.successRate;
     }
     public String getAssociatedUs() {
         return associatedUs;
@@ -22,13 +20,13 @@ public class ReportResult {
         return acceptanceTests;
     }
 
-    public double getSuccedRate() {
-        return succedRate;
+    public double getSuccessRate() {
+        return successRate;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(acceptanceTests, associatedUs, succedRate);
+        return Objects.hash(acceptanceTests, associatedUs, successRate);
     }
 
     @Override
@@ -42,7 +40,7 @@ public class ReportResult {
         ReportResult other = (ReportResult) obj;
         return Objects.equals(acceptanceTests, other.acceptanceTests)
                 && Objects.equals(associatedUs, other.associatedUs)
-                && Double.doubleToLongBits(succedRate) == Double.doubleToLongBits(other.succedRate);
+                && Double.doubleToLongBits(successRate) == Double.doubleToLongBits(other.successRate);
     }
 
     public static class ReportResultBuilder{

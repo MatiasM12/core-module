@@ -12,16 +12,14 @@ public class ReportUpdater implements core.Observer {
     private ObservableReport observableReportResult;
     //private SrcChecker srcChecker;
 
-    public ReportUpdater(Finder finderImple, URL path, ObservableReport reporteObservable, Observable srcChecker){
-        this.finder = finderImple;
+    public ReportUpdater(Finder finderImpl, URL path, ObservableReport reportObservable){
+        this.finder = finderImpl;
         this.path = path;
-        this.observableReportResult = reporteObservable;
-
-        srcChecker.addObserver(this);
+        this.observableReportResult = reportObservable;
     }
 
     public void update() {
-        ReportResult report = finder.find(this.path);
-        observableReportResult.set(report);
+        ReportResult report = this.finder.find(this.path);
+        this.observableReportResult.set(report);
     }
 }
