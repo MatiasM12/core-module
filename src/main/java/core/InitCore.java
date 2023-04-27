@@ -16,6 +16,7 @@ public class InitCore {
     }
     public ObservableReport init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
         Finder finder = this.finders.get(finderImpl);
+        //FIXME hay que implementar la eleccion del checker
         Checker checker = this.checkers.get("SrcChecker");
 
         ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
