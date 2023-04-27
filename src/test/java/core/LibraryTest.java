@@ -26,17 +26,18 @@ class LibraryTest {
         finderImplPath = "";
         checkerImplPath = "";
         initCore = new InitCore(finderImplPath, checkerImplPath);
-        directory = "C:\\Users\\Usuario\\Desktop\\Universidad\\20231erSem\\PP2\\diagramas";
+        directory = System.getProperty("user.home") + "\\Desktop";
         observableReport = initCore.init("DefaultFinder", directory, 1);
     }
     @Test void someLibraryMethodReturnsTrue() {
         assertTrue(true);
     }
 
+    //Chequea si el se hace el update bien
     @Test void test() throws IOException {
         ReportResult reportResult = observableReport.getReport();
 
-        String absoluteFilePath= directory + "\\jota.txt";
+        String absoluteFilePath= directory + "\\j.txt";
         File file = new File(absoluteFilePath);
         file.createNewFile();
 
@@ -44,6 +45,7 @@ class LibraryTest {
         assertFalse(reportResult.equals(newReportResult));
     }
 
+    //Chequea si los reportes son los mismos
     @Test void test2() throws IOException {
         ReportResult reportResult = observableReport.getReport();
         ReportResult newReportResult = observableReport.getReport();
