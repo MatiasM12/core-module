@@ -2,26 +2,30 @@ package core;
 
 import java.net.URL;
 import java.util.Map;
-import java.util.Observer;
 
 public class InitCore {
-    Discovery discovery;
+    Discovery finderDiscovery;
+    Discovery checkerDiscovery;
     Map<String, Finder> finders;
-    public InitCore(String findersImplPath){
-        this.discovery = new Discovery(findersImplPath);
-        this.finders = this.discovery.discover();
+    Map<String, Checker> checkers;
+    public InitCore(String findersImplPath, String checkerImplPath){
+        this.finderDiscovery = new Discovery(findersImplPath);
+        this.checkerDiscovery = new Discovery(checkerImplPath);
+        this.finders = this.finderDiscovery.discoverFinders();
+        this.checkers = this.checkerDiscovery.discoverCheckers();
     }
-    public PvCore init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
+    public ObservableReport init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
         Finder finder = this.finders.get(finderImpl);
+        Checker checker = this.checkers.get("SrcChecker");
 
         ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
         ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
-        SrcChecker srcChecker = new SrcChecker(reportDirectoryPath, updater);
-        CheckerTimer timer = new CheckerTimer(srcChecker, refreshPeriodms);
+        checker.addObserver(updater);
 
-        PvCore pvcore = new PvCore(observableReport);
+        CheckerTimer timer = new CheckerTimer(checker, refreshPeriodms, reportDirectoryPath);
+
         timer.run();
 
-        return pvcore;
+        return observableReport;
     }
 }

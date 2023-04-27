@@ -1,6 +1,7 @@
-package core;
+package InterfacesImpl;
 
-import netscape.javascript.JSObject;
+import core.Finder;
+import core.ReportResult;
 
 import java.net.URL;
 import java.util.HashMap;

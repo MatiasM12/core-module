@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Checker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/CheckerTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/CheckerTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DefaultFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesImpl/DefaultFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Discovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Discovery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/PvCore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/SrcChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/InterfacesImpl/SrcChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +46,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
