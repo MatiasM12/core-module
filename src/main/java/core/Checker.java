@@ -8,5 +8,5 @@ public abstract class Checker {
     public void addObserver(Observer observer){
         this.observer = observer;
     }
-    public abstract void check(URL path);
+    public abstract void check(String path);
 }

@@ -7,7 +7,7 @@ import java.util.TimerTask;
 public class CheckerTimer extends Timer {
     private TimerTask task;
     private int period;
-    public CheckerTimer(Checker checker, int period, URL path){
+    public CheckerTimer(Checker checker, int period, String path){
         this.task = new TimerTask() {
             @Override
             public void run() {

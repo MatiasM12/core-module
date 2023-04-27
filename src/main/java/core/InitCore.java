@@ -18,7 +18,7 @@ public class InitCore {
     public Set<String> getFinderImpl(){
         return finders.keySet();
     }
-    public ObservableReport init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
+    public ObservableReport init(String finderImpl, String reportDirectoryPath, int refreshPeriodms){
         Finder finder = this.finders.get(finderImpl);
         //FIXME hay que implementar la eleccion del checker
         Checker checker = this.checkers.get("SrcChecker");

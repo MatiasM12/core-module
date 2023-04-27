@@ -8,11 +8,11 @@ import java.util.Observer;
 
 public class ReportUpdater implements core.Observer {
     private Finder finder;
-    private URL path;
+    private String path;
     private ObservableReport observableReportResult;
     //private SrcChecker srcChecker;
 
-    public ReportUpdater(Finder finderImpl, URL path, ObservableReport reportObservable){
+    public ReportUpdater(Finder finderImpl, String path, ObservableReport reportObservable){
         this.finder = finderImpl;
         this.path = path;
         this.observableReportResult = reportObservable;

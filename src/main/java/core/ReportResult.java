@@ -37,10 +37,11 @@ public class ReportResult {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        ReportResult other = (ReportResult) obj;
+        return false;
+/*        ReportResult other = (ReportResult) obj;
         return Objects.equals(acceptanceTests, other.acceptanceTests)
                 && Objects.equals(associatedUs, other.associatedUs)
-                && Double.doubleToLongBits(successRate) == Double.doubleToLongBits(other.successRate);
+                && Double.doubleToLongBits(successRate) == Double.doubleToLongBits(other.successRate);*/
     }
 
     public static class ReportResultBuilder{
