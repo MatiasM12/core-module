@@ -1,22 +1,23 @@
 package core;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 public class Observable {
-	
-	public ArrayList<Observer> observers;
+    Collection<Observer> observers;
 
-	public void removeObserver(Observer o) {
-		observers.remove(o);
-	}
-	
-	public void addObserver(Observer o) {
-		observers.add(o);
-	}
-	
-	public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update();
+    public void addObserver(Observer o){
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o){
+        observers.remove(o);
+    }
+
+    public void notifyObservers(){
+        for(Observer o : observers){
+            if(o != null)
+            o.update();
         }
-	}
+    }
+
 }
