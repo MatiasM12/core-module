@@ -14,12 +14,12 @@ public class InitCore {
     public PvCore init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
         Finder finder = this.finders.get(finderImpl);
 
-        ObservableReport resultReports = new ObservableReport(finder.find(reportDirectoryPath));
-        ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, resultReports);
+        ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
+        ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
         SrcChecker srcChecker = new SrcChecker(reportDirectoryPath, updater);
         CheckerTimer timer = new CheckerTimer(srcChecker, refreshPeriodms);
 
-        PvCore pvcore = new PvCore(resultReports);
+        PvCore pvcore = new PvCore(observableReport);
         timer.run();
 
         return pvcore;
