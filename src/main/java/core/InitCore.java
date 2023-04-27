@@ -1,18 +1,23 @@
 package core;
 
 import java.net.URL;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class InitCore {
-    Discovery finderDiscovery;
-    Discovery checkerDiscovery;
-    Map<String, Finder> finders;
-    Map<String, Checker> checkers;
+    private Discovery finderDiscovery;
+    private Discovery checkerDiscovery;
+    private Map<String, Finder> finders;
+    private Map<String, Checker> checkers;
     public InitCore(String findersImplPath, String checkerImplPath){
         this.finderDiscovery = new Discovery(findersImplPath);
         this.checkerDiscovery = new Discovery(checkerImplPath);
         this.finders = this.finderDiscovery.discoverFinders();
         this.checkers = this.checkerDiscovery.discoverCheckers();
+    }
+    public Set<String> getFinderImpl(){
+        return finders.keySet();
     }
     public ObservableReport init(String finderImpl, URL reportDirectoryPath, int refreshPeriodms){
         Finder finder = this.finders.get(finderImpl);
