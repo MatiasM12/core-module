@@ -24,7 +24,7 @@ class LibraryTest {
 
     @BeforeAll
     public static void escenario1() throws MalformedURLException, InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-        finderImplPath = "C:\\Users\\matia\\Desktop\\core-module\\bin\\main\\InterfacesImpl";
+        finderImplPath = "";
         checkerImplPath = "";
         initCore = new InitCore(finderImplPath, checkerImplPath);
         directory = System.getProperty("user.home") + "\\Desktop";
@@ -35,7 +35,7 @@ class LibraryTest {
     @Test void criterio1() throws IOException {
         ReportResult reportResult = observableReport.getReport();
 
-        String absoluteFilePath= directory + "\\newReport2.txt";
+        String absoluteFilePath= directory + "\\newReport4.txt";
         File file = new File(absoluteFilePath);
         file.createNewFile();
 
