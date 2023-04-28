@@ -35,7 +35,7 @@ class LibraryTest {
     @Test void criterio1() throws IOException {
         ReportResult reportResult = observableReport.getReport();
 
-        String absoluteFilePath= directory + "\\newReport.txt";
+        String absoluteFilePath= directory + "\\newReport2.txt";
         File file = new File(absoluteFilePath);
         file.createNewFile();
 
