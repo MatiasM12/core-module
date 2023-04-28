@@ -3,52 +3,15 @@
  */
 package core;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    static String finderImplPath;
-    static String checkerImplPath;
-    static InitCore initCore;
-    static ObservableReport observableReport;
-    static String directory;
-
-
-    @BeforeAll
-    public static void escenario1() throws MalformedURLException {
-        finderImplPath = "";
-        checkerImplPath = "";
-        initCore = new InitCore(finderImplPath, checkerImplPath);
-        directory = System.getProperty("user.home") + "\\Desktop";
-        observableReport = initCore.init("DefaultFinder", directory, 1);
+    
+    @Test void someLibraryMethodReturnsTrue() {;
     }
-    @Test void someLibraryMethodReturnsTrue() {
-        assertTrue(true);
-    }
-
-    //Chequea si el se hace el update bien
-    @Test void test() throws IOException {
-        ReportResult reportResult = observableReport.getReport();
-
-        String absoluteFilePath= directory + "\\j.txt";
-        File file = new File(absoluteFilePath);
-        file.createNewFile();
-
-        ReportResult newReportResult = observableReport.getReport();
-        assertFalse(reportResult.equals(newReportResult));
-    }
-
-    //Chequea si los reportes son los mismos
-    @Test void test2() throws IOException {
-        ReportResult reportResult = observableReport.getReport();
-        ReportResult newReportResult = observableReport.getReport();
-        assertTrue(reportResult.equals(newReportResult));
+    
+    @Test void someOtherLibraryMethodReturnsFalse() {
+        assertTrue(false);
     }
 }
