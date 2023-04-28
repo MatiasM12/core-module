@@ -8,12 +8,13 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
+	
     static String finderImplPath;
     static String checkerImplPath;
     static InitCore initCore;
@@ -22,22 +23,19 @@ class LibraryTest {
 
 
     @BeforeAll
-    public static void escenario1() throws MalformedURLException {
-        finderImplPath = "";
+    public static void escenario1() throws MalformedURLException, InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+        finderImplPath = "C:\\Users\\matia\\Desktop\\core-module\\bin\\main\\InterfacesImpl";
         checkerImplPath = "";
         initCore = new InitCore(finderImplPath, checkerImplPath);
         directory = System.getProperty("user.home") + "\\Desktop";
-        observableReport = initCore.init("DefaultFinder", directory, 1);
-    }
-    @Test void someLibraryMethodReturnsTrue() {
-        assertTrue(true);
+        observableReport = initCore.init("DefaultFinder", directory, 000001);
     }
 
-    //Chequea si el se hace el update bien
-    @Test void test() throws IOException {
+    //Chequea si se hace el update bien
+    @Test void criterio1() throws IOException {
         ReportResult reportResult = observableReport.getReport();
 
-        String absoluteFilePath= directory + "\\j.txt";
+        String absoluteFilePath= directory + "\\newReport.txt";
         File file = new File(absoluteFilePath);
         file.createNewFile();
 
@@ -46,7 +44,7 @@ class LibraryTest {
     }
 
     //Chequea si los reportes son los mismos
-    @Test void test2() throws IOException {
+    @Test void criterio2() throws IOException {
         ReportResult reportResult = observableReport.getReport();
         ReportResult newReportResult = observableReport.getReport();
         assertTrue(reportResult.equals(newReportResult));

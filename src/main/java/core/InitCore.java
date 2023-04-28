@@ -1,5 +1,6 @@
 package core;
 
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Set;
@@ -9,7 +10,7 @@ public class InitCore {
     private Discovery checkerDiscovery;
     private Map<String, Finder> finders;
     private Map<String, Checker> checkers;
-    public InitCore(String findersImplPath, String checkerImplPath){
+    public InitCore(String findersImplPath, String checkerImplPath) throws   InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
         this.finderDiscovery = new Discovery(findersImplPath);
         this.checkerDiscovery = new Discovery(checkerImplPath);
         this.finders = this.finderDiscovery.discoverFinders();
@@ -22,7 +23,7 @@ public class InitCore {
         Finder finder = this.finders.get(finderImpl);
         //FIXME hay que implementar la eleccion del checker
         Checker checker = this.checkers.get("SrcChecker");
-
+        
         ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
         ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
         checker.addObserver(updater);
@@ -33,4 +34,5 @@ public class InitCore {
 
         return observableReport;
     }
+    
 }
