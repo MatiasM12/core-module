@@ -1,35 +1,29 @@
 package core;
 
-import java.net.URL;
-import java.util.Map;
+import java.util.HashSet;
 import java.util.Set;
 
 public class InitCore {
     private Discovery finderDiscovery;
-    private Discovery checkerDiscovery;
-    private Map<String, Finder> finders;
-    private Map<String, Checker> checkers;
-    public InitCore(String findersImplPath, String checkerImplPath){
+    private Set<Finder> finders;
+    public InitCore(String findersImplPath){
         this.finderDiscovery = new Discovery(findersImplPath);
-        this.checkerDiscovery = new Discovery(checkerImplPath);
-        this.finders = this.finderDiscovery.discoverFinders();
-        this.checkers = this.checkerDiscovery.discoverCheckers();
+        this.finders = new HashSet<>();
     }
+/*
     public Set<String> getFinderImpl(){
-        return finders.keySet();
+        return finders;
     }
-    public ObservableReport init(String finderImpl, String reportDirectoryPath, int refreshPeriodms){
+*/
+    public ReportSetterGetter init(String finderImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        this.finders = this.finderDiscovery.discover();
+        Listener miHandler = new Listener();
         Finder finder = this.finders.get(finderImpl);
         //FIXME hay que implementar la eleccion del checker
-        Checker checker = this.checkers.get("SrcChecker");
 
-        ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
+        ReportSetterGetter observableReport = new ReportSetterGetter(finder.find(reportDirectoryPath));
         ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
         checker.addObserver(updater);
-
-        CheckerTimer timer = new CheckerTimer(checker, refreshPeriodms, reportDirectoryPath);
-
-        timer.run();
 
         return observableReport;
     }

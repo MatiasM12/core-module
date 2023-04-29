@@ -2,9 +2,9 @@ package core;
 
 import java.util.ArrayList;
 
-public class ObservableReport extends core.Observable{
+public class ReportSetterGetter extends core.Observable{
     private ReportResult reportResult;
-    protected ObservableReport(ReportResult rr){
+    protected ReportSetterGetter(ReportResult rr){
         this.reportResult = rr;
         super.observers = new ArrayList<>();
     }

@@ -1,18 +1,13 @@
 package core;
 
 
-import netscape.javascript.JSObject;
-
-import java.net.URL;
-import java.util.Observer;
-
 public class ReportUpdater implements core.Observer {
     private Finder finder;
     private String path;
-    private ObservableReport observableReportResult;
+    private ReportSetterGetter observableReportResult;
     //private SrcChecker srcChecker;
 
-    public ReportUpdater(Finder finderImpl, String path, ObservableReport reportObservable){
+    public ReportUpdater(Finder finderImpl, String path, ReportSetterGetter reportObservable){
         this.finder = finderImpl;
         this.path = path;
         this.observableReportResult = reportObservable;

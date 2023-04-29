@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +16,7 @@ class LibraryTest {
     static String finderImplPath;
     static String checkerImplPath;
     static InitCore initCore;
-    static ObservableReport observableReport;
+    static ReportSetterGetter observableReport;
     static String directory;
 
 
