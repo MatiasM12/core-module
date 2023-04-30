@@ -23,6 +23,9 @@ public class TrackerFinder {
                 this.trackers.add((Tracker) cls.newInstance());
             }
         }
+        for(Tracker tracker : this.trackers){
+            System.out.println(tracker.getClass().getName());
+        }
     }
     public Tracker getTracker(String trackerImpl){
         return this.trackers.stream().filter(x -> x.getClass().getName().equals(trackerImpl)).collect(null);
