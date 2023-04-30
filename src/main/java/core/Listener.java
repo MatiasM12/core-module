@@ -10,18 +10,15 @@ import java.net.InetSocketAddress;
 
 public class Listener implements HttpHandler {
     ReportRefresher reportRefresher;
-
     Listener(ReportRefresher reportRefresher) {
         this.reportRefresher = reportRefresher;
     }
-
     public void  start() throws IOException{
         HttpServer server = HttpServer.create(new InetSocketAddress(8005), 0);
         server.createContext("/mi-endpoint", this);
         server.setExecutor(null);
         server.start();
     }
-
     @Override
     public void handle(HttpExchange t) throws IOException {
         reportRefresher.refreshReport();

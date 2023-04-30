@@ -7,6 +7,7 @@ public class Core {
     private Listener listener;
     public Core(Report report, Listener listener){
         this.report = report;
+        this.listener = listener;
     }
     public void subscribe(Observer o){
         this.report.addObserver(o);

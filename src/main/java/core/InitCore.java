@@ -12,7 +12,7 @@ public class InitCore {
         this.trackerFinder.initTrackers();
         Tracker tracker = this.trackerFinder.getTracker(trackerImpl);
 
-        Report report = new Report(tracker.find(reportDirectoryPath));
+        Report report = new Report(null);
         ReportRefresher refresher = new ReportRefresher(tracker, reportDirectoryPath, report);
         Listener listener = new Listener(refresher);
         listener.start();
