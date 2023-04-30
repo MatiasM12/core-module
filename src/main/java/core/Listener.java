@@ -21,6 +21,7 @@ public class Listener implements HttpHandler {
     }
     @Override
     public void handle(HttpExchange t) throws IOException {
+        System.out.println("Hola jaja");
         reportRefresher.refreshReport();
         if(t != null) {
             String response = "{ Se realizo el refresh}";

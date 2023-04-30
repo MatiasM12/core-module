@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,5 +80,16 @@
       <updated>1681834792976</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/core/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
