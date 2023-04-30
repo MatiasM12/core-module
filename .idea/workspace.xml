@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Discovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Discovery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/SrcChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Checker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Discovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Searcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Listener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportSetterGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/OtraClase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

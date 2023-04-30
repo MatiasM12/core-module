@@ -10,9 +10,6 @@ public class Report extends core.Observable{
     }
     protected void set(ReportResult reportResult) {
         this.reportResult = reportResult;
-        notifyObservers();
-    }
-    public ReportResult getReport() {
-        return this.reportResult;
+        notifyObservers(this.reportResult);
     }
 }

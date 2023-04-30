@@ -1,12 +1,13 @@
 package core;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Discovery {
+public class Searcher {
     private String path;
-    public Discovery(String path){
+    public Searcher(String path){
         this.path = path;
     }
     @SuppressWarnings("deprecation")

@@ -1,19 +1,22 @@
 package core;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class InitCore {
-    private OtraClase otraClase;
+    private TrackerFinder trackerFinder;
     public InitCore(String findersImplPath){
-        this.otraClase = new OtraClase(findersImplPath);
+        this.trackerFinder = new TrackerFinder(findersImplPath);
     }
-    public void init(String trackerImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException {
-        this.otraClase.initTrackers();
-        Tracker tracker = this.otraClase.getTracker(trackerImpl);
+    public ReportSubscriber init(String trackerImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
+        this.trackerFinder.initTrackers();
+        Tracker tracker = this.trackerFinder.getTracker(trackerImpl);
 
         Report report = new Report(tracker.find(reportDirectoryPath));
         ReportRefresher refresher = new ReportRefresher(tracker, reportDirectoryPath, report);
         Listener listener = new Listener(refresher);
         listener.start();
+
+        return new ReportSubscriber(report);
     }
 }

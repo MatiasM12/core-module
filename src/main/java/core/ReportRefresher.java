@@ -1,7 +1,7 @@
 package core;
 
 
-public class ReportRefresher implements core.Observer {
+public class ReportRefresher{
     private Tracker tracker;
     private String path;
     private Report report;
@@ -13,7 +13,7 @@ public class ReportRefresher implements core.Observer {
         this.report = reportObservable;
     }
 
-    public void update() {
+    public void refreshReport() {
         ReportResult report = this.tracker.find(this.path);
         this.report.set(report);
     }
