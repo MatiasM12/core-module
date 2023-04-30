@@ -16,7 +16,7 @@ class LibraryTest {
     static String finderImplPath;
     static String checkerImplPath;
     static InitCore initCore;
-    static ReportSetterGetter observableReport;
+    static Report observableReport;
     static String directory;
 
 

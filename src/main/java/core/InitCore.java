@@ -1,30 +1,19 @@
 package core;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.IOException;
 
 public class InitCore {
-    private Discovery finderDiscovery;
-    private Set<Finder> finders;
+    private OtraClase otraClase;
     public InitCore(String findersImplPath){
-        this.finderDiscovery = new Discovery(findersImplPath);
-        this.finders = new HashSet<>();
+        this.otraClase = new OtraClase(findersImplPath);
     }
-/*
-    public Set<String> getFinderImpl(){
-        return finders;
-    }
-*/
-    public ReportSetterGetter init(String finderImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        this.finders = this.finderDiscovery.discover();
-        Listener miHandler = new Listener();
-        Finder finder = this.finders.get(finderImpl);
-        //FIXME hay que implementar la eleccion del checker
+    public void init(String trackerImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException {
+        this.otraClase.initTrackers();
+        Tracker tracker = this.otraClase.getTracker(trackerImpl);
 
-        ReportSetterGetter observableReport = new ReportSetterGetter(finder.find(reportDirectoryPath));
-        ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
-        checker.addObserver(updater);
-
-        return observableReport;
+        Report report = new Report(tracker.find(reportDirectoryPath));
+        ReportRefresher refresher = new ReportRefresher(tracker, reportDirectoryPath, report);
+        Listener listener = new Listener(refresher);
+        listener.start();
     }
 }

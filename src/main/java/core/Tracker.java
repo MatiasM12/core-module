@@ -1,5 +1,5 @@
 package core;
 
-public interface Finder {
+public interface Tracker {
     ReportResult find(String path);
 }

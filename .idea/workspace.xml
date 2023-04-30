@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/DefaultFinder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/CheckerTimer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Discovery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Discovery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Finder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Finder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ObservableReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/FacadeReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportSetterGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

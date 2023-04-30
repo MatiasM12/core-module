@@ -9,10 +9,10 @@ import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
 public class Listener implements HttpHandler {
-    ReportUpdater reportUpdater;
+    ReportRefresher reportRefresher;
 
-    Listener(ReportUpdater reportUpdater) {
-        this.reportUpdater = reportUpdater;
+    Listener(ReportRefresher reportRefresher) {
+        this.reportRefresher = reportRefresher;
     }
 
     public void  start() throws IOException{
@@ -24,7 +24,7 @@ public class Listener implements HttpHandler {
 
     @Override
     public void handle(HttpExchange t) throws IOException {
-        reportUpdater.update();
+        reportRefresher.update();
         if(t != null) {
             String response = "{ Se realizo el refresh}";
             t.getResponseHeaders().set("Content-Type", "application/json");
@@ -34,6 +34,4 @@ public class Listener implements HttpHandler {
             os.close();
         }
     }
-}
-
 }
