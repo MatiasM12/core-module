@@ -1,5 +1,6 @@
 package core;
 
+import java.io.FileNotFoundException;
 
 public class ReportRefresher{
     private Tracker tracker;
@@ -10,8 +11,18 @@ public class ReportRefresher{
         this.path = path;
         this.report = reportObservable;
     }
-    public void refreshReport() {
-        ReportResult report = this.tracker.find(this.path);
-        this.report.set(report);
+    public void refreshReport()  {
+    	
+    	ReportResult report;
+        try {
+    	report = this.tracker.find(this.path);
+    	this.report.set(report);
+    	}
+        catch(FileNotFoundException e) {
+        	System.out.println(e.getStackTrace());
+        }
+       
+       
+    	
     }
 }
