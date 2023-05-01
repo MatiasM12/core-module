@@ -19,6 +19,7 @@ public class ReportRefresher{
     	this.report.set(report);
     	}
         catch(FileNotFoundException e) {
+        	System.out.println(e.getMessage());
         	System.out.println(e.getStackTrace());
         }
        
