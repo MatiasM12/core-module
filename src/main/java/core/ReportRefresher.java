@@ -2,6 +2,8 @@ package core;
 
 import java.io.FileNotFoundException;
 
+import javax.annotation.processing.FilerException;
+
 public class ReportRefresher{
     private Tracker tracker;
     private String path;
@@ -19,6 +21,10 @@ public class ReportRefresher{
     	this.report.set(report);
     	}
         catch(FileNotFoundException e) {
+        	System.out.println(e.getMessage());
+        	System.out.println(e.getStackTrace());
+        }
+        catch(FilerException e) {
         	System.out.println(e.getMessage());
         	System.out.println(e.getStackTrace());
         }
