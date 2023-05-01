@@ -16,7 +16,7 @@ public class TrackerEmptyDirectory  implements Tracker {
 		File file = new File(path);
 		
 		
-		if(file.length()==0) throw new FilerException("");
+		if(file.length()==0) throw new FilerException("La carpeta es vacia");
 		
 		
 		

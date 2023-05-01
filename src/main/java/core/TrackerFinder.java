@@ -40,4 +40,10 @@ public class TrackerFinder {
         System.out.println("Soy null");
         return null;
     }
+    
+    
+    public int getSizeTrackers() {
+    	return this.trackers.size();
+    	
+    }
 }

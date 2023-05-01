@@ -8,16 +8,19 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.MalformedURLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     static InitCore initCore;
-
+    static TrackerFinder trackerFinder;
 
     @BeforeAll
     public static void escenario1(){
+    	 trackerFinder = new TrackerFinder("C:\\Users\\Nicol\\git\\core-module2\\src\\main\\java\\UnTracker");
+    	
     }
     @Test void someLibraryMethodReturnsTrue() {
         assertTrue(true);
@@ -27,5 +30,10 @@ class LibraryTest {
     }
 
     @Test void test2() throws IOException {
+    }
+    
+    @Test void unTracker() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    	trackerFinder.initTrackers();
+    	assertTrue(trackerFinder.getSizeTrackers()==1);
     }
 }
