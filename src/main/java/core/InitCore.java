@@ -16,7 +16,7 @@ public class InitCore {
         ReportRefresher refresher = new ReportRefresher(tracker, reportDirectoryPath, report);
         Listener listener = new Listener(refresher);
         listener.start();
-
+        System.out.println("Saludos");
         return new Core(report, listener);
     }
 }
