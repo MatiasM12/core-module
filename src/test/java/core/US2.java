@@ -21,7 +21,7 @@ import TrackersMock.TrackerNonExistentPath;
 public class US2 {
 	
     private static final String INVALID_PATH = "archivo.txt";
-    private static final String NON_EXISTENT_PATH = "////";
+    private static final String NON_EXISTENT_PATH = "/unaCarpetaInexistente";
     private static final String EMPTY_DIRECTORY = "carpetaVacia/";
     private static final String NOT_A_SOURCE = "noEsFuente/image.gif";
     private static final String ONE_SOURCE = "gitlab.class";
