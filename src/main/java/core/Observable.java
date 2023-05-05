@@ -13,10 +13,10 @@ public class Observable {
         observers.remove(o);
     }
 
-    public void notifyObservers(){
+    public void notifyObservers(Object object){
         for(Observer o : observers){
             if(o != null)
-            o.update();
+            o.update(object);
         }
     }
 

@@ -1,42 +1,19 @@
 package core;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URL;
-import java.util.Map;
-import java.util.Set;
 
 public class InitCore {
-	
-    private Discovery finderDiscovery;
-    private Discovery checkerDiscovery;
-    private Map<String, Finder> finders;
-    private Map<String, Checker> checkers;
     
-    public InitCore(String findersImplPath, String checkerImplPath) throws   InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException{
-        this.finderDiscovery = new Discovery(findersImplPath);
-        this.checkerDiscovery = new Discovery(checkerImplPath);
-        this.finders = this.finderDiscovery.discoverFinders();
-        this.checkers = this.checkerDiscovery.discoverCheckers();
+    
+    public Integrator init(String trackerImpl, String reportDirectoryPath,String findersImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException  {
+        TrackerFinder finder = new TrackerFinder(findersImplPath);
+    	Report report = new Report(null);
+        ReportRefresher refresher = new ReportRefresher(reportDirectoryPath, report);
+        Listener listener = new Listener();
+        Integrator integrator = new Integrator(report, listener);
+        RelateObjects relate = new RelateObjects(finder,report, refresher, listener);
+        relate.relateApp(trackerImpl);
+        return integrator;
     }
-    
-    public Set<String> getFinderImpl(){
-        return finders.keySet();
-    }
-    
-    public ObservableReport init(String finderImpl, String reportDirectoryPath, int refreshPeriodms){
-        Finder finder = this.finders.get(finderImpl);
-        //FIXME hay que implementar la eleccion del checker
-        Checker checker = this.checkers.get("SrcChecker");
-        
-        ObservableReport observableReport = new ObservableReport(finder.find(reportDirectoryPath));
-        ReportUpdater updater = new ReportUpdater(finder, reportDirectoryPath, observableReport);
-        checker.addObserver(updater);
-
-        CheckerTimer timer = new CheckerTimer(checker, refreshPeriodms, reportDirectoryPath);
-
-        timer.run();
-
-        return observableReport;
-    }
-    
 }
