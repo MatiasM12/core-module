@@ -1,9 +1,11 @@
 package core;
 
-import java.io.FileNotFoundException;
+import java.util.Set;
 
-import javax.annotation.processing.FilerException;
-
-public interface Tracker {
-    ReportResult find(String path) throws FileNotFoundException, FilerException;
+public abstract class Tracker{
+    Observer observer;
+    void setObserver(Observer observer){
+        this.observer = observer;
+    }
+    abstract Set<TestResult> track(String path);
 }

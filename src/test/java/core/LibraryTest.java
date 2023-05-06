@@ -27,6 +27,7 @@ class LibraryTest {
     }
 
     @Test void test() throws IOException {
+        assertTrue(true);
     }
 
     @Test void test2() throws IOException {

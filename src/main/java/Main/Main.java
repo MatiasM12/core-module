@@ -1,4 +1,4 @@
-package core;
+package Main;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

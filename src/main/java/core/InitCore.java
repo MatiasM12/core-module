@@ -2,21 +2,21 @@ package core;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Set;
 
 public class InitCore {
-    private TrackerFinder trackerFinder;
+    /*
     public InitCore(String findersImplPath){
-        this.trackerFinder = new TrackerFinder(findersImplPath);
-    }
-    public Core init(String trackerImpl, String reportDirectoryPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
-        this.trackerFinder.initTrackers();
-        Tracker tracker = this.trackerFinder.getTracker(trackerImpl);
+    }*/
+    public NewCore init(String trackersPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
+        TrackerFinder trackerFinder = new TrackerFinder(trackersPath);
+        Set<Tracker> trackerSet = trackerFinder.findTrackers();
 
-        Report report = new Report(null);
-        ReportRefresher refresher = new ReportRefresher(tracker, reportDirectoryPath, report);
-        Listener listener = new Listener(refresher);
-        listener.start();
-        System.out.println("Saludos");
-        return new Core(report, listener);
+        NewCore core = new NewCore();
+        for(Tracker t : trackerSet){
+            t.setObserver(core);
+        }
+
+        return core;
     }
 }

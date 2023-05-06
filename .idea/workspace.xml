@@ -6,8 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/InterfacesImpl/DefaultReportTracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Core.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/InitCore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Report.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/ReportRefresher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/ReportResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Searcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/TrackerFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/core/LibraryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/DefaultReportTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/TrackerEmptyDirectory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/TrackerNoExistentFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UnTracker/DefaultReportTracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Searcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,17 +86,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="core" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,7 +139,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/core/Main.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/Main/Main.java</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
