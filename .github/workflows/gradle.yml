@@ -39,8 +39,12 @@ jobs:
       run: ./gradlew test
       
     - name: Install dependencies
-      run:
-         cd plugins && npm install --prefix ./plugins
+      run: npm install
+      working-directory: ./core-module
+
+    - name: Install plugin dependencies
+      run: npm install
+      working-directory: ./core-module/plugins
 
       
     - name: Build project
