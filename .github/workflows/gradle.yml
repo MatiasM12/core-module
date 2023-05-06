@@ -37,14 +37,7 @@ jobs:
       
     - name: Test with Gradle
       run: ./gradlew test
-      
-    - name: Install dependencies
-      run: npm install
-      working-directory: ./core-module
 
-    - name: Install plugin dependencies
-      run: npm install
-      working-directory: ./core-module/plugins
 
       
     - name: Build project
