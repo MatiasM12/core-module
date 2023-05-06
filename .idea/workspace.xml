@@ -6,35 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/InterfacesImpl/DefaultReportTracker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Core.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/InitCore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Listener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Report.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/ReportRefresher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/ReportResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Searcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Tracker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/TrackerFinder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/core/LibraryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/DefaultReportTracker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/TrackerEmptyDirectory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/InterfacesImpl/TrackerNoExistentFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UnTracker/DefaultReportTracker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Listener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Report.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportRefresher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/ReportResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Searcher.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TrackerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +74,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.LibraryTest">
     <configuration name="C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -118,8 +94,24 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="core.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.LibraryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryTest" />
         <item itemvalue="Gradle.C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" />
       </list>
     </recent_temporary>
@@ -134,16 +126,5 @@
       <updated>1681834792976</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

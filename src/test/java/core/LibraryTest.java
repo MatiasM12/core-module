@@ -3,6 +3,53 @@
  */
 package core;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 class LibraryTest {
+
+    InitCore initCore;
+    Tracker trackerNull;
+    Tracker trackerInvalid;
+    @BeforeAll
+    void escenario() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+        initCore = new InitCore();
+        trackerNull = new Tracker() {
+            @Override
+            protected void track(String path) throws FileNotFoundException {
+                File file = new File(path);
+                if (true) {
+                    throw new FileNotFoundException("Ubicacion inexistente");
+                }
+            }
+        };
+        trackerInvalid = new Tracker() {
+            @Override
+            protected void track(String path) throws FileNotFoundException {
+                File file = new File(path);
+                if (true) {
+                    throw new FileNotFoundException("Ubicacion inexistente");
+                }
+            }
+        };
+    }
+    @Test
+    void testNullTestResults(){
+        trackerNull.setObserver(new NewCore());
+        Exception exception = assertThrows(FileNotFoundException.class, () -> {
+            trackerNull.update(null);
+        });
+        String expected = "Ubicacion inexistente";
+        String actual = exception.getMessage();
+        assertEquals(expected, actual);
+    }
 	
 }

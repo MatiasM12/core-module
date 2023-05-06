@@ -5,9 +5,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TrackerFinder {
-	
-
-    
     public Set<Tracker> findTrackers(String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         File[] files = new File(path).listFiles();
         Set<Tracker> trackers = new HashSet<>();
