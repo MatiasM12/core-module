@@ -22,13 +22,16 @@ public class TrackerFinder {
             System.out.println(f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                String className = "InterfacesImpl." + fileName;
+                String className =  fileName;
+                System.out.println(className);
                 Class<?> cls = Class.forName(className);
                 if (!Tracker.class.isAssignableFrom(cls)) continue;
                 this.trackers.add((Tracker) cls.newInstance());
             }
         }
+        System.out.println("encontre los trackers");
     }
+    
     public Tracker getTracker(String trackerImpl){
         Iterator<Tracker> iterator = this.trackers.iterator();
         while(iterator.hasNext()){
