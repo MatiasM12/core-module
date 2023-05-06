@@ -1,16 +1,14 @@
 package core;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Set;
 
 public class TrackerFinder {
-    private String path;
-    TrackerFinder(String findersImplPath){
-        this.path = findersImplPath;
-    }
-    public Set<Tracker> findTrackers() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	
+
+    
+    public Set<Tracker> findTrackers(String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         File[] files = new File(path).listFiles();
         Set<Tracker> trackers = new HashSet<>();
         for (File f : files) {

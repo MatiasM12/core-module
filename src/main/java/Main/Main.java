@@ -13,19 +13,19 @@ public class Main {
     static String reportDirectoryPath = "reportPath";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        InitCore initCore = new InitCore(trackerDirectoryPath);
-        Core core = initCore.init(trackerImpl,reportDirectoryPath);
-
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    core.refresh();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }, new Date(), 5000);
+//        InitCore initCore = new InitCore(trackerDirectoryPath);
+//        Core core = initCore.init(trackerImpl,reportDirectoryPath);
+//
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                try {
+//                    core.refresh();
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//        }, new Date(), 5000);
     }
 }
