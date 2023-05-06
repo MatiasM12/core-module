@@ -11,7 +11,8 @@ public class InitCore {
 
         NewCore core = new NewCore();
 
-        Tracker tracker = new TrackerGetter().getTracker(trackerImpl, trackerSet);
+        //Tracker tracker = new TrackerGetter().getTracker(trackerImpl, trackerSet);
+        Tracker tracker = new SelfTracker();
         tracker.setObserver(core);
         tracker.track(path);
 
