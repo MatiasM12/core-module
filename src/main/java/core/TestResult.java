@@ -1,8 +1,8 @@
 package core;
 
 public class TestResult {
-    String name;
-    Boolean result;
+    public String name;
+    public Boolean result;
     TestResult(String name, Boolean result){
         this.name = name;
         this.result = result;
