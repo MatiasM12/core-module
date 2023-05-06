@@ -7,7 +7,7 @@ import java.util.Set;
 public class InitCore {
     public NewCore init(String trackersPath, String trackerImpl, String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
         TrackerFinder trackerFinder = new TrackerFinder();
-        Set<Tracker> trackerSet = trackerFinder.findTrackers(trackersPath);
+        //Set<Tracker> trackerSet = trackerFinder.findTrackers(trackersPath);
 
         NewCore core = new NewCore();
 
