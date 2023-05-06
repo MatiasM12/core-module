@@ -40,7 +40,7 @@ jobs:
       
     - name: Install dependencies
       run:
-         cd core-module && npm install --prefix /plugins
+         cd plugins && npm install --prefix /plugins
 
          
     - name: Build project
