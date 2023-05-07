@@ -13,4 +13,13 @@ public class TrackerGetter {
         }
         return null;
     }
+
+    public Tracker getOneTracker(Set<Tracker> trackerSet) {
+        Iterator<Tracker> iterator = trackerSet.iterator();
+        if (iterator.hasNext()){
+            Tracker tracker = iterator.next();
+            return tracker;
+        }
+        return null;
+    }
 }
