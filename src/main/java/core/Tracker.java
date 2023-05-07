@@ -6,7 +6,7 @@ import java.util.Set;
 public abstract class Tracker implements Observer{
     Observer observer;
     void setObserver(Observer observer){
-        this.observer = observer;
+        this.observer = observer; 
     }
     protected abstract void track(String path) throws FileNotFoundException;
     @Override
