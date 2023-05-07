@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class TrackerGetter {
-    public Tracker getTracker(String trackerImpl, Set<Tracker> trackerSet){
+    public static Tracker getTracker(String trackerImpl, Set<Tracker> trackerSet){
         Iterator<Tracker> iterator = trackerSet.iterator();
         while(iterator.hasNext()){
             Tracker tracker = iterator.next();
@@ -14,7 +14,7 @@ public class TrackerGetter {
         return null;
     }
 
-    public Tracker getOneTracker(Set<Tracker> trackerSet) {
+    public static Tracker getOneTracker(Set<Tracker> trackerSet) {
         Iterator<Tracker> iterator = trackerSet.iterator();
         if (iterator.hasNext()){
             Tracker tracker = iterator.next();

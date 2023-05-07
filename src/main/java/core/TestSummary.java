@@ -3,11 +3,12 @@ package core;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NewCore extends Observable implements Observer{
+public class TestSummary extends Observable implements Observer {
     Set<TestResult> testResultSet;
 
-    NewCore(){
+    TestSummary(){
         this.observers = new HashSet<>();
+        this.testResultSet = new HashSet<>();
     }
     protected void setTestResults(Set<TestResult> testResultSet) {
         this.testResultSet = testResultSet;
