@@ -43,7 +43,7 @@ class LibraryTest {
     }
     @Test
     void testNullTestResults(){
-        trackerNull.setObserver(new NewCore());
+        trackerNull.setObserver(new TestSummaryProxy());
         Exception exception = assertThrows(FileNotFoundException.class, () -> {
             trackerNull.update(null);
         });

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="" />
+    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/NewCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TestSummaryProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TestResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/UserStory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/UserStory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/LibraryTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +25,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>

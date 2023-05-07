@@ -5,11 +5,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
 public class InitCore {
-    public NewCore init(String trackersPath, String trackerImpl, String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
+    public TestSummary init(String trackersPath, String trackerImpl, String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
         TrackerFinder trackerFinder = new TrackerFinder();
         Set<Tracker> trackerSet = trackerFinder.findTrackers(trackersPath);
 
-        NewCore core = new NewCore();
+        TestSummary userStory = new UserStory();
+        TestSummary core = new TestSummaryProxy(userStory);
 
         TrackerGetter getter = new TrackerGetter();
         Tracker tracker1 = getter.getOneTracker(trackerSet);
