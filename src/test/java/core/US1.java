@@ -2,34 +2,49 @@ package core;
 
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US1 {
-//    static String trackerDirectoryPath = "./build/resources/test/availableTrackers";
-//    static String trackerImpl = "InterfacesImpl.DefaultReportTracker";
-//    static String reportDirectoryPath = "reportPath";
-//
-//    static Integrator integrator;
-//
-//    @BeforeAll
-//    public static void escenario1() throws IOException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-//        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-//        InitCore initCore = new InitCore();
-//        integrator = initCore.init(trackerImpl,reportDirectoryPath, trackerDirectoryPath);
-//    }
-//
+
+    static TestSummary core;
+    static MockTracker mock;
+    @BeforeAll
+    public static void escenario(){
+        core = new TestSummary();
+        mock = new MockTracker();
+        mock.addObserver(core);
+    }
+
+    @BeforeEach
+    public void vaciarTests(){
+        mock.ningunTest();
+    }
+
+    @Test
+    public void CA1(){
+        assertTrue(core.getTestResults().size() == 0);
+        this.mock.unSoloTest();
+        assertTrue(core.getTestResults().size() == 1);
+    }
+
+    @Test
+    public void CA2(){
+        this.mock.unSoloTest();
+        assertTrue(core.getTestResults().size() == 1);
+        mock.ningunTest();
+        assertTrue(core.getTestResults().size() == 0);
+    }
+
 //    @Test
-//    void CA0() {
-//        assertDoesNotThrow(() -> {
-//        	integrator.refresh();
-//        });
+//    public void CA3(){
+//        this.mock.unSoloTest();
+//        TestResult ret = new TestResult("Test1", true);
+//        Object[] array = core.getTestResults().toArray();
+//        assertTrue(array. == ret);
+//        this.mock.unoCambia();
 //    }
 
 }
