@@ -4,7 +4,18 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class TrackerGetter {
-    public static Tracker getTracker(String trackerImpl, Set<Tracker> trackerSet){
+    //voy a aplicar Singleton
+
+    private static TrackerGetter intancia;
+
+    private TrackerGetter(){}
+
+    public static TrackerGetter getInstance(){
+        if(intancia == null) intancia = new TrackerGetter();
+
+        return intancia;
+    }
+    public Tracker getTracker(String trackerImpl, Set<Tracker> trackerSet){
         Iterator<Tracker> iterator = trackerSet.iterator();
         while(iterator.hasNext()){
             Tracker tracker = iterator.next();
@@ -14,7 +25,7 @@ public class TrackerGetter {
         return null;
     }
 
-    public static Tracker getOneTracker(Set<Tracker> trackerSet) {
+    public Tracker getOneTracker(Set<Tracker> trackerSet) {
         Iterator<Tracker> iterator = trackerSet.iterator();
         if (iterator.hasNext()){
             Tracker tracker = iterator.next();
