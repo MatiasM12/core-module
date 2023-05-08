@@ -13,8 +13,8 @@ public class InitCore {
 
         TrackerGetter getter = TrackerGetter.getInstance();
         Tracker tracker1 = getter.getOneTracker(trackerSet);
-        if(tracker1 != null)tracker1.addObserver((Observer) core);
-
+//        if(tracker1 != null)tracker1.addObserver((Observer) core);
+        if(tracker1 != null) core.attach(tracker1);
 
         return core;
     }
