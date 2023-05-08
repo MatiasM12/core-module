@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SelfTracker extends Tracker {
     @Override
-    protected void track(String path) throws FileNotFoundException {
+    public void track(String path) throws FileNotFoundException {
         Timer timer = new Timer();
         Random random = new Random();
         Set<TestResult> testResultSet = new HashSet<>();
@@ -18,7 +18,7 @@ public class SelfTracker extends Tracker {
                     TestResult testResult = new TestResult("Test" + i, random.nextBoolean());
                     testResultSet.add(testResult);
                 }
-                update(testResultSet);
+                notifyObservers(testResultSet);
             }
         }, new Date(), 5000);
     }

@@ -6,7 +6,7 @@ import java.util.Set;
 public class TrackerImpl extends Tracker{
 
     @Override
-    protected void track(String path) {
+    public void track(String path) {
         return;
     }
 }

@@ -24,7 +24,7 @@ class LibraryTest {
         initCore = new InitCore();
         trackerNull = new Tracker() {
             @Override
-            protected void track(String path) throws FileNotFoundException {
+            public void track(String path) throws FileNotFoundException {
                 File file = new File(path);
                 if (true) {
                     throw new FileNotFoundException("Ubicacion inexistente");
@@ -33,7 +33,7 @@ class LibraryTest {
         };
         trackerInvalid = new Tracker() {
             @Override
-            protected void track(String path) throws FileNotFoundException {
+            public void track(String path) throws FileNotFoundException {
                 File file = new File(path);
                 if (true) {
                     throw new FileNotFoundException("Ubicacion inexistente");
@@ -43,9 +43,9 @@ class LibraryTest {
     }
     @Test
     void testNullTestResults(){
-        trackerNull.setObserver(new NewCore());
+        trackerNull.addObserver(new TestSummary());
         Exception exception = assertThrows(FileNotFoundException.class, () -> {
-            trackerNull.update(null);
+            trackerNull.notifyObservers(null);
         });
         String expected = "Ubicacion inexistente";
         String actual = exception.getMessage();
