@@ -5,8 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class Tracker implements Observer{
+public abstract class Tracker implements Observer, TestSummary{
     TestSummary testSummary;
+    Tracker(String url){
+        this.testSummary = hook(url);
+
+    }
+    public abstract TestSummary hook(String url);
     void setObserver(TestSummary testSummary){
         this.testSummary = testSummary;
     }

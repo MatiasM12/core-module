@@ -5,17 +5,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
 public class InitCore {
-    public UserStoryGateway init(String trackersPath, String trackerImpl, String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
+    public TestSummary init(String trackersPath, String trackerImpl, String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, IOException, InvocationTargetException {
         TrackerFinder trackerFinder = new TrackerFinder();
         Set<Tracker> trackerSet = trackerFinder.findTrackers(trackersPath);
 
-        TestSummary userStory = new UserStory();
-
-        UserStoryGateway userStoryGateway = new UserStoryGateway((UserStory) userStory);
-        TestSummary core = new TestSummaryProxy(userStory);
+        TestSummary concrete = new ConcreteTestSummary();
+        TestSummary core = new ObservableTestSummary(concrete);
 
         TrackerGetter getter = new TrackerGetter();
-        Tracker tracker1 = getter.getOneTracker(trackerSet);
+        TestSummary tracker1 = getter.getOneTracker(trackerSet);
         if(tracker1 != null)tracker1.setObserver(core);
 
         //Tracker tracker = new TrackerGetter().getTracker(trackerImpl, trackerSet);
@@ -23,6 +21,6 @@ public class InitCore {
 //        tracker.setObserver(core);
 //        tracker.track(path);
 
-        return userStoryGateway;
+        return core;
     }
 }

@@ -2,7 +2,7 @@ package core;
 
 import java.util.Collection;
 
-public class Observable {
+public abstract class Observable {
     Collection<Observer> observers;
 
     public void addObserver(Observer o){
