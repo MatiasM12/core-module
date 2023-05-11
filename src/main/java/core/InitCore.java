@@ -9,17 +9,11 @@ public class InitCore {
         TrackerFinder trackerFinder = new TrackerFinder();
         Set<Tracker> trackerSet = trackerFinder.findTrackers(trackersPath);
 
-        TestSummary concrete = new ConcreteTestSummary();
-        TestSummary core = new ObservableTestSummary(concrete);
-
         TrackerGetter getter = new TrackerGetter();
-        TestSummary tracker1 = getter.getOneTracker(trackerSet);
-        if(tracker1 != null)tracker1.setObserver(core);
+        TestSummary tracker = getter.getOneTracker(trackerSet);
 
-        //Tracker tracker = new TrackerGetter().getTracker(trackerImpl, trackerSet);
-//        Tracker tracker = new SelfTracker();
-//        tracker.setObserver(core);
-//        tracker.track(path);
+        TestSummary concrete = tracker.hook(path);
+        TestSummary core = new ObservableTestSummary(concrete);
 
         return core;
     }
