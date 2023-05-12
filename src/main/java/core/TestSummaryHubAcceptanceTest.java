@@ -11,7 +11,7 @@ public class TestSummaryHubAcceptanceTest extends DecoratorTestSummary {
 	public TestSummaryHubAcceptanceTest(TestSummary concrete) {
 		
 		this.ts = concrete;
-		
+		System.out.println("AcceptanceTest");
 		Random r = new Random();
 		Map <String,String> m = new HashMap<String,String>();
 		
