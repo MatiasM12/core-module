@@ -2,8 +2,10 @@ package core;
 
 import java.util.Collection;
 
-public abstract class Observable {
-    Collection<Observer> observers;
+public class Observable {
+
+	
+	Collection<Observer> observers;
 
     public void addObserver(Observer o){
         observers.add(o);
@@ -19,5 +21,4 @@ public abstract class Observable {
             o.update(object);
         }
     }
-
 }

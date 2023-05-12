@@ -2,9 +2,13 @@ package core;
 
 import java.util.Map;
 
-public interface TestSummary{
-    Map<String, Boolean> getTests();
-    void setTests(Map<String, Boolean> map);
-    void setName(String name);
-    String getName();
+public interface TestSummary {
+	
+		
+	
+ 	public TestSummary track(String url); 
+ 	public void setUS(String s);
+ 	public void setAcceptanceTest(String s,Map<String,String> m);
+ 	
+ 	 
 }

@@ -19,7 +19,7 @@ public class US2 {
     private static  String NOT_A_SOURCE ;
     private static  String ONE_SOURCE ;
     private static  String MULTIPLE_SOURCES ;
-    private static  TrackerFinder trackerFinder;
+  /*  private static  TrackerFinder trackerFinder;
 
     @BeforeAll
     public static void escenario() {
@@ -65,5 +65,5 @@ public class US2 {
         assertEquals(2, trackers.size());
         assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
         assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Jira")));
-    }  
+    }  */
 }

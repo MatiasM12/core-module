@@ -1,5 +1,5 @@
 package core;
 
-public interface Observer {
-    void update(Object object);
+public abstract class Observer {
+	abstract void update(Object object);
 }
