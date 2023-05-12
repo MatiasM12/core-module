@@ -9,8 +9,6 @@ public class TestSummaryUSHub extends DecoratorTestSummary{
 	public TestSummaryUSHub(TestSummary concrete) {
 	
 		this.ts = concrete;
-		
-		
 		this.setUS("US1");
 	}
 

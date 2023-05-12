@@ -19,7 +19,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="lib" path="C:/Users/matia/Desktop/core-module/src/test/java/MockDirectories/multiplesFuentes"/>
-	<classpathentry kind="lib" path="C:/Users/matia/Desktop/core-module/src/test/java/MockDirectories/unaFuente"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>

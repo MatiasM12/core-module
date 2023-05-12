@@ -8,5 +8,4 @@ public class Main {
 		System.out.println("sadsakljdklasjdkslaj");
 		Init ini = new Init();
 	}
-
 }

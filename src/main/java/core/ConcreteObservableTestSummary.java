@@ -1,5 +1,6 @@
 package core;
 
+import java.util.HashSet;
 import java.util.Map;
 
 public class ConcreteObservableTestSummary extends Observable implements TestSummary {
@@ -8,7 +9,7 @@ public class ConcreteObservableTestSummary extends Observable implements TestSum
 	
 	public ConcreteObservableTestSummary(TestSummary concrete) {
 		this.ts = concrete;
-		
+		this.observers = new HashSet<Observer>();
 		System.out.println("Le avise a todos");
 		this.notifyObservers("objeto aviso");
 	}

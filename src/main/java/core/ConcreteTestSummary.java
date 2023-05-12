@@ -1,5 +1,6 @@
 package core;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ConcreteTestSummary implements TestSummary {
@@ -7,6 +8,10 @@ public class ConcreteTestSummary implements TestSummary {
 	 Map<String,Map<String,String>> UsAcceptanceTest;
 	
 	
+	 ConcreteTestSummary(){
+		 this.UsAcceptanceTest = new HashMap<String,Map<String,String>>();
+	 }
+	 
 	@Override
 	public TestSummary track(String url) {
 		// TODO Auto-generated method stub

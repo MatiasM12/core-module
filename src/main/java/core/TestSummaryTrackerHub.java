@@ -2,7 +2,7 @@ package core;
 
 import java.util.Map;
 
-public class TestSummaryTrackerHub  implements TestSummary{
+public class TestSummaryTrackerHub implements  TestSummary, Observer{
 
 	TestSummary ts; 
 	
@@ -10,7 +10,6 @@ public class TestSummaryTrackerHub  implements TestSummary{
 	
 	@Override
 	public TestSummary track(String url) {
-		// TODO Auto-generated method stub
 		return new ConcreteTestSummary();
 	}
 
@@ -24,6 +23,13 @@ public class TestSummaryTrackerHub  implements TestSummary{
 	@Override
 	public void setAcceptanceTest(String s, Map<String, String> m) {
 		this.ts.setAcceptanceTest(s, m);
+		
+	}
+
+
+	@Override
+	public void update(Object object) {
+		// TODO Auto-generated method stub
 		
 	}
 
