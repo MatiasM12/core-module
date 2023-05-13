@@ -1,15 +1,16 @@
 package core;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Init {
 
 	
-	public  Init(){
-		System.out.println("sadsad");
-		TestSummary ts = new TestSummaryTrackerHub();
-		TestSummary concrete = ts.track("path");
-		TestSummary ushub  = new TestSummaryUSHub(concrete);
-		TestSummary acceptanceTest  = new TestSummaryHubAcceptanceTest(ushub);
-		ConcreteObservableTestSummary ObservableTestSummary = new ConcreteObservableTestSummary(acceptanceTest);
-		Mediator m = new Mediator(ObservableTestSummary);
+	public  Init(String url){
+		
+		Tracker t = new TrackerHub(url);
+		t.hook();
+		TestSummary ts = new ConcreteTestSummary(t.hook());
+		TestSummary observableTestSummary = new ObservableTestSummary(ts,t.hook());
 		}
 }
