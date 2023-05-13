@@ -1,15 +1,13 @@
 package core;
 
-import java.util.Map;
 
-public abstract class Tracker {
 
-	String url;
+public interface Tracker {
+
+
 	
-	public Tracker(String url) {
-		this.url = url;
-	}
+	public TestSummary hook(String url);
 	
-	abstract public Map<String,String> hook();
+	public TestSummary newChanges();
 	
 }

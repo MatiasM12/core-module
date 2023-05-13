@@ -6,7 +6,7 @@ public class ConcreteTestSummary implements TestSummary {
 
 	 public Map<String,String> usAcceptanceTest;
  
-	 ConcreteTestSummary(Map<String,String> m){
+	 public ConcreteTestSummary(Map<String,String> m){
 		 this.usAcceptanceTest = m;
 	 }
 	@Override
