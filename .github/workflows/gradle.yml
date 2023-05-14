@@ -40,7 +40,7 @@ jobs:
     - name: Test with Gradle
       run: ./gradlew test
       env:
-        CLASSPATH: ./src/test/java/directoriesMock/multiplesFuentes/*
+        CLASSPATH: ./src/test/java/directoriesMock/*
 
 
 
