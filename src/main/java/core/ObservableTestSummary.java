@@ -16,6 +16,7 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 	
 	@Override
 	public TestSummary update(Map<String, String> m) {
+		System.out.println("Update");
 		super.ts = new ConcreteTestSummary(m);
 		notifyObservers(m);
 		return super.ts;

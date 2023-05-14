@@ -109,6 +109,12 @@ public class US1 {
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr3.newChanges()).usAcceptanceTest;  	    	
     	assertTrue(ts1.size()==0);
     }
+    
+    @Test 
+    public void oneUS() throws FileNotFoundException{
+    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;  	    	
+    	assertTrue(ts1.size()==1);
+    }
 
     
 }
