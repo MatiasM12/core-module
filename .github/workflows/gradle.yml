@@ -28,12 +28,14 @@ jobs:
     - name: Clean Gradle cache
       run: ./gradlew clean
       
-
+    - name: Setup dependencies directory
+      run: |
+        mkdir -p libs
+        cp -r /src/test/java/directoriesMock/multiplesFuntes/ libs/
       
     - name: Test with Gradle
       run: ./gradlew test
-      env:
-        CLASSPATH: ./src/test/java
+
 
 
       
