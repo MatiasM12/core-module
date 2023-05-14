@@ -35,11 +35,13 @@ jobs:
     - name: Clean Gradle cache
       run: ./gradlew clean
       
+    - name: Install dependencies
+      run: npm install --prefix ./src/test/java/directoriesMock  
+      
     - name: Test with Gradle
       run: ./gradlew test
 
-    - name: Install dependencies
-      run: npm install --prefix ./src/test/java/directoriesMock
+
 
       
     - name: Build project
