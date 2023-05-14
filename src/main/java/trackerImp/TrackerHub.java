@@ -13,12 +13,14 @@ public class TrackerHub  implements Tracker{
 
 	
 	TestSummary obl;
-
+	int nCa;
+	
 	@Override
 	public TestSummary hook(String url) {
+		nCa = 1;
 		
 		Map<String,String> m = new HashMap<String,String>();
-		m.put("US1", "CA 1");
+		m.put("US1", "CA "+nCa);
 		
 		ConcreteTestSummary tsl = new ConcreteTestSummary(m);
 		TestSummary obl = new ObservableTestSummary(tsl,m);
@@ -30,8 +32,12 @@ public class TrackerHub  implements Tracker{
 	@Override
 	public TestSummary newChanges() {
 		
+		nCa++;
+		
+		
 		Map<String,String> m = new HashMap<String,String>();
-		m.put("US1", "CA 3");
+		m.put("US1", "CA "+nCa);
+		System.out.println(m.toString());
 		
 		return this.obl.update(m);
 		

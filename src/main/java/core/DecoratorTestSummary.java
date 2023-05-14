@@ -11,7 +11,6 @@ public abstract class DecoratorTestSummary implements TestSummary {
 	}
 	@Override
 	public TestSummary update(Map<String,String> s) {
-		System.out.println("Decore al bepi");
 		return this.ts.update(s);
 	}
 
