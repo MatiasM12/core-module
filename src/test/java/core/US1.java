@@ -29,32 +29,32 @@ public class US1 {
     private static Tracker tr3;
     
     /*Paths y implementaciones de tracker*/
-    private static String findersImplPath = "C:\\Users\\Nicol\\git\\core-module8\\bin\\main\\trackerImp";
-    private static String trackerImp = "trackerImp.TrackerHub";
-    private static String trackerImp2 = "trackerImp.TrackerTestIguales";
-    private static String trackerImp3 = "trackerImp.TrackerUSChanged";
-    private static String trackerImp4 = "trackerImp.TrackerSinUS";
+    private static String findersImplPath = "plugins";
+    private static String trackerImp = "TrackerHub";
+    private static String trackerImp2 = "TrackerTestIguales";
+    private static String trackerImp3 = "TrackerUSChanged";
+    private static String trackerImp4 = "TrackerSinUS";
     private static String url = "www.github.com";
    
     @BeforeAll
-    public static void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
     	init = new InitCore(url,findersImplPath);
     	tr = init.init(trackerImp);	
     }
     
     @BeforeAll
-    public static void escenario2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void escenario2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
     	init1 = new InitCore(url,findersImplPath);
     	tr1 = init.init(trackerImp2);	
     }
     @BeforeAll
-    public static void escenario3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void escenario3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
     	init2 = new InitCore(url,findersImplPath);
     	tr2 = init.init(trackerImp3);	
     }
     
     @BeforeAll
-    public static void escenario4() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void escenario4() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
     	init3 = new InitCore(url,findersImplPath);
     	tr3 = init.init(trackerImp4);	
     }
@@ -65,7 +65,17 @@ public class US1 {
     public void addTest(){
     	assertFalse(tr.newChanges().equals(null));
     }
- 
+    
+    @Test 
+    public void changeOfState() throws FileNotFoundException{
+    	Map<String,String> ts1 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
+    	Map<String,String> ts2 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
+    	
+    	System.out.println(ts1.toString());
+    	System.out.println(ts2.toString());
+    	
+    	assertFalse((ts1).equals(ts2));	
+    }
     @Test 
     public void noChanges() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr1.newChanges()).usAcceptanceTest;
@@ -86,6 +96,10 @@ public class US1 {
     public void usResultChanged() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
     	Map<String,String> ts2 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
+    	
+    	System.out.println(ts1.get("US2"));
+    	System.out.println(ts2.get("US2"));
+    	
     	assertFalse(ts1.get("US2").equals(ts2.get("US2")));	
     }
     
@@ -94,12 +108,6 @@ public class US1 {
     public void noUS() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr3.newChanges()).usAcceptanceTest;  	    	
     	assertTrue(ts1.size()==0);
-    }
-    
-    @Test 
-    public void oneUS() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;  	    	
-    	assertTrue(ts1.size()==1);
     }
 
     

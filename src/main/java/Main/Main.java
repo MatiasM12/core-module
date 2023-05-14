@@ -1,5 +1,6 @@
 package Main;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
@@ -15,9 +16,9 @@ public class Main {
 	
 	
 	
-	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-		String findersImplPath = "C:\\Users\\Nicol\\git\\core-module8\\bin\\main\\trackerImp";
-		String trackerImp = "trackerImp.TrackerHub";
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+		String findersImplPath = "plugins";
+		String trackerImp = "TrackerHub";
 		InitCore initCore = new InitCore("stub",findersImplPath);
 		Tracker t = initCore.init(trackerImp);
 		
