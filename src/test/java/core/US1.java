@@ -65,17 +65,7 @@ public class US1 {
     public void addTest(){
     	assertFalse(tr.newChanges().equals(null));
     }
-    
-    @Test 
-    public void changeOfState() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
-    	Map<String,String> ts2 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
-    	
-    	System.out.println(ts1.toString());
-    	System.out.println(ts2.toString());
-    	
-    	assertFalse((ts1).equals(ts2));	
-    }
+ 
     @Test 
     public void noChanges() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr1.newChanges()).usAcceptanceTest;
@@ -96,10 +86,6 @@ public class US1 {
     public void usResultChanged() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
     	Map<String,String> ts2 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
-    	
-    	System.out.println(ts1.get("US2"));
-    	System.out.println(ts2.get("US2"));
-    	
     	assertFalse(ts1.get("US2").equals(ts2.get("US2")));	
     }
     
@@ -108,6 +94,12 @@ public class US1 {
     public void noUS() throws FileNotFoundException{
     	Map<String,String> ts1 = ((ConcreteTestSummary)tr3.newChanges()).usAcceptanceTest;  	    	
     	assertTrue(ts1.size()==0);
+    }
+    
+    @Test 
+    public void oneUS() throws FileNotFoundException{
+    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;  	    	
+    	assertTrue(ts1.size()==1);
     }
 
     

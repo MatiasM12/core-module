@@ -17,7 +17,7 @@ public class TrackerUSChanged implements Tracker{
 	public TestSummary hook(String url) {
 		intUS=1;
 		Map<String,String> m = new HashMap<String,String>();
-		m.put("US1", "CA 1");
+		m.put("US1", "PASS");
 		
 		ConcreteTestSummary tsl = new ConcreteTestSummary(m);
 		TestSummary obl = new ObservableTestSummary(tsl,m);
@@ -28,7 +28,7 @@ public class TrackerUSChanged implements Tracker{
 	public TestSummary newChanges() {
 		intUS++;
 		Map<String,String> m = new HashMap<String,String>();
-		m.put("US"+intUS, "CA 1");
+		m.put("US"+intUS, "FAILED");
 		return this.obl.update(m);
 	}
 

@@ -14,7 +14,7 @@ public class TrackerSinUS implements Tracker{
 	@Override
 	public TestSummary hook(String url) {
 		Map<String,String> m = new HashMap<String,String>();
-		m.put("US1", "CA 1");
+		m.put("US1", "PASS");
 		ConcreteTestSummary tsl = new ConcreteTestSummary(m);
 		TestSummary obl = new ObservableTestSummary(tsl,m);
 		this.obl = obl;
