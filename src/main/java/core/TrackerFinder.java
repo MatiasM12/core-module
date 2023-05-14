@@ -24,10 +24,9 @@ public class TrackerFinder {
         for (File f : files) {
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                System.out.println(fileName);
                 Class<?> cls = Class.forName(fileName); 
                 if (!Tracker.class.isAssignableFrom(cls)) continue;
-                this.trackers.add((Tracker) cls.newInstance());
+                this.trackers.add((Tracker) cls.newInstance());  
             }
         }
         return this.trackers;
