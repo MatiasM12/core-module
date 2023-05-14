@@ -35,8 +35,6 @@ jobs:
     - name: Clean Gradle cache
       run: ./gradlew clean
       
-    - name: Install dependencies
-      run: ./gradlew build --include-build src/test/java/directoriesMock  
 
       
     - name: Test with Gradle
