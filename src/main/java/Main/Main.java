@@ -10,6 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import core.InitCore;
+import core.Mediador;
 import core.Tracker;
 
 public class Main {
@@ -20,14 +21,14 @@ public class Main {
 		String findersImplPath = "plugins";
 		String trackerImp = "TrackerHub";
 		InitCore initCore = new InitCore("stub",findersImplPath);
-		Tracker t = initCore.init(trackerImp);
+		Mediador m = initCore.init(trackerImp);
 		
 		
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {
-				t.newChanges();
+				m.newChanges();
 			}
 		}, new Date(), 5000); 
 	}

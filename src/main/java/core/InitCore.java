@@ -15,10 +15,10 @@ public class InitCore {
 	}
 	
 	
-	public Tracker init(String trackerImpl) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+	public Mediador init(String trackerImpl) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		this.trackerFinder.initTrackers();
 		Tracker t = trackerFinder.getTracker(trackerImpl);
-		t.hook(url);
-		return t;
+		TestSummary ts = t.hook(url);
+		return new Mediador(t,ts);
 	}
 }
