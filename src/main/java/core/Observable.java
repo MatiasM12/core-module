@@ -1,23 +1,16 @@
 package core;
 
 import java.util.Collection;
+import java.util.HashSet;
 
-public class Observable {
-    Collection<Observer> observers;
+public interface Observable {
 
-    public void addObserver(Observer o){
-        observers.add(o);
-    }
+	
+	public Collection<Observer> observers = new HashSet<Observer>();
 
-    public void removeObserver(Observer o){
-        observers.remove(o);
-    }
+    public void addObserver(Observer o);
 
-    public void notifyObservers(Object object){
-        for(Observer o : observers){
-            if(o != null)
-            o.update(object);
-        }
-    }
+    public void removeObserver(Observer o);
 
+    public void notifyObservers(Object object);
 }

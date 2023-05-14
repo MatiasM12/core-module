@@ -1,6 +1,7 @@
 package core;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -16,24 +17,24 @@ public class TrackerFinder {
         this.trackers = new HashSet<Tracker>();
     }
     
-    public void initTrackers() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        File[] files = new File(path).listFiles();
+    public Set<Tracker> initTrackers() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+        File file = new File(path);
+        if (!file.exists()) throw new FileNotFoundException();
+        File[] files = file.listFiles(); 
         for (File f : files) {
-            System.out.println(f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                String className =  fileName;
-                System.out.println(className);
-                Class<?> cls = Class.forName(className);
+                System.out.println(fileName);
+                Class<?> cls = Class.forName(fileName); 
                 if (!Tracker.class.isAssignableFrom(cls)) continue;
                 this.trackers.add((Tracker) cls.newInstance());
             }
         }
-        System.out.println("encontre los trackers");
+        return this.trackers;
     }
     
     public Tracker getTracker(String trackerImpl){
-        Iterator<Tracker> iterator = this.trackers.iterator();
+    	Iterator<Tracker> iterator = this.trackers.iterator();
         while(iterator.hasNext()){
             Tracker t = iterator.next();
             if(t.getClass().getName().equals(trackerImpl))

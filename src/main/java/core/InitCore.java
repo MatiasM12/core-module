@@ -1,19 +1,24 @@
 package core;
 
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InitCore {
-    
-    
-    public Integrator init(String trackerImpl, String reportDirectoryPath,String findersImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException  {
-        TrackerFinder finder = new TrackerFinder(findersImplPath);
-    	Report report = new Report(null);
-        ReportRefresher refresher = new ReportRefresher(reportDirectoryPath, report);
-        Listener listener = new Listener();
-        Integrator integrator = new Integrator(report, listener);
-        RelateObjects relate = new RelateObjects(finder,report, refresher, listener);
-        relate.relateApp(trackerImpl);
-        return integrator;
-    }
+
+	TrackerFinder trackerFinder;
+	String url;
+	
+	public  InitCore(String url,String findersImplPath){
+		this.trackerFinder = new TrackerFinder(findersImplPath);	
+	}
+	
+	
+	public Tracker init(String trackerImpl) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+		this.trackerFinder.initTrackers();
+		Tracker t = trackerFinder.getTracker(trackerImpl);
+		t.hook(url);
+		return t;
+	}
 }

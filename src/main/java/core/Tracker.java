@@ -1,9 +1,10 @@
 package core;
 
-import java.io.FileNotFoundException;
 
-import javax.annotation.processing.FilerException;
 
 public interface Tracker {
-    ReportResult find(String path) throws FileNotFoundException, FilerException;
+
+	public TestSummary hook(String url);
+	
+	public TestSummary newChanges();
 }
