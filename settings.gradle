@@ -9,3 +9,4 @@
 
 rootProject.name = 'core'
 include('lib')
+include('directoriesMock')
