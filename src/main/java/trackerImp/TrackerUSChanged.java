@@ -2,49 +2,34 @@ package trackerImp;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import core.ConcreteTestSummary;
 import core.ObservableTestSummary;
 import core.TestSummary;
 import core.Tracker;
 
-public class TrackerHub  implements Tracker{
+public class TrackerUSChanged implements Tracker{
 
-	
 	TestSummary obl;
-	String lastResult;
+	int intUS;
 	
 	@Override
 	public TestSummary hook(String url) {
+		intUS=1;
 		Map<String,String> m = new HashMap<String,String>();
-		
-		lastResult = "PASS";
-		m.put("US1", "PASS");
+		m.put("US1", "CA 1");
 		
 		ConcreteTestSummary tsl = new ConcreteTestSummary(m);
 		TestSummary obl = new ObservableTestSummary(tsl,m);
 		this.obl = obl;
-		
 		return obl;
 	}
-
 	@Override
 	public TestSummary newChanges() {
+		intUS++;
 		Map<String,String> m = new HashMap<String,String>();
-		
-		if(lastResult.equals("PASS")) {
-			lastResult = "ERROR";
-			m.put("US1", "ERROR");
-		}
-		else if(lastResult.equals("ERROR")) {
-			lastResult = "PASS";
-			m.put("US1", "PASS");
-		}
-		
-		
+		m.put("US"+intUS, "CA 1");
 		return this.obl.update(m);
-		
 	}
 
 }

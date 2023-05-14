@@ -18,7 +18,7 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 	public TestSummary update(Map<String, String> m) {
 		super.update(m);
 		notifyObservers(m);
-		return this.ts;
+		return super.ts;
 	}
 
 	
