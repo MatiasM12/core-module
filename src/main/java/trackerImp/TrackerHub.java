@@ -42,6 +42,8 @@ public class TrackerHub  implements Tracker{
 			m.put("US1", "PASS");
 		}
 		
+		System.out.println(m);
+		
 		
 		return this.obl.update(m);
 		
