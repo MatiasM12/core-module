@@ -36,7 +36,8 @@ jobs:
       run: ./gradlew clean
       
     - name: Install dependencies
-      run: npm install --prefix ./src/test/java/directoriesMock  
+      run: ./gradlew build --include-build /src/test/java/directoriesMock  
+
       
     - name: Test with Gradle
       run: ./gradlew test
