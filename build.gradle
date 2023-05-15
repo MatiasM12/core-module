@@ -17,6 +17,7 @@ dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
     // Add dependency from local directory
     testImplementation files('src/test/java/directoriesMock/multiplesFuentes/')
+    testImplementation files('plugins/')
 }
 
 tasks.named('test') {
