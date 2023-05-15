@@ -23,10 +23,10 @@ public class US1 {
     private static InitCore init1;
     private static InitCore init2;
     private static InitCore init3;
-    private static Tracker tr;
-    private static Tracker tr1;
-    private static Tracker tr2;
-    private static Tracker tr3;
+    private static Mediador tr;
+    private static Mediador tr1;
+    private static Mediador tr2;
+    private static Mediador tr3;
     
     /*Paths y implementaciones de tracker*/
     private static String findersImplPath = "plugins";

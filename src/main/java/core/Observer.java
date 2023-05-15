@@ -1,5 +1,5 @@
 package core;
 
 public interface  Observer {
-	 TestSummary update(Object object);
+	 void update(Object object);
 }
