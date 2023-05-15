@@ -20,7 +20,7 @@ public class Main {
 		String findersImplPath = "plugins";
 		String trackerImp = "TrackerHub";
 		InitCore initCore = new InitCore("stub",findersImplPath);
-		Tracker t = initCore.init(trackerImp);
+		Tracker t = (Tracker) initCore.init(trackerImp);
 		
 		
 		Timer timer = new Timer();
