@@ -9,9 +9,10 @@ public abstract class DecoratorTestSummary implements TestSummary {
 	public DecoratorTestSummary(TestSummary s) {
 		this.ts = s;
 	}
-	@Override
-	public TestSummary update(Map<String,String> s) {
-		return this.ts.update(s);
-	}
+
+//	@Override
+//	public TestSummary update(Map<String,String> s) {
+//		return this.ts.update(s);
+//	}
 
 }

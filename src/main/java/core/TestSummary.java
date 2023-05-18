@@ -3,7 +3,8 @@ package core;
 import java.util.Map;
 
 public interface TestSummary {
-		
-	public TestSummary update(Map<String, String> m);
+
+	void newChange(Map<String,String> m);
+	Map<String,String> getTestResults();
 
 }

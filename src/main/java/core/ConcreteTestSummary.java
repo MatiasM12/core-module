@@ -1,39 +1,47 @@
 package core;
 
 import java.util.Map;
-import java.util.Objects;
 
 public class ConcreteTestSummary implements TestSummary {
 
 	
-	public Map<String,String> usAcceptanceTest;
+	public Map<String,String> testResults;
  
 	 public ConcreteTestSummary(Map<String,String> m){
-		 this.usAcceptanceTest = m;
+		 this.testResults = m;
 	 }
-	@Override
-	public TestSummary update(Map<String, String> m) {
-		this.usAcceptanceTest = m;
-		return this;
-	}
-	
-	@Override
-		public int hashCode() {
-			return Objects.hash(usAcceptanceTest);
-		}
-	@Override
-		public boolean equals(Object obj) {
-			if (obj == null)
-				return false;
-			ConcreteTestSummary other = (ConcreteTestSummary) obj;
-			
-			System.out.println(usAcceptanceTest.toString());
-			System.out.println(other.usAcceptanceTest.toString());
-			
-			return Objects.equals(usAcceptanceTest, other.usAcceptanceTest);
-		}
-	
-	
-	 
 
+	@Override
+	public void newChange(Map<String, String> m) {
+		this.testResults = m;
+	}
+
+	@Override
+	public Map<String, String> getTestResults() {
+		return this.testResults;
+	}
+
+
+//
+//	@Override
+//	public TestSummary update(Map<String, String> m) {
+//		this.testResults = m;
+//		return this;
+//	}
+//
+//	@Override
+//		public int hashCode() {
+//			return Objects.hash(testResults);
+//		}
+//	@Override
+//		public boolean equals(Object obj) {
+//			if (obj == null)
+//				return false;
+//			ConcreteTestSummary other = (ConcreteTestSummary) obj;
+//
+//			System.out.println(testResults.toString());
+//			System.out.println(other.testResults.toString());
+//
+//			return Objects.equals(testResults, other.testResults);
+//		}
 }

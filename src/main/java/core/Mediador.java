@@ -11,9 +11,9 @@ public class Mediador {
 		this.ts = ts;
 	}
 	
-	public TestSummary newChanges() {
-		return t.newChanges();
-	}
+//	public TestSummary newChanges() {
+//		return t.newChanges();
+//	}
 	
 	public void addObserver(Observer o){
 		

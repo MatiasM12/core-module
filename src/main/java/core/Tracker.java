@@ -1,10 +1,8 @@
 package core;
 
 
+public interface Tracker extends Observable {
 
-public interface Tracker {
+	public ConcreteTestSummary hook(String url);
 
-	public TestSummary hook(String url);
-	
-	public TestSummary newChanges();
 }
