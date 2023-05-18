@@ -17,20 +17,7 @@ public class Main {
 	
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		TrackerFinder t = new TrackerFinder();
-		System.out.println(t.getOneTracker(new HashSet<>()));
-
-
-
-
-
-
-
-
-
-
-
-
-
+		//System.out.println(t.getOneTracker(new HashSet<>()));
 
 //		String findersImplPath = "plugins";
 //		String trackerImp = "TrackerHub";
