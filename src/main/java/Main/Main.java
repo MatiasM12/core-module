@@ -8,6 +8,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import core.CoreInit;
+import core.ObservableTestSummary;
+import core.TestSummary;
 import core.TrackerFinder;
 
 public class Main {
@@ -15,12 +17,14 @@ public class Main {
 	
 	
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-		TrackerFinder t = new TrackerFinder();
-		//System.out.println(t.getOneTracker(new HashSet<>()));
-
-//		String findersImplPath = "plugins";
-//		String trackerImp = "TrackerHub";
-//		CoreInit coreInit = new CoreInit("stub",findersImplPath);
+		
+	
+		//String findersImplPath = "plugins";
+		//String trackerImp = "TrackerHub";
+		CoreInit coreInit = new CoreInit();
+		TestSummary t = coreInit.init("C:\\Users\\Nicol\\git\\core-module12\\bin\\main\\trackers", "trackers.TrackerTestSummary");
+		
+		System.out.println(((ObservableTestSummary)t).getTestSummary());
 //		Tracker t = (Tracker) coreInit.init(trackerImp);
 //
 //

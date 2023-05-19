@@ -9,7 +9,9 @@ public class TrackerObtainer {
 	 
 	
 	  public TestSummary getTracker(Set<TestSummary> trackers,String trackerName){
-	    	Iterator<TestSummary> iterator = trackers.iterator();
+		  	System.out.println(trackers.toString());
+		  	System.out.println(trackerName);
+		  	Iterator<TestSummary> iterator = trackers.iterator();
 	        while(iterator.hasNext()){
 	        	TestSummary t = iterator.next();
 	            if(t.getClass().getName().equals(trackerName))
