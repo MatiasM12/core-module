@@ -25,7 +25,7 @@ public class US1 {
     @BeforeAll
     public void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException  {
     	init = new CoreInit();
-    	testSummary =(ObservableTestSummary)init.init("C:\\Users\\Nicol\\git\\core-module12\\bin\\main\\trackers", "trackers.TrackerTestSummary");
+    	testSummary =(ObservableTestSummary)init.init("plugins", "trackers.TrackerTestSummary");
     	System.out.println(testSummary);
     
     }
