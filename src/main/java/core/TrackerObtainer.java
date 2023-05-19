@@ -8,10 +8,10 @@ public class TrackerObtainer {
 	
 	 
 	
-	  public Tracker getTracker(Set<Tracker> trackers,String trackerName){
-	    	Iterator<Tracker> iterator = trackers.iterator();
+	  public TestSummary getTracker(Set<TestSummary> trackers,String trackerName){
+	    	Iterator<TestSummary> iterator = trackers.iterator();
 	        while(iterator.hasNext()){
-	            Tracker t = iterator.next();
+	        	TestSummary t = iterator.next();
 	            if(t.getClass().getName().equals(trackerName))
 	                return t;
 	        }
@@ -19,10 +19,10 @@ public class TrackerObtainer {
 	    }
 	  
 
-	    public Tracker getOneTracker(Set<Tracker> trackerSet) {
+	    public TestSummary getOneTracker(Set<TestSummary> trackerSet) {
 //	        if(trackerSet == null)
-	        Iterator<Tracker> iterator = trackerSet.iterator();
-	        Tracker t = null;
+	        Iterator<TestSummary> iterator = trackerSet.iterator();
+	        TestSummary t = null;
 	        while (iterator.hasNext()) {
 	            t = iterator.next();
 	        }

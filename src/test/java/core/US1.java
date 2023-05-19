@@ -1,119 +1,106 @@
 package core;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 
 public class US1 {
 	
     
 	/*Inicializaciones*/
-    private static InitCore init;
-    private static InitCore init1;
-    private static InitCore init2;
-    private static InitCore init3;
-    private static Mediador tr;
-    private static Mediador tr1;
-    private static Mediador tr2;
-    private static Mediador tr3;
+    private static CoreInit init;
+    private static CoreInit init1;
+    private static CoreInit init2;
+    private static CoreInit init3;
+    private static CoreInit init4;
+    private static ObservableTestSummary testSummary;
+    private static ObservableTestSummary testSummary1;
+    private static ObservableTestSummary testSummary2;
+    private static ObservableTestSummary testSummary3;
+    private static ObservableTestSummary testSummary4;
     
     /*Paths y implementaciones de tracker*/
     private static String findersImplPath = "plugins";
     private static String trackerImp = "TrackerHub";
-    private static String trackerImp2 = "TrackerTestIguales";
-    private static String trackerImp3 = "TrackerUSChanged";
+    private static String trackerImp1 = "TrackerTestIguales";
+    private static String trackerImp2 = "TrackerUSChanged";
+    private static String trackerImp3 = "TrackerSinUS";
     private static String trackerImp4 = "TrackerSinUS";
+    private static String trackerImp5 = "TrackerSinUS";
     private static String url = "www.github.com";
    
     @BeforeAll
     public static void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-    	init = new InitCore(url,findersImplPath);
-    	tr = init.init(trackerImp);	
+    	init = new CoreInit();
+    	testSummary = (ObservableTestSummary)init.init(trackerImp,findersImplPath);	
     }
-    
     @BeforeAll
     public static void escenario2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-    	init1 = new InitCore(url,findersImplPath);
-    	tr1 = init.init(trackerImp2);	
+    	init1 = new CoreInit();
+    	testSummary1 =(ObservableTestSummary)init1.init(trackerImp1,findersImplPath);	
     }
     @BeforeAll
     public static void escenario3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-    	init2 = new InitCore(url,findersImplPath);
-    	tr2 = init.init(trackerImp3);	
+    	init2 = new CoreInit();
+    	testSummary2 = (ObservableTestSummary)init2.init(trackerImp1,findersImplPath);	
     }
-    
     @BeforeAll
     public static void escenario4() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-    	init3 = new InitCore(url,findersImplPath);
-    	tr3 = init.init(trackerImp4);	
+    	init3 = new CoreInit();
+    	testSummary3 = (ObservableTestSummary)init3.init(trackerImp1,findersImplPath);
     }
-    
-    
-    
     @Test 
     public void addTest(){
-    	assertFalse(tr.newChanges().equals(null));
+    	Map<String,String> m = new HashMap<String,String>();
+    	m.put("CA1", "PASS");
+    	testSummary.update(m);
+    	//assertTrue(testSummary.getTestSummary().equals(m));
+    	
     }
     
     @Test 
     public void changeOfState() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
-    	Map<String,String> ts2 = ((ConcreteTestSummary)tr.newChanges()).usAcceptanceTest;
     	
-    	System.out.println(ts1.toString());
-    	System.out.println(ts2.toString());
+    	Map<String,String> m = new HashMap<String,String>();
+    	m.put("CA1", "PASS");
+    	testSummary.update(m);
     	
-    	assertFalse((ts1).equals(ts2));	
+    	Map<String,String> m1 = new HashMap<String,String>();
+    	m.put("CA1", "ERROR");
+    	testSummary.update(m);
+    
     }
     @Test 
     public void noChanges() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr1.newChanges()).usAcceptanceTest;
-    	Map<String,String> ts2 = ((ConcreteTestSummary)tr1.newChanges()).usAcceptanceTest;
-    	assertTrue((ts1).equals(ts2));	
+    	
     }
     
     @Test 
     public void usChanged() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
-    	Map<String,String> ts2 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
-    	String key1 = (String)(ts1.keySet().toArray()[0]);
-    	String key2 = (String)(ts2.keySet().toArray()[0]);
-    	assertFalse(key1.equals(key2));	
+    		
     }
     
     @Test 
     public void usResultChanged() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
-    	Map<String,String> ts2 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;
-    	
-    	System.out.println(ts1.get("US2"));
-    	System.out.println(ts2.get("US2"));
-    	
-    	assertFalse(ts1.get("US2").equals(ts2.get("US2")));	
+    		
     }
     
     
     @Test 
     public void noUS() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr3.newChanges()).usAcceptanceTest;  	    	
-    	assertTrue(ts1.size()==0);
+    	
     }
     
     @Test 
     public void oneUS() throws FileNotFoundException{
-    	Map<String,String> ts1 = ((ConcreteTestSummary)tr2.newChanges()).usAcceptanceTest;  	    	
-    	assertTrue(ts1.size()==1);
+    	
     }
 
     

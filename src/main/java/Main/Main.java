@@ -8,7 +8,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import core.CoreInit;
-import core.Tracker;
 import core.TrackerFinder;
 
 public class Main {

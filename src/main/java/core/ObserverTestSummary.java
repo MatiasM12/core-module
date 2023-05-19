@@ -2,8 +2,8 @@ package core;
 
 import java.util.Map;
 
-public class ObserverTestSummary extends DecoratorTestSummary implements Observer{
-    public ObserverTestSummary(TestSummary s) {
+//public class ObserverTestSummary extends DecoratorTestSummary implements Observer{
+ /*   public ObserverTestSummary(TestSummary s) {
         super(s);
     }
     @Override
@@ -20,5 +20,5 @@ public class ObserverTestSummary extends DecoratorTestSummary implements Observe
     @Override
     public Map<String, String> getTestResults() {
         return super.ts.getTestResults();
-    }
-}
+    }*/
+//}

@@ -9,14 +9,13 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 		super(concrete);
 	}
 	@Override
-	public void newChange(Map<String, String> m) {
-		super.ts.newChange(m);
+	public TestSummary update(Map<String, String> m) {
+		super.ts.update(m);
 		notifyObservers(m);
+		return super.ts;
 	}
-	@Override
-	public Map<String, String> getTestResults() {
-		return super.ts.getTestResults();
-	}
+	
+	
 	@SuppressWarnings("static-access")
 	@Override
 	public void addObserver(Observer o) {
@@ -37,16 +36,9 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 			observer.update(object);
 		}
 	}
-//	public ObservableTestSummary(TestSummary concrete,Map<String, String> m) {
-//		super(concrete);
-//		update(m);
-//	}
+	
+	public Map<String,String> getTestSummary(){
+		return ((ConcreteTestSummary)super.ts).testResults;
+	}
 
-//	@Override
-//	public TestSummary update(Map<String, String> m) {
-//		System.out.println("Update");
-//		super.ts = new ConcreteTestSummary(m);
-//		notifyObservers(m);
-//		return super.ts;
-//	}
 }
