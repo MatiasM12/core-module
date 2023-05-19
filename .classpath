@@ -25,9 +25,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
 	<classpathentry kind="lib" path="plugins"/>
 	<classpathentry kind="lib" path="src/test/java/directoriesMock/fuenteSimple"/>
 	<classpathentry kind="lib" path="src/test/java/directoriesMock/multiplesFuentes"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
