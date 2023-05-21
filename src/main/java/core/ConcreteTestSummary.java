@@ -8,10 +8,7 @@ public class ConcreteTestSummary implements TestSummary {
 	
 	public Map<String,String> testResults;
  
-	 public ConcreteTestSummary(Map<String,String> m){
-		 this.testResults = m;
-	 }
-
+	
 	@Override
 	public TestSummary update(Map<String, String> m) {
 		this.testResults = m;

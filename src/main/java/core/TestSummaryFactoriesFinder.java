@@ -7,11 +7,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class TrackerFinder {
+public class TestSummaryFactoriesFinder {
 	 
-    public Set<TestSummary> find(String trackerImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-        File file = new File(trackerImplPath);
-        Set<TestSummary> trackerSet = new HashSet<>();
+    public Set<Factory> find(String ImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+        File file = new File(ImplPath);
+        Set<Factory> factorySet = new HashSet<>();
         if (!file.exists()) throw new FileNotFoundException();
         File[] files = file.listFiles();
         
@@ -21,10 +21,12 @@ public class TrackerFinder {
                 String fileName = f.getName().replace(".class", "");
                 Class<?> cls = Class.forName("trackers."+fileName);
                 if (!TestSummary.class.isAssignableFrom(cls)) continue;
-                trackerSet.add((TestSummary) cls.newInstance());
+                factorySet.add((Factory) cls.newInstance());
             }
         }
-        return trackerSet;
+        return factorySet;
     }
+    
+
   
 }

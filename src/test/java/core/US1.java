@@ -10,13 +10,14 @@ import org.junit.jupiter.api.Test;
 
 class US1 {
 
-	private static CoreInit init;
+	private static ObservableFactory init;
 	private  static ObservableTestSummary testSummary;
 	
 	@BeforeAll
 	static void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-		init = new CoreInit();
-    	testSummary =(ObservableTestSummary)init.init("plugins", "trackers.TrackerTestSummary");
+		init = new ObservableFactory();
+		String[] values = new String[] {""};
+    	Observable obv =init.createObservable(values);
 	}
 	
 	@Test
