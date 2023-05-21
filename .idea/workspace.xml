@@ -4,16 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
+    <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="El core hace su attach a un tracker">
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/TSManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/core.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/core.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/SelfTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SelfTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/TestSummaryProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TrackerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/UserStory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/UserStoryGateway.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observable.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/core/Observable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Observer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/core/Observer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/Tracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/core/TrackerFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/DefaultReportTracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/TrackerHub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/TrackerSinUS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/TrackerTestIguales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/TrackerUSChanged.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ConcreteTestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ConcreteTestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/CoreInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/DecoratorTestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/DecoratorTestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Mediador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ObservableTestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ObservableTestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/ObserverTestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/ObserverTestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/SelfTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TestResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/TestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/PluginFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerGetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/MockTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/US1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/US2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/US2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,64 +83,129 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ObgekTFVH3IaaknAhtRKe8JskL" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "/Users/felipecorso/Library/CloudStorage/OneDrive-Personal/Documentos/UNGS/2023-Cuatrimestre 8/Proyecto Profecional 2/Java workspace/core-module/src/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5264368"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="core" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/plugins" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="directoriesMock.multiplesFuentes" />
+      <recent name="core" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibraryTest">
-    <configuration name="C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core.test" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="core.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="US1felipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="core" />
-      <option name="MAIN_CLASS_NAME" value="core.LibraryTest" />
+      <option name="MAIN_CLASS_NAME" value="core.US1felipe" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="US1felipe.CA2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.US1felipe" />
+      <option name="METHOD_NAME" value="CA2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="US1felipe.CA3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.US1felipe" />
+      <option name="METHOD_NAME" value="CA3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="US1felipe.CA4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="core" />
+      <option name="MAIN_CLASS_NAME" value="core.US1felipe" />
+      <option name="METHOD_NAME" value="CA4" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LibraryTest" />
-        <item itemvalue="Gradle.C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.US1felipe.CA4" />
+        <item itemvalue="JUnit.US1felipe" />
+        <item itemvalue="JUnit.US1felipe.CA3" />
+        <item itemvalue="JUnit.US1felipe.CA2" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +217,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681834792976</updated>
+      <workItem from="1684515048837" duration="5442000" />
+      <workItem from="1684520515119" duration="133000" />
+      <workItem from="1684520675739" duration="24736000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/felipe" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="8" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

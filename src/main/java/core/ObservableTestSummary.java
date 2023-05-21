@@ -9,15 +9,16 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 		super(concrete);
 	}
 	@Override
-	public void newChange(Map<String, String> m) {
-		super.ts.newChange(m);
-		notifyObservers(m);
+	public void updateTests(TestSummary ts) {
+		super.delegado.updateTests(ts);
+		notifyObservers(ts);
 	}
 	@Override
-	public Map<String, String> getTestResults() {
-		return super.ts.getTestResults();
+	public Map<String, Boolean> getTestResults() {
+		return super.delegado.getTestResults();
 	}
 	@SuppressWarnings("static-access")
+
 	@Override
 	public void addObserver(Observer o) {
 		this.observers.add(o);

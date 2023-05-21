@@ -4,7 +4,9 @@ import java.util.Map;
 
 public interface TestSummary {
 
-	void newChange(Map<String,String> m);
-	Map<String,String> getTestResults();
+	//void newChange(TestSummary cts);
+	Map<String,Boolean> getTestResults();
+
+	protected void updateTests(TestSummary ts);
 
 }

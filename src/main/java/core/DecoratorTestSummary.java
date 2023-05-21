@@ -1,18 +1,10 @@
 package core;
 
-import java.util.Map;
-
 public abstract class DecoratorTestSummary implements TestSummary {
 	
-	TestSummary ts;
+	TestSummary delegado;
 	
 	public DecoratorTestSummary(TestSummary s) {
-		this.ts = s;
+		this.delegado = s;
 	}
-
-//	@Override
-//	public TestSummary update(Map<String,String> s) {
-//		return this.ts.update(s);
-//	}
-
 }

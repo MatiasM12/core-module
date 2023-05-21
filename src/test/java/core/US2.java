@@ -20,7 +20,7 @@ public class US2 {
     private static  String NOT_A_SOURCE ;
     private static  String ONE_SOURCE ;
     private static  String MULTIPLE_SOURCES ;
-    private static  TrackerFinder trackerFinder;
+    private static PluginFinder pluginFinder;
 
     @BeforeAll
     public static void escenario() {
@@ -34,43 +34,43 @@ public class US2 {
  
     @Test 
     public void testNonExistentPath() throws FileNotFoundException{
-    	trackerFinder = new TrackerFinder(NON_EXISTENT_PATH);
-    	assertThrows(FileNotFoundException.class, () -> trackerFinder.initTrackers());
+    	pluginFinder = new PluginFinder(NON_EXISTENT_PATH);
+    	assertThrows(FileNotFoundException.class, () -> pluginFinder.initTrackers());
     }
 
     @Test 
     public void testInvalidPath() throws FileNotFoundException {
-    	trackerFinder = new TrackerFinder(INVALID_PATH);
-    	assertThrows(FileNotFoundException.class, () -> trackerFinder.initTrackers());
+    	pluginFinder = new PluginFinder(INVALID_PATH);
+    	assertThrows(FileNotFoundException.class, () -> pluginFinder.initTrackers());
     }
     
     @Test
     public void testEmptyDirectory() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(EMPTY_DIRECTORY);
-    	assertTrue(trackerFinder.initTrackers().isEmpty());
+    	pluginFinder = new PluginFinder(EMPTY_DIRECTORY);
+    	assertTrue(pluginFinder.initTrackers().isEmpty());
     }
 
     @Test
     public void testNotASource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(NOT_A_SOURCE);
-    	assertTrue(trackerFinder.initTrackers().isEmpty());
+    	pluginFinder = new PluginFinder(NOT_A_SOURCE);
+    	assertTrue(pluginFinder.initTrackers().isEmpty());
     }
 
     @Test
     public void testOneSource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(ONE_SOURCE);
-    	Set<Tracker> trackers = trackerFinder.initTrackers();System.out.println(trackers);
-        assertEquals(1, trackers.size());
+    	pluginFinder = new PluginFinder(ONE_SOURCE);
+    	Set<TSManager> TSBuilders = pluginFinder.initTrackers();System.out.println(TSBuilders);
+        assertEquals(1, TSBuilders.size());
         
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
+        assertTrue(TSBuilders.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
     }
 
     @Test
     public void testMultipleSources() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(MULTIPLE_SOURCES); 
-    	Set<Tracker> trackers = trackerFinder.initTrackers();
-        assertEquals(2, trackers.size());
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Jira")));
+    	pluginFinder = new PluginFinder(MULTIPLE_SOURCES);
+    	Set<TSManager> TSBuilders = pluginFinder.initTrackers();
+        assertEquals(2, TSBuilders.size());
+        assertTrue(TSBuilders.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
+        assertTrue(TSBuilders.stream().anyMatch(t -> t.getClass().getName().equals("Jira")));
     }  
 }

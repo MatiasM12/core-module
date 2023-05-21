@@ -8,17 +8,17 @@ public class ObserverTestSummary extends DecoratorTestSummary implements Observe
     }
     @Override
     public void update(Object object) {
-        if(object instanceof TestSummary){
-            newChange(  (   (TestSummary) object)
-                            .getTestResults() );
-        }
+        if (object instanceof TestSummary) {
+            TestSummary ts = (TestSummary) object;
+            if(! getTestResults().equals(ts)) updateTests(ts);
+        }else{throw new IllegalArgumentException("Se espera que llegue un TestSummary al core, pero llego un "+ object.getClass());
     }
     @Override
-    public void newChange(Map<String,String> m) {
-        super.ts.newChange(m);
+    public void updateTests(TestSummary ts) {
+        super.delegado.updateTests(ts);
     }
     @Override
-    public Map<String, String> getTestResults() {
-        return super.ts.getTestResults();
+    public Map<String, Boolean> getTestResults() {
+        return super.delegado.getTestResults();
     }
 }

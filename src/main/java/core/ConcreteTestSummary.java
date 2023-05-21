@@ -5,20 +5,19 @@ import java.util.Map;
 public class ConcreteTestSummary implements TestSummary {
 
 	
-	public Map<String,String> testResults;
+	public Map<String,Boolean> testResults;
  
-	 public ConcreteTestSummary(Map<String,String> m){
+	 public ConcreteTestSummary(Map<String,Boolean> m){
 		 this.testResults = m;
 	 }
-
 	@Override
-	public void newChange(Map<String, String> m) {
-		this.testResults = m;
+	 public Map<String, Boolean> getTestResults() {
+		return this.testResults;
 	}
 
 	@Override
-	public Map<String, String> getTestResults() {
-		return this.testResults;
+	public void updateTests(TestSummary ts) {
+		testResults = ts.getTestResults();
 	}
 
 
