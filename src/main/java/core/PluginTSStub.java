@@ -1,6 +1,6 @@
 package core;
 
-public class FactoryTSStub   implements Factory {
+public class PluginTSStub implements Plugin {
 
 	private TestSummary updater;
 	
@@ -17,6 +17,11 @@ public class FactoryTSStub   implements Factory {
 	public TestSummary getTSDecorator() {
 		// TODO Auto-generated method stub
 		return this.updater;
+	}
+
+	@Override
+	public TestSummary getTS(String userStory) {
+		return null;
 	}
 
 }

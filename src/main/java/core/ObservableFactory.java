@@ -2,12 +2,10 @@ package core;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Set;
 
 public class ObservableFactory {
-	static final String DEFAULT_PLUGIN_PATH = "plugins"; 
+	public final String DEFAULT_PLUGIN_PATH = "plugins";
 
 	
 	
@@ -28,15 +26,15 @@ public class ObservableFactory {
 		String pluginPath = DEFAULT_PLUGIN_PATH;
 		if(args.length>1)
 			pluginPath = args[1];
-		TestSummaryFactoriesFinder tSFFinder = new TestSummaryFactoriesFinder();
-		Set<Factory> tsFactories = tSFFinder.find(pluginPath);
-		FactoryObtainer factoryObtainer = new FactoryObtainer(); 
+		PluginsFinder tSFFinder = new PluginsFinder();
+		Set<Plugin> tsFactories = tSFFinder.find(pluginPath);
+		PluginProvider pluginProvider = new PluginProvider();
 		
 		if(tsFactories.isEmpty())throw new RuntimeException("No se encontro la impl");
 		
 		if(tsFactories.size()>1) System.err.println("Se encontro mas de un plugin, se usara el primero");
 		
-		Factory f = factoryObtainer.getOneFactory(tsFactories);
+		Plugin f = pluginProvider.getOneFactory(tsFactories);
 		Observable ob = f.createObservableTS(args[0]);
 		decorador = f.getTSDecorator();
 		return  ob;		
