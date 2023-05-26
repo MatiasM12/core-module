@@ -15,17 +15,6 @@ public class ConcreteTestSummary implements TestSummary {
 		return this;
 	}
 
-
-
-
-//
-//	@Override
-//	public TestSummary update(Map<String, String> m) {
-//		this.testResults = m;
-//		return this;
-//	}
-//
-
 	@Override
 		public boolean equals(Object obj) {
 			if (obj == null)

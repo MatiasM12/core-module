@@ -4,7 +4,7 @@ import java.util.Map;
 
 public abstract class DecoratorTestSummary implements TestSummary {
 	
-	TestSummary ts;
+	protected TestSummary ts;
 	
 	public DecoratorTestSummary(TestSummary s) {
 		this.ts = s;

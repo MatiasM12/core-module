@@ -16,8 +16,9 @@ class US1 {
 	@BeforeAll
 	static void escenario1() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		init = new ObservableFactory();
-		String[] values = new String[] {""};
+		String[] values = new String[] {"US1","StubTsDecorator"};
     	Observable obv =init.createObservable(values);
+    	init.getDecorador();
 	}
 	
 	@Test

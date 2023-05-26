@@ -8,6 +8,7 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 	public ObservableTestSummary(TestSummary concrete) {
 		super(concrete);
 	}
+	
 	@Override
 	public TestSummary update(Map<String, String> m) {
 		super.ts.update(m);
