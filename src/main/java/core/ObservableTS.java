@@ -38,11 +38,11 @@ public class ObservableTS extends TSDecorator implements Observable {
 	}
 
 	@Override
-	public void notifyObservers(Object object) {
+	public void notifyObservers(Object map) {
 		for (@SuppressWarnings("rawtypes")
 		Iterator iterator = observers.iterator(); iterator.hasNext();) {
 			Observer observer = (Observer) iterator.next();
-			observer.update(object);
+			observer.update(map);
 		}
 	}
 	

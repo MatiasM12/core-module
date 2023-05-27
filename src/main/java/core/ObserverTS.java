@@ -17,9 +17,12 @@ public class ObserverTS extends TSDecorator implements Observer {
 
     @Override
     public void update(Object object) {
-        if(object instanceof TestSummary) {
-            Map<String, Boolean> map = ((TestSummary) object).getTests();
+        try{
+            Map<String, Boolean> map = (Map<String, Boolean>) object;
             super.updateTests(map);
+        }catch (ClassCastException e){
+            e.printStackTrace();
         }
+
     }
 }

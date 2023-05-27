@@ -17,12 +17,10 @@ public class MockTSProvider extends TSProvider {
         return new ConcreteTS(this.tests);
     }
 
-
     public void fingirCambio(int choice){
         switch (choice) {
             case 1:
                 this.tests.put("CA2", true);
-                doChange();
                 break;
             case 2:
                 System.out.println("You selected option 2");
@@ -33,9 +31,6 @@ public class MockTSProvider extends TSProvider {
             default:
                 System.out.println("Invalid choice");
         }
-    }
-
-    private void doChange() {
-        super.notifyNewChanges(new ConcreteTS(this.tests));
+        super.notifyNewChanges(this.tests);
     }
 }
