@@ -5,11 +5,11 @@ import Interfaces.TestSummary;
 import java.util.Map;
 import java.util.Objects;
 
-public class ConcreteTestSummary implements TestSummary {
+public class ConcreteTS implements TestSummary {
 
 	
 	public Map<String,Boolean> testResults;
-	public ConcreteTestSummary(Map<String,Boolean> testRestults){
+	public ConcreteTS(Map<String,Boolean> testRestults){
 		this.testResults = testRestults;
 	}
 
@@ -27,7 +27,7 @@ public class ConcreteTestSummary implements TestSummary {
 		public boolean equals(Object obj) {
 			if (obj == null)
 				return false;
-			ConcreteTestSummary other = (ConcreteTestSummary) obj;
+			ConcreteTS other = (ConcreteTS) obj;
 
 			System.out.println(testResults.toString());
 			System.out.println(other.testResults.toString());

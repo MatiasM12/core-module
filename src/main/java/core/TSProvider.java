@@ -3,7 +3,7 @@ package core;
 import Interfaces.Observer;
 import Interfaces.TestSummary;
 
-public abstract class Plugin {
+public abstract class TSProvider {
 	Observer observer;
 	public abstract TestSummary getTS(String userStory);
 

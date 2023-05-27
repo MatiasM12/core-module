@@ -5,16 +5,16 @@ import Interfaces.TestSummary;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MockPlugin extends Plugin{
+public class MockTSProvider extends TSProvider {
 
     public Map<String, Boolean> tests;
-    public MockPlugin(){
+    public MockTSProvider(){
         this.tests = new HashMap<>();
         this.tests.put("CA1",false);
     }
     @Override
     public TestSummary getTS(String userStory) {
-        return new ConcreteTestSummary(this.tests);
+        return new ConcreteTS(this.tests);
     }
 
 
@@ -36,6 +36,6 @@ public class MockPlugin extends Plugin{
     }
 
     private void doChange() {
-        super.notifyNewChanges(new ConcreteTestSummary(this.tests));
+        super.notifyNewChanges(new ConcreteTS(this.tests));
     }
 }

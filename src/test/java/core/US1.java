@@ -8,14 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class US1 {
 
-    private MockPlugin plugin;
+    private MockTSProvider plugin;
     private MockVista vista;
 
     @BeforeEach
     public void escenario() {
        AppBuilder app = new AppBuilder();
-       plugin = new MockPlugin();
-       ObservableTestSummary o = app.build((Plugin) plugin, "US1");
+       plugin = new MockTSProvider();
+       ObservableTS o = app.build((TSProvider) plugin, "US1");
        vista = new MockVista(o);
     }
 

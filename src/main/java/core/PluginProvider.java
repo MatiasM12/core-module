@@ -5,10 +5,10 @@ import java.util.Set;
 
 public class PluginProvider {
 	
-	  public Plugin getOne(Set<Plugin> factories, String factoryName){
-		  	Iterator<Plugin> iterator = factories.iterator();
+	  public TSProvider getOne(Set<TSProvider> factories, String factoryName){
+		  	Iterator<TSProvider> iterator = factories.iterator();
 	        while(iterator.hasNext()){
-	        	Plugin t = iterator.next();
+	        	TSProvider t = iterator.next();
 	            if(t.getClass().getName().equals(factoryName))
 	                return t;
 	        }
@@ -16,9 +16,9 @@ public class PluginProvider {
 	    }
 	  
 	    
-	    public Plugin getOneFactory(Set<Plugin> trackerSet) {
-	        Iterator<Plugin> iterator = trackerSet.iterator();
-	        Plugin t = null;
+	    public TSProvider getOneFactory(Set<TSProvider> trackerSet) {
+	        Iterator<TSProvider> iterator = trackerSet.iterator();
+	        TSProvider t = null;
 	        while (iterator.hasNext()) {
 	            t = iterator.next();
 	        }

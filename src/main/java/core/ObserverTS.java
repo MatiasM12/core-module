@@ -5,8 +5,8 @@ import Interfaces.TestSummary;
 
 import java.util.Map;
 
-public class ObserverTestSummary extends DecoratorTestSummary implements Observer {
-    public ObserverTestSummary(TestSummary unDelegado) {
+public class ObserverTS extends TSDecorator implements Observer {
+    public ObserverTS(TestSummary unDelegado) {
         super(unDelegado);
     }
 

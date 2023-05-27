@@ -1,20 +1,19 @@
 package core;
 
 import Interfaces.Observer;
-import Interfaces.TestSummary;
 
 import java.util.Map;
 
 public class MockVista implements Observer {
 
     private Map<String, Boolean> tests;
-    public MockVista(ObservableTestSummary oble){
+    public MockVista(ObservableTS oble){
         oble.addObserver(this);
         this.tests = oble.getTests();
     }
     @Override
     public void update(Object object) {
-        this.tests = ((ConcreteTestSummary) object).getTests();
+        this.tests = ((ConcreteTS) object).getTests();
     }
 
     public Map<String, Boolean> getTests() {

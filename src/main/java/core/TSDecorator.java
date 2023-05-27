@@ -4,11 +4,11 @@ import Interfaces.TestSummary;
 
 import java.util.Map;
 
-public abstract class DecoratorTestSummary implements TestSummary {
+public abstract class TSDecorator implements TestSummary {
 	
 	protected TestSummary delegado;
 	
-	public DecoratorTestSummary(TestSummary unDelegado) {
+	public TSDecorator(TestSummary unDelegado) {
 		this.delegado = unDelegado;
 	}
 
@@ -18,7 +18,7 @@ public abstract class DecoratorTestSummary implements TestSummary {
 	}
 	
 	protected  Map<String, Boolean> getTestSummary(){
-		return ((ConcreteTestSummary)this.delegado).testResults;
+		return ((ConcreteTS)this.delegado).testResults;
 	}
 
 }
