@@ -34,7 +34,7 @@ public class InitProvider {
 		findFactories(pluginPath);
 		TestSummary ts = new ConcreteTS();
 		TestSummary ob = new ObservableTS(ts);
-		TestSummary tsPlugin = getFactory().createTS(ob,args[0],args[1]);
+		TestSummary tsPlugin = obtainFactory().createTS(ob,args[0],args[1]);
 		return new Provider(ob,tsPlugin);
 }
 	
@@ -46,11 +46,11 @@ public class InitProvider {
 		this.factoryObtainer = new FactoryObtainer();
 	}
 	
-	private void findFactories(String arg) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-		this.factories = this.factoryFinder.find(arg);
+	private void findFactories(String path) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+		this.factories = this.factoryFinder.find(path);
 	}
 	
-	private Factory getFactory() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+	private Factory obtainFactory() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		return this.factoryObtainer.getOneFactory(factories);
 	}
 	
