@@ -11,12 +11,6 @@ public class TestSummaryStub extends DecoratorTestSummary{
 		super(s);
 		
 	}
-
-	@Override
-	public TestSummary update(Map<String,Boolean> m) {
-		return super.update(m);
-	}
-	
 	public void setTS(TestSummary ts) {
 		super.ts = ts;
 	}
