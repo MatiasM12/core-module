@@ -14,16 +14,4 @@ public class ConcreteTS implements TestSummary {
 		this.testResults = test;
 		return this;
 	}
-
-	@Override
-		public boolean equals(Object obj) {
-			if (obj == null)
-				return false;
-			ConcreteTS other = (ConcreteTS) obj;
-
-			System.out.println(testResults.toString());
-			System.out.println(other.testResults.toString());
-
-			return Objects.equals(testResults, other.testResults);
-		}
 }
