@@ -10,8 +10,8 @@ public class ConcreteTS implements TestSummary {
  
 	
 	@Override
-	public TestSummary update(Map<String, Boolean> m) {
-		this.testResults = m;
+	public TestSummary update(Map<String, Boolean> test) {
+		this.testResults = test;
 		return this;
 	}
 

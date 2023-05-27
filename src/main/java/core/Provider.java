@@ -16,8 +16,8 @@ public class Provider{
 		((Observable)this.Observable).addObserver(o);
 	}
 	
-	protected TestSummary update(Map <String,Boolean> m) {
-		return this.plugin.update(m);
+	protected TestSummary update(Map <String,Boolean> test) {
+		return this.plugin.update(test);
 	}
 	
 	protected Map<String,Boolean> getMap() {

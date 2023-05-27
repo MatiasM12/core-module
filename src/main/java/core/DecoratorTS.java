@@ -6,13 +6,13 @@ public abstract class DecoratorTS implements TestSummary {
 	
 	protected TestSummary ts;
 	
-	public DecoratorTS(TestSummary s) {
-		this.ts = s;
+	public DecoratorTS(TestSummary ts) {
+		this.ts = ts;
 	}
 
 	@Override
-	public TestSummary update(Map<String,Boolean> s) {
-		return this.ts.update(s);
+	public TestSummary update(Map<String,Boolean> test) {
+		return this.ts.update(test);
 	}
 	
 	protected  Map<String, Boolean> getTestSummary(){

@@ -4,7 +4,7 @@ import java.util.Map;
 
 public interface TestSummary {
 
-	public TestSummary update(Map<String,Boolean> m);
+	public TestSummary update(Map<String,Boolean> test);
 
 
 }

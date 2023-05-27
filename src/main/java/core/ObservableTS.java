@@ -11,9 +11,9 @@ public class ObservableTS extends DecoratorTS implements Observable {
 	}
 	
 	@Override
-	public TestSummary update(Map<String, Boolean> m) {
-		super.ts.update(m);
-		notifyObservers(m);
+	public TestSummary update(Map<String, Boolean> test) {
+		super.ts.update(test);
+		notifyObservers(test);
 		return super.ts;
 	}
 	
