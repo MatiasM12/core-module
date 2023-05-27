@@ -6,8 +6,8 @@ import java.util.Set;
 public class FactoryObtainer {
 
 	
-	public Factory getOneFactory(Set<Factory> trackerSet) {
-        Iterator<Factory> iterator = trackerSet.iterator();
+	public Factory getOneFactory(Set<Factory> factorySet) {
+        Iterator<Factory> iterator = factorySet.iterator();
         Factory t = null;
         while (iterator.hasNext()) {
             t = iterator.next();
