@@ -1,4 +1,9 @@
-package core;
+package CoreInicialization;
+
+import CoreInicialization.AppBuilder;
+import CoreInicialization.ProviderInit;
+import core.ObservableTS;
+import core.TSProvider;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
@@ -7,7 +12,7 @@ public class ObservableTSInit {
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
 	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultPlugin";
 	private final ProviderInit inicializador;
-	private  AppBuilder app;
+	private AppBuilder app;
 
 	public ObservableTSInit(){
 		this.app = new AppBuilder();

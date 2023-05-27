@@ -1,6 +1,9 @@
-package core;
+package CoreInicialization;
 
 import Interfaces.TestSummary;
+import core.ObservableTS;
+import core.ObserverTS;
+import core.TSProvider;
 
 public class AppBuilder {
     public ObservableTS build(TSProvider TSProvider1, String userStory) {

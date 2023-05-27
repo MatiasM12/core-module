@@ -1,6 +1,6 @@
 package Main;
 
-import core.ObservableTSInit;
+import CoreInicialization.ObservableTSInit;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;

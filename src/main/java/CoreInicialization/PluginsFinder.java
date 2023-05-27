@@ -1,4 +1,6 @@
-package core;
+package CoreInicialization;
+
+import core.TSProvider;
 
 import java.io.File;
 import java.io.FileNotFoundException;
