@@ -2,7 +2,7 @@ package core;
 
 import java.util.Map;
 
-public class StubTsDecorator  extends DecoratorTestSummary implements TestSummary {
+public class StubTsDecorator extends DecoratorTestSummary implements TestSummary {
 
 	
 	String us;
@@ -13,11 +13,9 @@ public class StubTsDecorator  extends DecoratorTestSummary implements TestSummar
 	}
 
 	@Override
-	public TestSummary update(Map<String, String> m) {
+	public TestSummary update(Map<String, Boolean> m) {
 				
 		return super.update(m);
 	}
-	
-	
 
 }

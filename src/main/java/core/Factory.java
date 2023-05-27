@@ -3,8 +3,5 @@ package core;
 public interface Factory {
 
 
-	public Observable createObservableTS(String args);
-	public TestSummary  getTSDecorator();
-	
-	
+	public TestSummary createTS(TestSummary ts,String us,String url);
 }

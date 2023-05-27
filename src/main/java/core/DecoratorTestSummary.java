@@ -11,8 +11,12 @@ public abstract class DecoratorTestSummary implements TestSummary {
 	}
 
 	@Override
-	public TestSummary update(Map<String,String> s) {
+	public TestSummary update(Map<String,Boolean> s) {
 		return this.ts.update(s);
+	}
+	
+	protected  Map<String, Boolean> getTestSummary(){
+		return ((ConcreteTestSummary)this.ts).testResults;
 	}
 
 }

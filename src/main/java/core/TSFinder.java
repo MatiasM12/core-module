@@ -9,22 +9,21 @@ import java.util.Set;
 
 public class TSFinder {
 	 
-    public Set<TestSummary> find(String ImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public Set<Factory> find(String ImplPath) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
         File file = new File(ImplPath);
-        Set<TestSummary> TSSet = new HashSet<>();
+        Set<Factory> FactorySet = new HashSet<>();
         if (!file.exists()) throw new FileNotFoundException();
-        File[] files = file.listFiles();
-        
+        File[] files = file.listFiles();       
         for (File f : files) {
         	System.out.println(f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                Class<?> cls = Class.forName("trackers."+fileName);
-                if (!TestSummary.class.isAssignableFrom(cls)) continue;
-                TSSet.add((TestSummary) cls.newInstance());
+                Class<?> cls = Class.forName("Factory."+fileName);
+                if (!Factory.class.isAssignableFrom(cls)) continue;
+                FactorySet.add((Factory) cls.newInstance());
             }
         }
-        return TSSet;
+        return FactorySet;
     }
     
 

@@ -6,11 +6,11 @@ import java.util.Objects;
 public class ConcreteTestSummary implements TestSummary {
 
 	
-	public Map<String,String> testResults;
+	public Map<String,Boolean> testResults;
  
 	
 	@Override
-	public TestSummary update(Map<String, String> m) {
+	public TestSummary update(Map<String, Boolean> m) {
 		this.testResults = m;
 		return this;
 	}

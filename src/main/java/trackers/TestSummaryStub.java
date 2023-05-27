@@ -11,13 +11,10 @@ public class TestSummaryStub extends DecoratorTestSummary {
 	public TestSummaryStub(TestSummary s) {
 		super(s);
 	}
-	
-	public  TestSummaryStub() {
-		super(null);
-	}
+
 
 	@Override
-	public TestSummary update(Map<String,String> m) {
+	public TestSummary update(Map<String,Boolean> m) {
 		return super.update(m);
 	}
 	

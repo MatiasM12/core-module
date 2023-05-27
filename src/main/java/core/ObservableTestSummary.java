@@ -10,7 +10,7 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 	}
 	
 	@Override
-	public TestSummary update(Map<String, String> m) {
+	public TestSummary update(Map<String, Boolean> m) {
 		super.ts.update(m);
 		notifyObservers(m);
 		return super.ts;
@@ -38,8 +38,8 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 		}
 	}
 	
-	public Map<String,String> getTestSummary(){
-		return ((ConcreteTestSummary)super.ts).testResults;
+	public Map<String,Boolean> getTestSummary(){
+		return super.getTestSummary();
 	}
 
 }
