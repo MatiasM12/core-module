@@ -13,8 +13,9 @@ public class FactoryFinder {
         File file = new File(ImplPath);
         Set<Factory> FactorySet = new HashSet<>();
         if (!file.exists()) throw new FileNotFoundException();
-        File[] files = file.listFiles();       
+        File[] files = file.listFiles();
         for (File f : files) {
+        	System.out.println(f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
                 Class<?> cls = Class.forName("Factory."+fileName);
@@ -22,6 +23,7 @@ public class FactoryFinder {
                 FactorySet.add((Factory) cls.newInstance());
             }
         }
+        
         return FactorySet;
     }
     

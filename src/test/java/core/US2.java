@@ -13,14 +13,14 @@ import org.junit.jupiter.api.Test;
 
 
 public class US2 {
-/*	
+	
     private static  String INVALID_PATH;
     private static  String NON_EXISTENT_PATH;
     private static  String EMPTY_DIRECTORY;
     private static  String NOT_A_SOURCE ;
     private static  String ONE_SOURCE ;
     private static  String MULTIPLE_SOURCES ;
-    private static  TrackerFinder trackerFinder;
+    private static  FactoryFinder factoryFinder;
 
     @BeforeAll
     public static void escenario() {
@@ -34,43 +34,42 @@ public class US2 {
  
     @Test 
     public void testNonExistentPath() throws FileNotFoundException{
-    	trackerFinder = new TrackerFinder(NON_EXISTENT_PATH);
-    	assertThrows(FileNotFoundException.class, () -> trackerFinder.initTrackers());
+    	factoryFinder = new FactoryFinder(); //NON_EXISTENT_PATH
+    	assertThrows(FileNotFoundException.class, () -> factoryFinder.find(NON_EXISTENT_PATH));
     }
 
     @Test 
     public void testInvalidPath() throws FileNotFoundException {
-    	trackerFinder = new TrackerFinder(INVALID_PATH);
-    	assertThrows(FileNotFoundException.class, () -> trackerFinder.initTrackers());
+    	factoryFinder = new FactoryFinder(); //INVALID_PATH
+    	assertThrows(FileNotFoundException.class, () -> factoryFinder.find(INVALID_PATH));
     }
     
     @Test
     public void testEmptyDirectory() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(EMPTY_DIRECTORY);
-    	assertTrue(trackerFinder.initTrackers().isEmpty());
+    	factoryFinder = new FactoryFinder();  //EMPTY_DIRECTORY
+    	assertTrue(factoryFinder.find(EMPTY_DIRECTORY).isEmpty());
     }
 
     @Test
     public void testNotASource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(NOT_A_SOURCE);
-    	assertTrue(trackerFinder.initTrackers().isEmpty());
+    	factoryFinder = new FactoryFinder();   //NOT_A_SOURCE
+    	assertTrue(factoryFinder.find(NOT_A_SOURCE).isEmpty());
     }
 
     @Test
     public void testOneSource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(ONE_SOURCE);
-    	Set<Tracker> trackers = trackerFinder.initTrackers();System.out.println(trackers);
-        assertEquals(1, trackers.size());
-        
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
+    	factoryFinder = new FactoryFinder();  //ONE_SOURCE
+    	Set<Factory> factory = factoryFinder.find(ONE_SOURCE);
+        assertEquals(1, factory.size());
+        assertTrue(factory.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGithub")));
     }
 
     @Test
     public void testMultipleSources() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	trackerFinder = new TrackerFinder(MULTIPLE_SOURCES); 
-    	Set<Tracker> trackers = trackerFinder.initTrackers();
-        assertEquals(2, trackers.size());
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Gitlab")));
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Jira")));
-    }  */
+    	factoryFinder = new FactoryFinder();  //MULTIPLE_SOURCES
+    	Set<Factory> trackers = factoryFinder.find(MULTIPLE_SOURCES);
+        assertEquals(3, trackers.size());
+        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGithub")));
+        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGitlab")));
+    }  
 }

@@ -7,8 +7,7 @@ import core.TestSummary;
 public class TestSummaryStub extends DecoratorTestSummary{
 
 	public TestSummaryStub(TestSummary s) {
-		super(s);
-		
+		super(s);	
 	}
 
 }
