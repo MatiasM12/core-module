@@ -10,8 +10,5 @@ public class TestSummaryStub extends DecoratorTestSummary{
 		super(s);
 		
 	}
-	public void setTS(TestSummary ts) {
-		super.ts = ts;
-	}
 
 }
