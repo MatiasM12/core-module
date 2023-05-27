@@ -9,6 +9,7 @@ public class TestSummaryStub extends DecoratorTestSummary{
 
 	public TestSummaryStub(TestSummary s) {
 		super(s);
+		
 	}
 
 	@Override
