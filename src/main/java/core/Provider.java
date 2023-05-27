@@ -21,7 +21,7 @@ public class Provider{
 	}
 	
 	protected Map<String,Boolean> getMap() {
-		return ((ObservableTestSummary)this.Observable).getTestSummary();
+		return ((ObservableTS)this.Observable).getTestSummary();
 	}
 }
 

@@ -2,11 +2,11 @@ package core;
 
 import java.util.Map;
 
-public abstract class DecoratorTestSummary implements TestSummary {
+public abstract class DecoratorTS implements TestSummary {
 	
 	protected TestSummary ts;
 	
-	public DecoratorTestSummary(TestSummary s) {
+	public DecoratorTS(TestSummary s) {
 		this.ts = s;
 	}
 
@@ -16,7 +16,7 @@ public abstract class DecoratorTestSummary implements TestSummary {
 	}
 	
 	protected  Map<String, Boolean> getTestSummary(){
-		return ((ConcreteTestSummary)this.ts).testResults;
+		return ((ConcreteTS)this.ts).testResults;
 	}
 
 }

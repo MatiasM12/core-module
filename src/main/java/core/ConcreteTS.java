@@ -3,7 +3,7 @@ package core;
 import java.util.Map;
 import java.util.Objects;
 
-public class ConcreteTestSummary implements TestSummary {
+public class ConcreteTS implements TestSummary {
 
 	
 	public Map<String,Boolean> testResults;
@@ -19,7 +19,7 @@ public class ConcreteTestSummary implements TestSummary {
 		public boolean equals(Object obj) {
 			if (obj == null)
 				return false;
-			ConcreteTestSummary other = (ConcreteTestSummary) obj;
+			ConcreteTS other = (ConcreteTS) obj;
 
 			System.out.println(testResults.toString());
 			System.out.println(other.testResults.toString());

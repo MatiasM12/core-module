@@ -4,9 +4,9 @@ package core;
 import java.util.Iterator;
 import java.util.Map;
 
-public class ObservableTestSummary extends DecoratorTestSummary implements Observable {
+public class ObservableTS extends DecoratorTS implements Observable {
 	
-	public ObservableTestSummary(TestSummary concrete) {
+	public ObservableTS(TestSummary concrete) {
 		super(concrete);
 	}
 	

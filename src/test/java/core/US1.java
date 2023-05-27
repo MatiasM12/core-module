@@ -19,7 +19,7 @@ class US1 {
 	@BeforeAll
 	static void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		String[] values = {"US1","www.github.com/proyecto1/US1/"};
-		provider = new InitProviderTS().init(values);
+		provider = new InitProvider().init(values);
     	test = createInitTests();
     	emptyTest = createEmptyTest();
     	provider.update(test);

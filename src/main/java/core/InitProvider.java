@@ -4,14 +4,14 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
-public class InitProviderTS {
+public class InitProvider {
 	
 	static final String DEFAULT_PLUGIN_PATH = "plugins"; 
 	private FactoryFinder factoryFinder;
 	private Set<Factory> factories;
 	private FactoryObtainer factoryObtainer; 
 	
-	public InitProviderTS() {
+	public InitProvider() {
 		setFactoryFinder();
 		setFactoryObtainer();	
 	}
@@ -32,8 +32,8 @@ public class InitProviderTS {
 		String pluginPath = DEFAULT_PLUGIN_PATH;
 		if(args.length>2) pluginPath = args[2];
 		findFactories(pluginPath);
-		TestSummary ts = new ConcreteTestSummary();
-		TestSummary ob = new ObservableTestSummary(ts);
+		TestSummary ts = new ConcreteTS();
+		TestSummary ob = new ObservableTS(ts);
 		TestSummary tsPlugin = getFactory().createTS(ob,args[0],args[1]);
 		return new Provider(ob,tsPlugin);
 }

@@ -1,10 +1,10 @@
 package Factory;
 
 
-import core.DecoratorTestSummary;
+import core.DecoratorTS;
 import core.TestSummary;
 
-public class TestSummaryStub extends DecoratorTestSummary{
+public class TestSummaryStub extends DecoratorTS{
 
 	public TestSummaryStub(TestSummary s) {
 		super(s);	
