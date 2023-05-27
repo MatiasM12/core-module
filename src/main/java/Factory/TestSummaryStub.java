@@ -1,6 +1,5 @@
 package Factory;
 
-import java.util.Map;
 
 import core.DecoratorTestSummary;
 import core.TestSummary;
