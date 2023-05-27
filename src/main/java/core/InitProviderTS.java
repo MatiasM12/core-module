@@ -32,13 +32,11 @@ public class InitProviderTS {
 		String pluginPath = DEFAULT_PLUGIN_PATH;
 		if(args.length>2) pluginPath = args[2];
 		findFactories(pluginPath);
-		
 		TestSummary ts = new ConcreteTestSummary();
-		TestSummary tsPlugin = getFactory().createTS(ts,args[0],args[1]);
-		ObservableTestSummary ob = new ObservableTestSummary(ts);
-		
+		TestSummary ob = new ObservableTestSummary(ts);
+		TestSummary tsPlugin = getFactory().createTS(ob,args[0],args[1]);
 		return new Provider(ob,tsPlugin);
-	}
+}
 	
 	private void setFactoryFinder() {
 		this.factoryFinder = new FactoryFinder();
