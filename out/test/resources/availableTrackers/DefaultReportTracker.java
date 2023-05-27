@@ -1,7 +1,6 @@
 package InterfacesImpl;
 
 import core.ReportResult;
-import core.Tracker;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,23 +1,18 @@
 package core;
 
+import Interfaces.Observer;
+import Interfaces.TestSummary;
+
 public abstract class Plugin {
-	Observer observador;
-	TestSummary testSummary;
-	public Plugin(Observer o){
-		this.observador = o;
-	}
+	Observer observer;
+	public abstract TestSummary getTS(String userStory);
 
-	public Observable createObservableTS(String args);
-	public TestSummary  getTSDecorator();
-
-
-	TestSummary getTS(String userStory){
-		return this.testSummary;
-	}
-
-	public void notifyNewChanges(){
-		observador.update(this.testSummary);
+	public void notifyNewChanges(TestSummary ts){
+		observer.update(ts);
 	}
 
 
+	public void setObserver(Observer over) {
+		this.observer = over;
+	}
 }

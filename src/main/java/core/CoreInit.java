@@ -1,5 +1,7 @@
 package core;
 
+import Interfaces.Observable;
+
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
@@ -8,12 +10,15 @@ public class CoreInit {
 	private final PluginProvider provider;
 	private final PluginsFinder finder;
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
-	private static final String DEFAULT_PLUGIN_ELEGIDO = "defaultPlugin";
+	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultPlugin";
+	private  AppBuilder app;
+
 	public CoreInit(){
 		this.provider = new PluginProvider();
 		this.finder = new PluginsFinder();
+		this.app = new AppBuilder();
 	}
-	public ObservableTestSummary init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		//args = {repo, US, PluginElegido, pluginsPath
 		String repo = args[0];
 		String userStory = args[1];
@@ -21,12 +26,12 @@ public class CoreInit {
 		String pluginPath = args.length<4 ? DEFAULT_PLUGIN_PATH : args[3];
 
 		Set<Plugin> set = finder.find(pluginPath);
+		System.out.println("El set: " + set);
 		Plugin plugin1 = this.provider.getOne(set, pluginElegido);
 
-		TestSummary ts = plugin1.getTS(userStory);
+		Observable ret = this.app.build(plugin1, userStory);
 
-		ObservableTestSummary oTS = new ObservableTestSummary(ts);
-		return oTS;
+		return ret;
 
 
 //		#Set<Pulgins> set = TestSummaryFactoryFinder.find(path) -> creo que el nombre de esto deberia ser pluginsFinder o algo mas generico ya que el plugin no es un factory si o si.

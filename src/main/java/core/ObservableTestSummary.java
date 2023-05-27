@@ -1,21 +1,30 @@
 package core;
 
 
+import Interfaces.Observable;
+import Interfaces.Observer;
+import Interfaces.TestSummary;
+
 import java.util.Iterator;
 import java.util.Map;
 
 public class ObservableTestSummary extends DecoratorTestSummary implements Observable {
+	
 	public ObservableTestSummary(TestSummary concrete) {
 		super(concrete);
 	}
+	
 	@Override
-	public TestSummary update(Map<String, String> m) {
-		super.ts.update(m);
+	public void updateTests(Map<String, Boolean> m) {
+		super.updateTests(m);
 		notifyObservers(m);
-		return super.ts;
 	}
-	
-	
+
+	@Override
+	public Map<String, Boolean> getTests() {
+		return super.delegado.getTests();
+	}
+
 	@SuppressWarnings("static-access")
 	@Override
 	public void addObserver(Observer o) {
@@ -37,8 +46,8 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 		}
 	}
 	
-	public Map<String,String> getTestSummary(){
-		return ((ConcreteTestSummary)super.ts).testResults;
+	public Map<String,Boolean> getTestSummary(){
+		return super.getTestSummary();
 	}
 
 }

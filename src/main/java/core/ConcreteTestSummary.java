@@ -1,30 +1,27 @@
 package core;
 
+import Interfaces.TestSummary;
+
 import java.util.Map;
 import java.util.Objects;
 
 public class ConcreteTestSummary implements TestSummary {
 
 	
-	public Map<String,String> testResults;
- 
-	
-	@Override
-	public TestSummary update(Map<String, String> m) {
-		this.testResults = m;
-		return this;
+	public Map<String,Boolean> testResults;
+	public ConcreteTestSummary(Map<String,Boolean> testRestults){
+		this.testResults = testRestults;
 	}
 
+	@Override
+	public void updateTests(Map<String, Boolean> m) {
+		this.testResults = m;
+	}
 
-
-
-//
-//	@Override
-//	public TestSummary update(Map<String, String> m) {
-//		this.testResults = m;
-//		return this;
-//	}
-//
+	@Override
+	public Map<String, Boolean> getTests() {
+		return this.testResults;
+	}
 
 	@Override
 		public boolean equals(Object obj) {

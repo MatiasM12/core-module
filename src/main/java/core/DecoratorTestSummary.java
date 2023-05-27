@@ -1,18 +1,24 @@
 package core;
 
+import Interfaces.TestSummary;
+
 import java.util.Map;
 
 public abstract class DecoratorTestSummary implements TestSummary {
 	
-	TestSummary ts;
+	protected TestSummary delegado;
 	
-	public DecoratorTestSummary(TestSummary s) {
-		this.ts = s;
+	public DecoratorTestSummary(TestSummary unDelegado) {
+		this.delegado = unDelegado;
 	}
 
 	@Override
-	public TestSummary update(Map<String,String> s) {
-		return this.ts.update(s);
+	public void updateTests(Map<String,Boolean> s) {
+		this.delegado.updateTests(s);
+	}
+	
+	protected  Map<String, Boolean> getTestSummary(){
+		return ((ConcreteTestSummary)this.delegado).testResults;
 	}
 
 }

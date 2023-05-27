@@ -1,5 +1,7 @@
 package core;
 
+import Interfaces.TestSummary;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
@@ -15,11 +17,12 @@ public class PluginsFinder {
         File[] files = file.listFiles();
         
         for (File f : files) {
-        	System.out.println(f.getName());
+        	System.out.println("Plugin: " + f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                Class<?> cls = Class.forName("trackers."+fileName);
-                if (!TestSummary.class.isAssignableFrom(cls)) continue;
+                System.out.println("Filename: " + fileName);
+                Class<?> cls = Class.forName(fileName);
+                if (!Plugin.class.isAssignableFrom(cls)) continue;
                 pluginSet.add((Plugin) cls.newInstance());
             }
         }
