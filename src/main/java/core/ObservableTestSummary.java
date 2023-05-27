@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class ObservableTestSummary extends DecoratorTestSummary implements Observable {
+	
 	public ObservableTestSummary(TestSummary concrete) {
 		super(concrete);
 	}
@@ -15,7 +16,6 @@ public class ObservableTestSummary extends DecoratorTestSummary implements Obser
 		notifyObservers(m);
 		return super.ts;
 	}
-	
 	
 	@SuppressWarnings("static-access")
 	@Override
