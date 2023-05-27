@@ -45,9 +45,4 @@ public class ObservableTS extends TSDecorator implements Observable {
 			observer.update(map);
 		}
 	}
-	
-	public Map<String,Boolean> getTestSummary(){
-		return super.getTestSummary();
-	}
-
 }

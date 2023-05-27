@@ -16,9 +16,4 @@ public abstract class TSDecorator implements TestSummary {
 	public void updateTests(Map<String,Boolean> s) {
 		this.delegado.updateTests(s);
 	}
-	
-	protected  Map<String, Boolean> getTestSummary(){
-		return ((ConcreteTS)this.delegado).testResults;
-	}
-
 }

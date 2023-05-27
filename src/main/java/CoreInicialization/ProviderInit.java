@@ -1,6 +1,6 @@
 package CoreInicialization;
 
-import core.TSProvider;
+import Interfaces.TSProvider;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;

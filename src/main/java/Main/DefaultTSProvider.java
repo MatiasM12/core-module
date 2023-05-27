@@ -1,6 +1,8 @@
+package Main;
+
 import Interfaces.TestSummary;
 import core.ConcreteTS;
-import core.TSProvider;
+import Interfaces.TSProvider;
 
 import java.util.HashMap;
 

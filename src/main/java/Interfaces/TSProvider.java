@@ -1,4 +1,4 @@
-package core;
+package Interfaces;
 
 import Interfaces.Observer;
 import Interfaces.TestSummary;

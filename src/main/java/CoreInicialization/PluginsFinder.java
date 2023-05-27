@@ -1,7 +1,6 @@
 package CoreInicialization;
 
-import core.TSProvider;
-
+import Interfaces.TSProvider;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
@@ -17,18 +16,13 @@ public class PluginsFinder {
         File[] files = file.listFiles();
         
         for (File f : files) {
-        	System.out.println("Plugin: " + f.getName());
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                System.out.println("Filename: " + fileName);
-                Class<?> cls = Class.forName(fileName);
+                Class<?> cls = Class.forName("Main." +fileName);
                 if (!TSProvider.class.isAssignableFrom(cls)) continue;
                 TSProviderSet.add((TSProvider) cls.newInstance());
             }
         }
         return TSProviderSet;
     }
-    
-
-  
 }

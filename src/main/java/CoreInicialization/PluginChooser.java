@@ -1,6 +1,6 @@
 package CoreInicialization;
 
-import core.TSProvider;
+import Interfaces.TSProvider;
 
 import java.util.Iterator;
 import java.util.Set;
