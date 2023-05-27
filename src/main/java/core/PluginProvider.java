@@ -6,8 +6,6 @@ import java.util.Set;
 public class PluginProvider {
 	
 	  public Plugin getOne(Set<Plugin> factories, String factoryName){
-		  	System.out.println(factories.toString());
-		  	System.out.println(factoryName);
 		  	Iterator<Plugin> iterator = factories.iterator();
 	        while(iterator.hasNext()){
 	        	Plugin t = iterator.next();

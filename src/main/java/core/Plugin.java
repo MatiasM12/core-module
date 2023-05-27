@@ -10,8 +10,6 @@ public abstract class Plugin {
 	public void notifyNewChanges(TestSummary ts){
 		observer.update(ts);
 	}
-
-
 	public void setObserver(Observer over) {
 		this.observer = over;
 	}
