@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ObservableTSInit {
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
-	private static final String DEFAULT_PLUGIN_ELEGIDO = "Main.DefaultTSProvider";
+	private static final String DEFAULT_PLUGIN_ELEGIDO = "plugins.DefaultTSProvider";
 	private final ProviderInit inicializador;
 	private AppBuilder app;
 

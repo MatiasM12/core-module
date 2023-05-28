@@ -6,14 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="a98fb626-381a-42ef-8328-80d52a3fdbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/InitCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/InitCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Observable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/SelfTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/SelfTracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/TestSummaryProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/Tracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Tracker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/TrackerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/TrackerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/UserStory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/UserStoryGateway.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CoreInicialization/ObservableTSInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoreInicialization/ObservableTSInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CoreInicialization/PluginsFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CoreInicialization/PluginsFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/DefaultTSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/plugins/DefaultTSProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/core/US2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/core/US2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/directoriesMock/fuenteSimple/Gitlab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/directoriesMock/multiplesFuentes/Gitlab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/directoriesMock/multiplesFuentes/Jira.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/directoriesMock/multiplesFuentes/image.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/trackersMock/TrackerSinUS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/trackersMock/TrackerTestIguales.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/trackersMock/TrackerUSChanged.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,13 +70,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/core-module&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Usuario/IntelliJ-Workspace/VALKIRIA/ui-module"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="core" />
@@ -103,7 +106,7 @@
       <module name="core.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Main.*" />
+          <option name="PATTERN" value="plugins.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

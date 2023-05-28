@@ -1,4 +1,4 @@
-package Main;
+package plugins;
 
 import Interfaces.TestSummary;
 import core.ConcreteTS;
