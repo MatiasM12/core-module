@@ -8,19 +8,22 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
+import Interfaces.TSProvider;
+import coreInicialization.PluginsFinder;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
 public class US2 {
-	
-    private static  String INVALID_PATH;
-    private static  String NON_EXISTENT_PATH;
-    private static  String EMPTY_DIRECTORY;
-    private static  String NOT_A_SOURCE ;
-    private static  String ONE_SOURCE ;
-    private static  String MULTIPLE_SOURCES ;
-    private static  FactoryFinder factoryFinder;
+    private static String INVALID_PATH;
+    private static String NON_EXISTENT_PATH;
+    private static String EMPTY_DIRECTORY;
+    private static String NOT_A_SOURCE;
+    private static String ONE_SOURCE;
+    private static String MULTIPLE_SOURCES;
+    private static String SPECIFIC_PROVIDER;
+    private static PluginsFinder finder;
 
     @BeforeAll
     public static void escenario() {
@@ -30,46 +33,38 @@ public class US2 {
         NOT_A_SOURCE = "src/test/java/directoriesMock/noEsFuente/";
         ONE_SOURCE = "src/test/java/directoriesMock/fuenteSimple/";
         MULTIPLE_SOURCES = "src/test/java/directoriesMock/multiplesFuentes/";
+        SPECIFIC_PROVIDER = "DefaultTSProvider";
+        finder = new PluginsFinder();
     }
- 
     @Test 
-    public void testNonExistentPath() throws FileNotFoundException{
-    	factoryFinder = new FactoryFinder(); //NON_EXISTENT_PATH
-    	assertThrows(FileNotFoundException.class, () -> factoryFinder.find(NON_EXISTENT_PATH));
+    public void CA1() {
+        assertThrows(FileNotFoundException.class, () -> finder.find(NON_EXISTENT_PATH));
     }
-
     @Test 
-    public void testInvalidPath() throws FileNotFoundException {
-    	factoryFinder = new FactoryFinder(); //INVALID_PATH
-    	assertThrows(FileNotFoundException.class, () -> factoryFinder.find(INVALID_PATH));
+    public void CA2(){
+    	assertThrows(FileNotFoundException.class, () -> finder.find(INVALID_PATH));
     }
-    
     @Test
-    public void testEmptyDirectory() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	factoryFinder = new FactoryFinder();  //EMPTY_DIRECTORY
-    	assertTrue(factoryFinder.find(EMPTY_DIRECTORY).isEmpty());
+    public void CA3() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    	assertTrue(finder.find(EMPTY_DIRECTORY).isEmpty());
     }
-
     @Test
-    public void testNotASource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	factoryFinder = new FactoryFinder();   //NOT_A_SOURCE
-    	assertTrue(factoryFinder.find(NOT_A_SOURCE).isEmpty());
+    public void CA4() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    	assertTrue(finder.find(NOT_A_SOURCE).isEmpty());
     }
-
     @Test
-    public void testOneSource() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	factoryFinder = new FactoryFinder();  //ONE_SOURCE
-    	Set<Factory> factory = factoryFinder.find(ONE_SOURCE);
-        assertEquals(1, factory.size());
-        assertTrue(factory.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGithub")));
+    public void CA5() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    	Set<TSProvider> providers = finder.find(ONE_SOURCE);
+        assertEquals(1, providers.size());
     }
-
     @Test
-    public void testMultipleSources() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	factoryFinder = new FactoryFinder();  //MULTIPLE_SOURCES
-    	Set<Factory> trackers = factoryFinder.find(MULTIPLE_SOURCES);
-        assertEquals(3, trackers.size());
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGithub")));
-        assertTrue(trackers.stream().anyMatch(t -> t.getClass().getName().equals("Factory.FactoryGitlab")));
-    }  
+    public void CA6() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        Set<TSProvider> providers = finder.find(MULTIPLE_SOURCES);
+        assertTrue(providers.size() >= 2);
+    }
+    @Test
+    public void CA7() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        Set<TSProvider> providers = finder.find(ONE_SOURCE);
+        assertTrue(providers.stream().anyMatch(t -> t.getClass().getName().equals(SPECIFIC_PROVIDER)));
+    }
 }

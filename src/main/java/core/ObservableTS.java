@@ -1,22 +1,30 @@
 package core;
 
 
+import Interfaces.Observable;
+import Interfaces.Observer;
+import Interfaces.TestSummary;
+
 import java.util.Iterator;
 import java.util.Map;
 
-public class ObservableTS extends DecoratorTS implements Observable {
+public class ObservableTS extends TSDecorator implements Observable {
 	
 	public ObservableTS(TestSummary concrete) {
 		super(concrete);
 	}
 	
 	@Override
-	public TestSummary update(Map<String, Boolean> test) {
-		super.ts.update(test);
-		notifyObservers(test);
-		return super.ts;
+	public void updateTests(Map<String, Boolean> m) {
+		super.updateTests(m);
+		notifyObservers(m);
 	}
-	
+
+	@Override
+	public Map<String, Boolean> getTests() {
+		return super.delegado.getTests();
+	}
+
 	@SuppressWarnings("static-access")
 	@Override
 	public void addObserver(Observer o) {
@@ -30,16 +38,11 @@ public class ObservableTS extends DecoratorTS implements Observable {
 	}
 
 	@Override
-	public void notifyObservers(Object object) {
+	public void notifyObservers(Object map) {
 		for (@SuppressWarnings("rawtypes")
 		Iterator iterator = observers.iterator(); iterator.hasNext();) {
 			Observer observer = (Observer) iterator.next();
-			observer.update(object);
+			observer.update(map);
 		}
 	}
-	
-	public Map<String,Boolean> getTestSummary(){
-		return super.getTestSummary();
-	}
-
 }
