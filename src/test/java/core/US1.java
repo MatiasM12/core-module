@@ -6,7 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.HashMap;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class US1 {
 
@@ -22,43 +24,37 @@ public class US1 {
     }
 
     @Test
-    void seAgregaUnTest() {
+    void CA1seAgregaUnTest() {
         int oldTestsQuantity = vista.getTests().size();
-        plugin.fingirCambio(1);
+        plugin.fingirCambios(new HashMap<String, Boolean>() {{
+                    put("CA1",false);
+                    put("CA2",true);
+                }});
         assertTrue(vista.getTests().size() == oldTestsQuantity + 1);
     }
-
-    @Disabled
     @Test
-    void seBorraUnTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-//        int oldTestsQuantity = test.size();
-//        removeOneTest();
-//        provider.update(test);
-//        assertEquals(provider.getMap().size(),oldTestsQuantity - 1);
+    void CA2seBorraUnTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+        int oldTestsQuantity = vista.getTests().size();
+        plugin.fingirCambios(new HashMap<String, Boolean>() {{
+            remove("CA1");
+        }});
+        assertTrue(vista.getTests().size() == oldTestsQuantity - 1);
     }
 
-    @Disabled
     @Test
-    void CambiaEstadoDeTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-//        Boolean oldStatus = provider.getMap().get("CA1");
-//        changeStatusTest();
-//        provider.update(test);
-//        assertNotEquals(provider.getMap().get("CA1"),oldStatus);
+    void CA3cambiaEstadoDeTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+        Boolean oldState = vista.getTests().get("CA1");
+        plugin.fingirCambios(new HashMap<String, Boolean>() {{
+            put("CA1",true);
+        }});
+        assertNotEquals(oldState,vista.getTests().get("CA1"));
     }
 
-    @Disabled
     @Test
-    void sinTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-//        provider.update(emptyTest);
-//        assertEquals(provider.getMap().size(),0);
+    void CA4sinTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+        plugin.fingirCambios(new HashMap<String, Boolean>() {{
+            //is empty
+        }});
+        assertEquals(vista.getTests().size(), 0);
     }
-
-    @Disabled
-    @Test
-    void cambiaElTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-//        Map<String,Boolean> repoUpdate = new HashMap<String,Boolean>();
-//        provider.update(repoUpdate);
-//        assertEquals(provider.getMap().size(),0);
-    }
-
 }
