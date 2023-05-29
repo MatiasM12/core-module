@@ -11,7 +11,7 @@ public class ConcreteTS implements TestSummary {
 	public Map<String,Boolean> testResults;
 	public ConcreteTS(Map<String,Boolean> testRestults){
 		this.testResults = testRestults;
-	}
+	} 
 
 	@Override
 	public void updateTests(Map<String, Boolean> m) {
