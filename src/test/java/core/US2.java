@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
-import Interfaces.TSProvider;
+
 import coreInicialization.PluginsFinder;
 
 import org.junit.jupiter.api.BeforeAll;

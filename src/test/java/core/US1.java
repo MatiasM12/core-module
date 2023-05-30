@@ -2,8 +2,7 @@ package core;
 
 
 import coreInicialization.DecoratorInit;
-import pluginsMock.MockTSProvider;
-import pluginsMock.MockVista;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class US1 {
 
     private TSDecorator plugin;
-    private MockVista vista;
+ 
 
  /*   @BeforeEach
     public void escenario() {
