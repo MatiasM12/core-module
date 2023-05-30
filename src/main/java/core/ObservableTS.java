@@ -15,14 +15,9 @@ public class ObservableTS extends TSDecorator implements Observable {
 	}
 	
 	@Override
-	public void updateTests(Map<String, Boolean> m) {
-		super.updateTests(m);
+	public void update(Map<String, Boolean> m) {
+		super.update(m);
 		notifyObservers(m);
-	}
-
-	@Override
-	public Map<String, Boolean> getTests() {
-		return super.delegado.getTests();
 	}
 
 	@SuppressWarnings("static-access")
@@ -40,7 +35,7 @@ public class ObservableTS extends TSDecorator implements Observable {
 	@Override
 	public void notifyObservers(Object map) {
 		for (@SuppressWarnings("rawtypes")
-		Iterator iterator = observers.iterator(); iterator.hasNext();) {
+		    Iterator iterator = observers.iterator(); iterator.hasNext();) {
 			Observer observer = (Observer) iterator.next();
 			observer.update(map);
 		}

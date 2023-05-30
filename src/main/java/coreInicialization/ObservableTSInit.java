@@ -1,7 +1,9 @@
 package coreInicialization;
 
+import core.ConcreteTS;
 import core.ObservableTS;
-import Interfaces.TSProvider;
+import core.TSDecorator;
+import Interfaces.TestSummary;
 
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
@@ -9,12 +11,10 @@ import java.lang.reflect.InvocationTargetException;
 public class ObservableTSInit {
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
 	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTSProvider";
-	private final ProviderInit inicializador;
-	private AppBuilder app;
+	private DecoratorInit inicializador;
 
 	public ObservableTSInit(){
-		this.app = new AppBuilder();
-		inicializador = new ProviderInit();
+		inicializador = new DecoratorInit();    
 	}
 	public ObservableTS init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		//args = {repo, US, PluginElegido, pluginsPath
@@ -22,10 +22,10 @@ public class ObservableTSInit {
 		String userStory = args[1];
 		String pluginElegido = args.length<3 ? DEFAULT_PLUGIN_ELEGIDO : args[2];
 		String pluginPath = args.length<4 ? DEFAULT_PLUGIN_PATH : args[3];
-
-		TSProvider plugin = inicializador.init(pluginPath, pluginElegido);
-
-		ObservableTS ret = this.app.build(plugin, userStory);
+		TestSummary ts = new ConcreteTS(); 
+		ObservableTS ret = new ObservableTS(ts);
+		TSDecorator tsD = inicializador.init(pluginPath, pluginElegido, ret);
+		
 		return ret;
 	}
 }

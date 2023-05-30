@@ -13,7 +13,7 @@ public abstract class TSDecorator implements TestSummary {
 	}
 
 	@Override
-	public void updateTests(Map<String,Boolean> s) {
-		this.delegado.updateTests(s);
+	public void update(Map<String,Boolean> s) {
+		this.delegado.update(s);
 	}
 }

@@ -1,16 +1,17 @@
 package coreInicialization;
 
-import Interfaces.TSProvider;
+
+import core.TSDecorator;
 
 import java.util.Iterator;
 import java.util.Set;
 
-public class PluginChooser {
+public class DecoratorChooser {
 	
-	  public TSProvider getOne(Set<TSProvider> factories, String factoryName){
-		  	Iterator<TSProvider> iterator = factories.iterator();
+	  public TSDecorator getOne(Set<TSDecorator> decorador, String factoryName){
+		  	Iterator<TSDecorator> iterator = decorador.iterator();
 	        while(iterator.hasNext()){
-	        	TSProvider t = iterator.next();
+	        	TSDecorator t = iterator.next();
 	            if(t.getClass().getName().equals(factoryName))
 	                return t;
 	        }
