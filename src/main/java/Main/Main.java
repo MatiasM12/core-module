@@ -9,5 +9,6 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException, MalformedURLException {
 		Core core = new Core();
 		core.init( new String[]{"www.github.com/felipe", "US1" });
+		System.out.println("hola");
 	}
 }
