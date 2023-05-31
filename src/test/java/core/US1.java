@@ -1,7 +1,7 @@
 package core;
 
 import Interfaces.TSProvider;
-import coreInicialization.AppBuilder;
+import coreInicialization.OTSBuilder;
 import pluginsMock.MockTSProvider;
 import pluginsMock.MockVista;
 
@@ -19,7 +19,7 @@ public class US1 {
 
     @BeforeEach
     public void escenario() {
-       AppBuilder app = new AppBuilder();
+       OTSBuilder app = new OTSBuilder();
        plugin = new MockTSProvider();
        ObservableTS o = app.build((TSProvider) plugin, "US1");
        vista = new MockVista(o);
