@@ -1,8 +1,8 @@
-package Interfaces;
+package interfaces;
 
 import java.util.Map;
 
-public interface TestSummary {
+public interface USTestSummary {
 
 	void updateTests(Map<String,Boolean> m);
 	Map<String, Boolean> getTests();

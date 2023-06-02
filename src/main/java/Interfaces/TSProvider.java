@@ -1,16 +1,12 @@
-package Interfaces;
+package interfaces;
 
-
-import java.util.Map;
+import core.TSDecorator;
 
 public abstract class TSProvider {
-	Observer observer;
-	public abstract TestSummary getTS(String userStory);
+	
+	public TSProvider() {
+	}
+	
+	public abstract USTestSummary getUSTS(String userStory);
 
-	public void notifyNewChanges(Map<String, Boolean> ts){
-		observer.update(ts);
-	}
-	public void setObserver(Observer over) {
-		this.observer = over;
-	}
 }

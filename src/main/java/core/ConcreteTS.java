@@ -1,11 +1,11 @@
 package core;
 
-import Interfaces.TestSummary;
-
 import java.util.Map;
 import java.util.Objects;
 
-public class ConcreteTS implements TestSummary {
+import interfaces.USTestSummary;
+
+public class ConcreteTS implements USTestSummary {
 
 	
 	public Map<String,Boolean> testResults;
@@ -16,6 +16,7 @@ public class ConcreteTS implements TestSummary {
 	@Override
 	public void updateTests(Map<String, Boolean> m) {
 		this.testResults = m;
+		System.out.println(m);
 	}
 
 	@Override
@@ -34,4 +35,6 @@ public class ConcreteTS implements TestSummary {
 
 			return Objects.equals(testResults, other.testResults);
 		}
+
+
 }

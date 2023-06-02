@@ -1,16 +1,16 @@
 package core;
 
 
-import Interfaces.Observable;
-import Interfaces.Observer;
-import Interfaces.TestSummary;
-
 import java.util.Iterator;
 import java.util.Map;
 
+import interfaces.Observable;
+import interfaces.Observer;
+import interfaces.USTestSummary;
+
 public class ObservableTS extends TSDecorator implements Observable {
 	
-	public ObservableTS(TestSummary concrete) {
+	public ObservableTS(USTestSummary concrete) {
 		super(concrete);
 	}
 	

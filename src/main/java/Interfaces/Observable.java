@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 import java.util.Collection;
 import java.util.HashSet;

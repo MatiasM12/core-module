@@ -1,67 +1,98 @@
 package core;
 
-import Interfaces.TSProvider;
-import coreInicialization.OTSBuilder;
-import pluginsMock.MockTSProvider;
-import pluginsMock.MockVista;
+import interfaces.USTestSummary;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class US1 {
 
-    private MockTSProvider plugin;
-    private MockVista vista;
+    private USTestSummary usTestSummary;
+    private Map<String,Boolean> TSUS1 ;
 
     @BeforeEach
-    public void escenario() {
-       OTSBuilder app = new OTSBuilder();
-       plugin = new MockTSProvider();
-       ObservableTS o = app.build((TSProvider) plugin, "US1");
-       vista = new MockVista(o);
-    }
-
-    @SuppressWarnings("serial")
-	@Test
-    void CA1() {
-        int oldTestsQuantity = vista.getTests().size();
-        plugin.fingirCambios(new HashMap<String, Boolean>() {{
-                    put("CA1",false);
-                    put("CA2",true);
-                }});
-        assertTrue(vista.getTests().size() == oldTestsQuantity + 1);
+    public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException, MalformedURLException {
+		Properties prop = new Properties();
+        loadProperties(prop,"src/test/java/mock.properties"); 
+		usTestSummary = new Core().init(prop);
+		TSUS1  = usTestSummary.getTests();
     }
     
-    @SuppressWarnings("serial")
+    
 	@Test
+    void CA1() {
+		Map<String,Boolean> newCA = createMap("CA2",true);
+    	
+		TSUS1 .putAll(newCA);
+    	usTestSummary.updateTests(TSUS1 );
+    	
+    	assertTrue(usTestSummary.getTests().entrySet().containsAll(newCA.entrySet()));
+    	assertEquals(2,usTestSummary.getTests().size());
+    }
+
+    
+	@Test @SuppressWarnings({"unlikely-arg-type"})
     void CA2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-        int oldTestsQuantity = vista.getTests().size();
-        plugin.fingirCambios(new HashMap<String, Boolean>() {{
-            remove("CA1");
-        }});
-        assertTrue(vista.getTests().size() == oldTestsQuantity - 1);
+		Map<String,Boolean> removeCA = createMap("CA2",true);
+    	
+		TSUS1 .remove(removeCA);
+		usTestSummary.updateTests(TSUS1 );
+		
+    	assertFalse(usTestSummary.getTests().entrySet().containsAll(removeCA.entrySet()));
+    	assertEquals(1,usTestSummary.getTests().size());
     }
 
-    @SuppressWarnings("serial")
-	@Test
+    
+	@Test 
     void CA3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-        Boolean oldState = vista.getTests().get("CA1");
-        plugin.fingirCambios(new HashMap<String, Boolean>() {{
-            put("CA1",true);
-        }});
-        assertNotEquals(oldState,vista.getTests().get("CA1"));
+		Map<String,Boolean> newSatusCA = createMap("CA1",false);
+    	
+		TSUS1 .putAll(newSatusCA);
+    	usTestSummary.updateTests(TSUS1 );
+    	
+    	assertTrue(usTestSummary.getTests().get("CA1") == false);
     }
 
-    @SuppressWarnings("serial")
+    
 	@Test
     void CA4() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-        plugin.fingirCambios(new HashMap<String, Boolean>() {{
-            //is empty
-        }});
-        assertEquals(vista.getTests().size(), 0);
+		Map<String,Boolean> emptyCA = createEmptyMap();
+    	
+		TSUS1 = emptyCA;
+    	usTestSummary.updateTests(TSUS1);
+    	
+    	assertTrue(usTestSummary.getTests() == emptyCA);
     }
+	
+    
+
+
+	public static void loadProperties(Properties prop,String filePath) {
+		try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
+        	prop.load(fileInputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	
+	@SuppressWarnings("serial")
+	public HashMap<String, Boolean> createMap(String caName,Boolean testResult) {
+		return new HashMap<String,Boolean>(){{put(caName,testResult);}};
+	}
+	
+	private Map<String, Boolean> createEmptyMap() {
+		return new HashMap<String,Boolean>();
+	}
+
 }

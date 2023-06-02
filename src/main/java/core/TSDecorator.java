@@ -1,16 +1,17 @@
 package core;
 
-import Interfaces.TestSummary;
-
 import java.util.Map;
 
-public abstract class TSDecorator implements TestSummary {
+import interfaces.USTestSummary;
+
+public abstract class TSDecorator implements USTestSummary {
 	
-	protected TestSummary delegado;
+	protected USTestSummary delegado;
 	
-	public TSDecorator(TestSummary unDelegado) {
+	public TSDecorator(USTestSummary unDelegado) {
 		this.delegado = unDelegado;
 	}
+
 
 	@Override
 	public void updateTests(Map<String,Boolean> s) {
