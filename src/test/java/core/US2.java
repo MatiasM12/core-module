@@ -70,7 +70,7 @@ public class US2 {
     @BeforeAll
     public static void escenario7() {
     	SPECIFIC_PROVIDER = "OriginImp.DefaultTS";
-    	finder7 = new OriginFinder(SPECIFIC_PROVIDER);
+    	finder7 = new OriginFinder(ONE_SOURCE);
     }
     
     
