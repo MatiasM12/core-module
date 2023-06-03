@@ -14,14 +14,12 @@ public class timerTS extends OriginTS {
 
 	public timerTS(TestSummary unDelegado, String url, String us) {
 		super(unDelegado, url, us);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public boolean connectTS(String url, String us) {
 		Timer timer = new Timer();
         TimerTask task = new TimerTask() {
-        int count = 0;
         @Override
         public void run() {
         	Map <String,Boolean> criterios = new HashMap<String,Boolean>();
@@ -31,7 +29,6 @@ public class timerTS extends OriginTS {
              }
     		TestSummary ts = new TSResultDefault(us,criterios);
     		superUpdate(ts);
-    		
             }
         };
         timer.schedule(task, 1000, 2000);
