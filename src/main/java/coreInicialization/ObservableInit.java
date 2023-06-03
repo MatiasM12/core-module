@@ -18,7 +18,7 @@ public class ObservableInit {
 		String pluginElegido = args.length<3 ? DEFAULT_PLUGIN_ELEGIDO : args[2];
 		String pluginPath = args.length<4 ? DEFAULT_PLUGIN_PATH : args[3];
 		ObservableTS ret = new ObservableTSFactory().create();
-		TestSummary plugin = new OriginTSBuilder(pluginPath).init(repo,userStory,pluginElegido,ret);
+		TestSummary plugin = new OriginTSFactory(pluginPath).init(repo,userStory,pluginElegido,ret);
 		return ret;
 	}
 }

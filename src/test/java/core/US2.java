@@ -40,13 +40,13 @@ public class US2 {
     	INVALID_PATH = "\\n";
     	finder1 = new OriginFinder(INVALID_PATH);
     }
-    
+    @BeforeAll
     public static void escenario2() {
         NON_EXISTENT_PATH = "src/unaCarpetaInexistente";
        
         finder2 = new OriginFinder(NON_EXISTENT_PATH);
     }
-    
+    @BeforeAll
     public static void escenario3() {
     	EMPTY_DIRECTORY = "src/test/java/directoriesMock/carpetaVacia/";
     	finder3 = new OriginFinder(EMPTY_DIRECTORY);
@@ -85,11 +85,11 @@ public class US2 {
     }
     @Test
     public void CA3() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	assertThrows(FileNotFoundException.class, () -> finder3.find(new TSVacio(),SPECIFIC_PROVIDER,"US1"));
+    	assertTrue(finder3.find(new TSVacio(),SPECIFIC_PROVIDER,"US1").isEmpty());
     }
     @Test
     public void CA4() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	assertThrows(FileNotFoundException.class, () -> finder4.find(new TSVacio(),SPECIFIC_PROVIDER,"US1"));
+    	assertTrue(finder4.find(new TSVacio(),SPECIFIC_PROVIDER,"US1").isEmpty());
     }
     @Test
     public void CA5() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
@@ -105,7 +105,7 @@ public class US2 {
     }
     @Test
     public void CA7() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-    	Set<TestSummary> setTS = finder7.find(new TSVacio(),SPECIFIC_PROVIDER,"US1");
+    	Set<TestSummary> setTS = finder7.find(new TSVacio(),SPECIFIC_PROVIDER,"US1");	
         assertTrue(setTS.stream().anyMatch(t -> t.getClass().getName().equals(SPECIFIC_PROVIDER)));
     }
 }
