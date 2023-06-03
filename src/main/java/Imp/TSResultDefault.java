@@ -19,5 +19,14 @@ public class TSResultDefault implements TestSummary {
 	public TestSummary update(TestSummary ts) {
 		return ts ;
 	}
+	
+	
+	public String getUS() {
+		return this.us;
+	}
+	
+	public Map <String,Boolean> getCA() {
+		return this.CA;
+	}
 
 }

@@ -13,11 +13,8 @@ public class ConcreteTS implements TestSummary {
 
 	@Override
 	public TestSummary update(TestSummary ts) {
-		
-		System.out.println(ts.toString());
-		
 		this.tsResult = ts;
-		return this;
+		return tsResult;
 	}
 	
 	public TestSummary getTS() {

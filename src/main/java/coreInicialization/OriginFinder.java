@@ -22,6 +22,9 @@ public class OriginFinder {
 	public Set<TestSummary> find(TestSummary ts,String url ,String us) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
         File file = new File(this.path);
         Set<TestSummary> tSSet = new HashSet<>();
+        
+        System.out.println(file.exists());
+        
         if (!file.exists()) throw new FileNotFoundException();
         File[] files = file.listFiles();
         for (File f : files) {
