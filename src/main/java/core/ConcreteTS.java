@@ -8,30 +8,26 @@ import java.util.Objects;
 public class ConcreteTS implements TestSummary {
 
 	
-	public Map<String,Boolean> testResults;
-	public ConcreteTS(Map<String,Boolean> testRestults){
-		this.testResults = testRestults;
-	}
+	public TestSummary tsResult;
+	
 
 	@Override
-	public void updateTests(Map<String, Boolean> m) {
-		this.testResults = m;
+	public TestSummary update(TestSummary ts) {
+		
+		System.out.println(ts.toString());
+		
+		this.tsResult = ts;
+		return this;
+	}
+	
+	public TestSummary getTS() {
+		
+		return tsResult;
 	}
 
-	@Override
-	public Map<String, Boolean> getTests() {
-		return this.testResults;
-	}
 
-	@Override
-		public boolean equals(Object obj) {
-			if (obj == null)
-				return false;
-			ConcreteTS other = (ConcreteTS) obj;
 
-			System.out.println(testResults.toString());
-			System.out.println(other.testResults.toString());
 
-			return Objects.equals(testResults, other.testResults);
-		}
+
+
 }

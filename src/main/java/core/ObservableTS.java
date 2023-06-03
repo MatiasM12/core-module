@@ -10,25 +10,26 @@ import java.util.Map;
 
 public class ObservableTS extends TSDecorator implements Observable {
 	
+	TestSummary lastTS;
+	
 	public ObservableTS(TestSummary concrete) {
 		super(concrete);
 	}
 	
 	@Override
-	public void updateTests(Map<String, Boolean> m) {
-		super.updateTests(m);
-		notifyObservers(m);
+	public TestSummary update(TestSummary ts) {
+		this.lastTS = ts;
+		TestSummary tsUpdate = super.update(ts);
+		notifyObservers(tsUpdate);
+		return tsUpdate;
 	}
 
-	@Override
-	public Map<String, Boolean> getTests() {
-		return super.delegado.getTests();
-	}
 
 	@SuppressWarnings("static-access")
 	@Override
 	public void addObserver(Observer o) {
 		this.observers.add(o);
+		notifyObservers(lastTS);
 	}
 
 	@SuppressWarnings("static-access")
@@ -38,11 +39,11 @@ public class ObservableTS extends TSDecorator implements Observable {
 	}
 
 	@Override
-	public void notifyObservers(Object map) {
+	public void notifyObservers(TestSummary ts) {
 		for (@SuppressWarnings("rawtypes")
 		Iterator iterator = observers.iterator(); iterator.hasNext();) {
 			Observer observer = (Observer) iterator.next();
-			observer.update(map);
+			observer.update(ts);
 		}
 	}
 }

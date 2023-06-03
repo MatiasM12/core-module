@@ -12,5 +12,5 @@ public interface Observable {
 
     public void removeObserver(Observer o);
 
-    public void notifyObservers(Object object);
+    public void notifyObservers(TestSummary ts);
 }

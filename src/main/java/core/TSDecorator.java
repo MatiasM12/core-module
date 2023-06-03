@@ -1,7 +1,6 @@
 package core;
 
 import Interfaces.TestSummary;
-
 import java.util.Map;
 
 public abstract class TSDecorator implements TestSummary {
@@ -13,7 +12,8 @@ public abstract class TSDecorator implements TestSummary {
 	}
 
 	@Override
-	public void updateTests(Map<String,Boolean> s) {
-		this.delegado.updateTests(s);
+	public TestSummary update(TestSummary ts) {
+		
+		return this.delegado.update(ts);
 	}
 }
