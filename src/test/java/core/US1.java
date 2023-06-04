@@ -1,7 +1,7 @@
 package core;
 
 
-import coreInicialization.ObservableInit;
+import coreInicialization.Core;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,11 +29,9 @@ public class US1 {
     	String url = "url";
     	String [] args  = new String[] {path,url,ImplPlugin};
     	Observer o = new ObAT();
-    	Observable obv=  new  ObservableInit().init(args);
+    	Observable obv=  new  Core().init(args);
     	obv.addObserver(o);
     	ts = ((ObAT)o).getTS();
-
-
     }
 
 	@Test

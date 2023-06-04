@@ -7,7 +7,7 @@ import Interfaces.TestSummary;
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 
-public class ObservableInit {
+public class Core {
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
 	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTSProvider";
 

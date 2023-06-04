@@ -43,7 +43,6 @@ public class US2 {
     @BeforeAll
     public static void escenario2() {
         NON_EXISTENT_PATH = "src/unaCarpetaInexistente";
-       
         finder2 = new OriginFinder(NON_EXISTENT_PATH);
     }
     @BeforeAll
