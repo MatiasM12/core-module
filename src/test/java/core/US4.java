@@ -27,8 +27,8 @@ public class US4 {
 
     @BeforeEach
     public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-        String path = "plugin";
-        String Imp = "TSVacio";
+        String path = "src\\test\\java\\directoriesMock\\multiplesFuentes";
+        String Imp = "DefaultTS";
         String url = "url";
         String us = "US1";
         String [] args  = new String [] {path,Imp,url,us};
@@ -46,8 +46,8 @@ public class US4 {
     }
     @BeforeEach
     public void escenario2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        String path = "plugin";
-        String Imp = "TSVacio";
+        String path = "src\\test\\java\\directoriesMock\\carpetaVacia";
+        String Imp = "DefaultTS";
         String url = "url";
         String us = "US1";
         String [] args  = new String [] {path,Imp,url,us};
