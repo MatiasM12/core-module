@@ -1,12 +1,13 @@
 package core;
 
 
-import coreInicialization.ObservableInit;
+import coreInicialization.Core;
+import mocks.ObAT;
+import mocks.TSStub;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Imp.ObAT;
-import Imp.TSStub;
 import Interfaces.Observable;
 import Interfaces.Observer;
 import Interfaces.TestSummary;
@@ -24,43 +25,49 @@ public class US1 {
 
     @BeforeEach
     public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
-    	String path = "C:\\Users\\Nicol\\git\\core-module82\\bin\\test\\Imp";
-    	String ImplPlugin = "OriginImp.DefaultTS";
+    	String path = "src/test/java/Imp";
+    	String ImplPlugin = "DefaultTS";
     	String url = "url";
     	String [] args  = new String[] {path,url,ImplPlugin};
     	Observer o = new ObAT();
-    	Observable obv=  new  ObservableInit().init(args);
+    	Observable obv=  new  Core().init(args);
     	obv.addObserver(o);
     	ts = ((ObAT)o).getTS();
-
-
     }
 
 	@Test
-    void CA1AgregarTest() {
-    	Map<String,Boolean> m = new HashMap<String,Boolean>();   //[CA1 : TRUE]
-    	m.put("CA1", true);
-    	TestSummary newTS= new TSStub("US1",m);
+    void CA1() {
+    	Map<String, Boolean> test = createMap("CA1", true);		//[CA1 : TRUE]
+    	TestSummary newTS= createTS(test);
     	assertEquals(((TSStub)ts.update(newTS)).sizeCA() , 1);
     }
+
 	@Test
-    void CA2QuitarTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-    	Map<String,Boolean> m = new HashMap<String,Boolean>();   //[CA1 : TRUE]
-    	TestSummary newTS= new TSStub("US1",m);
+    void CA2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+    	Map<String,Boolean> test = new HashMap<String,Boolean>();	//[]
+    	TestSummary newTS= createTS(test);
         assertEquals(((TSStub)ts.update(newTS)).sizeCA() , 0);
     }
+	
 	@Test
     void CA3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException{
-    	Map<String,Boolean> m0 = new HashMap<String,Boolean>();//[CA1 : TRUE]
-    	Map<String,Boolean> m1 = new HashMap<String,Boolean>();//[CA1 : TRUE]
-    	m0.put("CA1", true);
-    	m1.put("CA1", false);
-    	TestSummary nuevoTSTrue   = new TSStub("US1",m0);
-        TestSummary nuevoTSFalse  = new TSStub("US1",m1);
-        assertEquals(ts.update(nuevoTSTrue).equals(ts.update(nuevoTSFalse)), false);
+    	Map<String,Boolean> test1 = createMap("CA1", true);		//[CA1 : TRUE]
+    	Map<String,Boolean> test2 = createMap("CA1", false);	//[CA1 : FALSE]
+    	TestSummary newTSTrue   = createTS(test1);
+        TestSummary newTSFalse  = createTS(test2);
+        assertEquals(ts.update(newTSTrue).equals(ts.update(newTSFalse)), false);
     }
 
+	//Funciones auxiliares
+	private Map<String, Boolean> createMap(String ca, boolean status) {
+		Map<String,Boolean> m = new HashMap<String,Boolean>();   
+    	m.put(ca, status);
+		return m;
+	}
   
+	private TSStub createTS(Map<String, Boolean> test) {
+		return new TSStub("US1",test);
+	}
 }
 
 

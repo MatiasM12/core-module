@@ -7,9 +7,10 @@ import Interfaces.TestSummary;
 import java.io.FileNotFoundException;
 import java.lang.reflect.InvocationTargetException;
 
-public class ObservableInit {
+public class Core {
+	
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
-	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTSProvider";
+	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTS";
 
 	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
 		//args = {repo, US, PluginElegido, pluginsPath
@@ -21,4 +22,5 @@ public class ObservableInit {
 		TestSummary plugin = new OriginTSFactory(pluginPath).init(repo,userStory,pluginElegido,ret);
 		return ret;
 	}
+
 }

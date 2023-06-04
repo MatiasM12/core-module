@@ -6,7 +6,6 @@ import Interfaces.Observer;
 import Interfaces.TestSummary;
 
 import java.util.Iterator;
-import java.util.Map;
 
 public class ObservableTS extends TSDecorator implements Observable {
 	

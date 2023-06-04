@@ -1,7 +1,6 @@
 package core;
 
 import Interfaces.TestSummary;
-import java.util.Map;
 
 public abstract class TSDecorator implements TestSummary {
 	

@@ -1,5 +1,2 @@
 /core/
-/pluginsMock/
-/impMock/
-/tsImp/
-/Imp/
+/mocks/
