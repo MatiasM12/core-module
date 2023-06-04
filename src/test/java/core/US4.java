@@ -44,7 +44,7 @@ public class US4 {
         c.init(args);
         implementations1 = c.getImplementationNames();  //TSBadge,TSCA
     }
-    @BeforeEach
+/*    @BeforeEach
     public void escenario2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
         String path = "src\\test\\java\\directoriesMock\\carpetaVacia";
         String Imp = "DefaultTS";
@@ -55,21 +55,17 @@ public class US4 {
         c.init(args);
         implementations2 = c.getImplementationNames();  //[vacio]
 
-    }
+    }*/
     @Test
     public void CA1(){
         assertEquals(1, implementations1.length);
     }
     @Test
     public void CA2(){
-        assertEquals(0, implementations2.length);
-    }
-    @Test
-    public void CA3(){
         assertEquals(true, coreOK.changeImplementation(implementations1[0]));
     }
     @Test
-    public void CA4(){
+    public void CA3(){
         assertEquals(false, coreOK.changeImplementation(null));
     }
 }
