@@ -3,6 +3,7 @@ package coreInicialization;
 import core.ObservableTS;
 import Interfaces.Observable;
 import Interfaces.TestSummary;
+import breaker.CBOrigin;
 import core.TSNameExtractor;
 
 import java.io.FileNotFoundException;
@@ -10,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class Core {
 	
+	private CBOrigin origin;
 	private final String DEFAULT_PLUGIN_PATH = "plugins";
 	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTS";
 	private String[] args;
@@ -28,6 +30,8 @@ public class Core {
 		TestSummary plugin = otsFactory.init(repo,userStory,pluginElegido,ret);
 		return ret;
 	}
+	
+	
 	public String[] getImplementationNames(){
 		TSNameExtractor extractor = new TSNameExtractor();
 		return extractor.extractNames(this.otsFactory.getSet());
@@ -44,6 +48,24 @@ public class Core {
 			ret = false;
 		}
 		return ret;
+	}
+
+
+	public String getConnectionState() {
+		return "";
+		
+	}
+
+
+	public Integer amountOfRetrys() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public void retry(String url, String us) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
