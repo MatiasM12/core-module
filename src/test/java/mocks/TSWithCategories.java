@@ -6,33 +6,40 @@ import Interfaces.TestSummary;
 
 public class TSWithCategories implements TestSummary {
 
-	public String us;
-	public Map <String,Boolean> ca;
-	public Map <String,String> caCategories;
-	 
-	public TSWithCategories(String us, Map<String, Boolean> ca,Map <String,String> caCategories) {
+	public String us; 
+	public Map<String,Boolean> CA;
+	public Map<String,String> caCategories;
+	
+	public TSWithCategories(String us, Map<String, Boolean> cA, Map<String,String> caCategories) {
 		this.us = us;
-		this.ca = ca;
+		this.CA = cA;
 		this.caCategories = caCategories;
 	}
-
+	
+	
 	@Override
 	public TestSummary update(TestSummary ts) {
-		return this;
+		return ts ;
 	}
 	
-	public Map<String,Boolean>  getCA(){
-		return this.ca;
+	
+	public String getUS() {
+		return this.us;
 	}
 	
-	public int sizeCA(){
-		return this.ca.size();
+	public Map <String,Boolean> getCA() {
+		return this.CA;
 	}
 	
-
-	
-	public Map <String,String> getCategories() {
+	public Map <String,String> getAllCategories() {
 		return this.caCategories;
 	}
-
+	
+	public int getSizeOfCategories() {
+		return getAllCategories().size();
+	}
+	
+	public String getCategoryOf(String ca) {
+		return this.caCategories.get(ca);
+	}
 }

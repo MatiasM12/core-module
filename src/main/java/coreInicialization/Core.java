@@ -6,41 +6,52 @@ import Interfaces.TestSummary;
 import breaker.CBOrigin;
 import core.TSNameExtractor;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Properties;
 
 public class Core {
-	
+
 	private CBOrigin origin;
-	private final String DEFAULT_PLUGIN_PATH = "plugins";
-	private static final String DEFAULT_PLUGIN_ELEGIDO = "DefaultTS";
 	private String[] args;
 	private OriginTSFactory otsFactory;
-	private ObservableTSFactory obstsfactory;
-	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+	private ObservableTSFactory obstsFactory;
+	private TSNameExtractor extractor;
+	private PropertiesLoader propertiesLoader;
+
+	public Core() {
+		this.obstsFactory = new ObservableTSFactory();
+		this.extractor = new TSNameExtractor();
+		this.propertiesLoader = new PropertiesLoader();
+	}
+
+	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
 		//args = {repo, US, PluginElegido, pluginsPath
+		propertiesLoader.loadDefaultProperties("defaultArgs.properties");
 		this.args = args;
 		String repo = args[0];
 		String userStory = args[1];
-		String pluginElegido = args.length<3 ? DEFAULT_PLUGIN_ELEGIDO : args[2];
-		String pluginPath = args.length<4 ? DEFAULT_PLUGIN_PATH : args[3];
-		this.obstsfactory = new ObservableTSFactory();
-		ObservableTS ret = this.obstsfactory.create();
+		String pluginElegido = args.length<3 ? propertiesLoader.getDefaultPlugin() : args[2];
+		String pluginPath = args.length<4 ? propertiesLoader.getDefaultPluginPath() : args[3];
+		
+		ObservableTS ret = this.obstsFactory.create();
 		this.otsFactory = new OriginTSFactory(pluginPath);
-		TestSummary plugin = otsFactory.init(repo,userStory,pluginElegido,ret);
+		otsFactory.init(repo,userStory,pluginElegido,ret);
 		return ret;
 	}
-	
-	
+
+
 	public String[] getImplementationNames(){
-		TSNameExtractor extractor = new TSNameExtractor();
 		return extractor.extractNames(this.otsFactory.getSet());
 	}
+	
 	public boolean changeImplementation(String pluginElegido) {
-		String pluginPath = this.args.length<4 ? DEFAULT_PLUGIN_PATH : this.args[3];
+		String pluginPath = this.args.length<4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
 		boolean ret;
 		try {
-			TestSummary plugin = otsFactory.init(this.args[0], this.args[1], pluginElegido, this.obstsfactory.getTs());
+			TestSummary plugin = otsFactory.init(this.args[0], this.args[1], pluginElegido, this.obstsFactory.getTs());
 			ret = true;
 		}
 		catch(Exception e){
@@ -53,9 +64,8 @@ public class Core {
 
 	public String getConnectionState() {
 		return "";
-		
-	}
 
+	}
 
 	public Integer amountOfRetrys() {
 		// TODO Auto-generated method stub
@@ -65,7 +75,8 @@ public class Core {
 
 	public void retry(String url, String us) {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 
 }

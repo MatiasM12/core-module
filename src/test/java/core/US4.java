@@ -13,6 +13,7 @@ import Interfaces.Observer;
 import Interfaces.TestSummary;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class US4 {
     static Core coreOK;
 
     @BeforeEach
-    public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
         String path = "src\\test\\java\\directoriesMock\\multiplesFuentes";
         String Imp = "DefaultTS";
         String url = "url";

@@ -32,8 +32,14 @@ public class TSResultDefault implements TestSummary {
 		return this.CA;
 	}
 	
-	public Map <String,String> getCategories() {
+	public Map <String,String> getAllCategories() {
 		return this.caCategories;
 	}
+	
+	public String getCategoryOf(String ca) {
+		return this.caCategories.get(ca);
+	}
+	
+
 
 }

@@ -3,6 +3,7 @@ package core;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +16,7 @@ class US6 {
 	private static Core c;
 	
 	@BeforeAll
-	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
 		String path = "plugin";
 		String Imp = "TSConnectionPositive";
 		String url = "url";

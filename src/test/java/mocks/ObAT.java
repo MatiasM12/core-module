@@ -2,12 +2,17 @@ package mocks;
 
 import java.util.Objects;
 
+import Interfaces.Observable;
 import Interfaces.Observer;
 import Interfaces.TestSummary;
 
 public class ObAT implements Observer{
 
 	TestSummary ts;
+	
+	public ObAT(Observable obv) {
+		obv.addObserver(this);
+	}
 	
 	@Override
 	public void update(TestSummary ts) {

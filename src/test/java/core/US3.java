@@ -3,6 +3,7 @@ package core;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,13 +24,12 @@ public class US3 {
 	private static TestSummary ts;
 	
     @BeforeEach
-    public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
     	String ImplPlugin = "DefaultTS";
     	String url = "url";
     	String [] args  = new String[] {url,"US1",ImplPlugin};
-    	Observer o = new ObAT();
     	Observable obv=  new  Core().init(args);
-    	obv.addObserver(o);
+    	Observer o = new ObAT(obv);
     	ts = ((ObAT)o).getTS();
     }
     @Test
