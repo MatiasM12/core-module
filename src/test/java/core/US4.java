@@ -33,17 +33,10 @@ public class US4 {
         String url = "url";
         String us = "US1";
         String [] args  = new String [] {url,us,Imp,path};
-        Observer obs  = new Observer() {
-            @Override
-            public void update(TestSummary ts) {
-
-            }
-        };
-        Core c  = new Core();
+       // Core c  = new Core();
         Core coreOK = new Core();
         coreOK.init(args);
-        c.init(args);
-        implementations1 = c.getImplementationNames();  //TSBadge,TSCA
+        implementations1 = coreOK.getImplementationNames();  //TSBadge,TSCA
     }
 /*    @BeforeEach
     public void escenario2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {

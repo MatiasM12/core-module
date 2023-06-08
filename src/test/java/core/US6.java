@@ -24,15 +24,15 @@ class US6 {
 
 	}
 	@Test
-	 static void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+	 void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 		
 		System.out.println(c==null ? "soy nulo" : "no soy nulo");
-		assertEquals(c.initImplementation("imp.TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
+		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
 	}
 	@Test
 	 void openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 		System.out.println(c==null ? "soy nulo" : "no soy nulo");
-		assertEquals(c.initImplementation("imp.TSInexistente","www.github/proyecto1/","US1").isSuccess(),false);
+		assertEquals(c.initImplementation("TSInexistente","www.github/proyecto1/","US1").isSuccess(),false);
 	}
 
 	

@@ -16,7 +16,6 @@ public class OriginTSFactory {
     public TestSummary init(String url,String us,String pluginElegido,TestSummary ts) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
     	this.set = new OriginFinder(this.path).find(ts);
         TestSummary origin =  new OriginChooser().getOne(set, pluginElegido);
-        
         return origin;
     }
     public Set<TestSummary> getSet(){

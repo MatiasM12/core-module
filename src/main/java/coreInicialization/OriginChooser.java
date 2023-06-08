@@ -15,6 +15,10 @@ public class OriginChooser {
 	        while(iterator.hasNext()){
 	        	TestSummary t = iterator.next();
 	        	
+	        	
+	        	System.out.println(t.getClass().getName()+ "  "+impl+ "  "+t.getClass().getName().equals("imp."+impl) );
+	        	
+	        	
 	        	if(t.getClass().getName().equals("imp."+impl))
 	                return t;
 	        }
