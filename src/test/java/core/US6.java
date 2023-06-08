@@ -20,18 +20,14 @@ class US6 {
 	String [] args = new String[]  {"www.github/proyecto1/","US1","DefaultTS"};
 	c  = new Core();
 	c.init(args);
-	System.out.println(c==null ? "soy nulo" : "no soy nulo");
 
 	}
 	@Test
 	 void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-		
-		System.out.println(c==null ? "soy nulo" : "no soy nulo");
 		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
 	}
 	@Test
 	 void openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-		System.out.println(c==null ? "soy nulo" : "no soy nulo");
 		assertEquals(c.initImplementation("TSInexistente","www.github/proyecto1/","US1").isSuccess(),false);
 	}
 

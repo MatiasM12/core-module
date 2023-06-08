@@ -42,4 +42,6 @@ public class TSWithCategories implements TestSummary {
 	public String getCategoryOf(String ca) {
 		return this.caCategories.get(ca);
 	}
+	
+	
 }

@@ -23,7 +23,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class US4 {
     static String[] implementations1;
-    static String[] implementations2;
     static Core coreOK;
 
     @BeforeEach
@@ -34,32 +33,27 @@ public class US4 {
         String us = "US1";
         String [] args  = new String [] {url,us,Imp,path};
        // Core c  = new Core();
-        Core coreOK = new Core();
+        coreOK = new Core();
         coreOK.init(args);
         implementations1 = coreOK.getImplementationNames();  //TSBadge,TSCA
     }
-/*    @BeforeEach
-    public void escenario2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-        String path = "src\\test\\java\\directoriesMock\\carpetaVacia";
-        String Imp = "DefaultTS";
-        String url = "url";
-        String us = "US1";
-        String [] args  = new String [] {path,Imp,url,us};
-        Core c  = new Core();
-        c.init(args);
-        implementations2 = c.getImplementationNames();  //[vacio]
 
-    }*/
     @Test
     public void CA1(){
-        //assertEquals(1, implementations1.length);
+    	assertEquals(implementations1.length , 3);
     }
     @Test
-    public void CA2(){
-        //assertEquals(true, coreOK.changeImplementation(implementations1[0]));
+    public void CA2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+    	assertEquals(coreOK.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
+    	
+
     }
     @Test
-    public void CA3(){
-       // assertEquals(false, coreOK.changeImplementation(null));
+    public void CA3() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException{
+    	
+    	assertEquals(coreOK.initImplementation("TSInexistente","www.github/proyecto1/","US1").isSuccess(),false);
+    	
+  
+
     }
 }
