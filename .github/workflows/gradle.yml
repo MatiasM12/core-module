@@ -2,9 +2,9 @@ name: Java CI with Gradle
 
 on: 
   push:
-    branches: [ "main" ]
+    branches: [ "rama_rota" ]
   pull_request:
-    branches: [ "main" ] 
+    branches: [ "rama_rota" ] 
 
 permissions:
   contents: read
