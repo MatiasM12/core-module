@@ -11,7 +11,6 @@ public class CBOrigin {
 	}
 
 	public Response makeRequest(OriginTS ts, String url, String us) {
-
 		return this.state.makeRequest(ts, url, us);
 	}
 

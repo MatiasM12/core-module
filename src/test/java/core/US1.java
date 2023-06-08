@@ -23,17 +23,13 @@ public class US1 {
 	private static TestSummary ts;
 
 	@BeforeEach
-	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
-			NoSuchMethodException, InvocationTargetException, IOException {
+	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
 		String us = "US1";
 		String url = "url";
 		String[] args = new String[] { url, us };
 		Observable obv = new Core().init(args);
 		Observer o = new ObAT(obv);
-
 		ts = ((ObAT) o).getTS();
-
-		System.out.println(ts == null);
 	}
 
 	@Test
