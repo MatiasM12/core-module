@@ -2,7 +2,7 @@ package core;
 
 import coreInicialization.Core;
 import mocks.ObAT;
-import mocks.TSStub;
+import mocks.TSStub; 
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
