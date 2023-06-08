@@ -17,7 +17,7 @@ public class OriginFinder {
 		this.path = path;
 	}
 	 
-    public Set<TestSummary> find(TestSummary ts,String url ,String us) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
+    public Set<TestSummary> find(TestSummary ts) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, FileNotFoundException {
         File file = new File(this.path);
         Set<TestSummary> tSSet = new HashSet<>();
         if (!file.exists()) throw new FileNotFoundException();
@@ -26,10 +26,17 @@ public class OriginFinder {
         for (File f : files) {
             if (f.getName().endsWith(".class")) {
                 String fileName = f.getName().replace(".class", "");
-                Class<?> cls = Class.forName(fileName);
+                
+                System.out.println(fileName);                
+                Class<?> cls = Class.forName("imp."+fileName);
                 if (!OriginTS.class.isAssignableFrom(cls)) continue;
-                Constructor<?> constructor = cls.getDeclaredConstructor(TestSummary.class,String.class,String.class);
-                tSSet.add((OriginTS) constructor.newInstance(ts,url,us));
+                
+                for (Constructor<?>  c : cls.getConstructors()) {
+					System.out.println(c.toString());
+				}
+                
+                Constructor<?> constructor = cls.getDeclaredConstructor(TestSummary.class);
+                tSSet.add((OriginTS) constructor.newInstance(ts));
             }
         }
         return tSSet;

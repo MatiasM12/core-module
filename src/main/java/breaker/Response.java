@@ -5,7 +5,11 @@ public class Response {
 	Boolean  success;
 	
 	
-	Boolean isSuccess() {
-		return true;
+	Response(Boolean success){
+		this.success = success;
+	}
+	
+	public Boolean isSuccess() {
+		return success;
 	}
 }

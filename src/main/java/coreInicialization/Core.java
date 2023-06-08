@@ -2,8 +2,10 @@ package coreInicialization;
 
 import core.ObservableTS;
 import Interfaces.Observable;
+import Interfaces.OriginTS;
 import Interfaces.TestSummary;
 import breaker.CBOrigin;
+import breaker.Response;
 import core.TSNameExtractor;
 
 import java.io.FileInputStream;
@@ -25,6 +27,7 @@ public class Core {
 		this.obstsFactory = new ObservableTSFactory();
 		this.extractor = new TSNameExtractor();
 		this.propertiesLoader = new PropertiesLoader();
+		this.origin = new CBOrigin();
 	}
 
 	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
@@ -35,10 +38,9 @@ public class Core {
 		String userStory = args[1];
 		String pluginElegido = args.length<3 ? propertiesLoader.getDefaultPlugin() : args[2];
 		String pluginPath = args.length<4 ? propertiesLoader.getDefaultPluginPath() : args[3];
-		
-		ObservableTS ret = this.obstsFactory.create();
 		this.otsFactory = new OriginTSFactory(pluginPath);
-		otsFactory.init(repo,userStory,pluginElegido,ret);
+		ObservableTS ret = this.obstsFactory.create();
+		this.initImplementation(pluginElegido, repo, userStory);
 		return ret;
 	}
 
@@ -47,18 +49,11 @@ public class Core {
 		return extractor.extractNames(this.otsFactory.getSet());
 	}
 	
-	public boolean changeImplementation(String pluginElegido) {
+	public Response initImplementation(String pluginElegido,String repo,String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 		String pluginPath = this.args.length<4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
-		boolean ret;
-		try {
-			TestSummary plugin = otsFactory.init(this.args[0], this.args[1], pluginElegido, this.obstsFactory.getTs());
-			ret = true;
-		}
-		catch(Exception e){
-			e.printStackTrace();
-			ret = false;
-		}
-		return ret;
+		TestSummary plugin = otsFactory.init(repo, us, pluginElegido, this.obstsFactory.getTs());
+		return this.origin.makeRequest((OriginTS)plugin,repo,us);
+		
 	}
 
 

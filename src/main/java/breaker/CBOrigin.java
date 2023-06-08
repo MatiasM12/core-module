@@ -1,31 +1,17 @@
 package breaker;
 
+import Interfaces.OriginTS;
 import Interfaces.TestSummary;
 
 public class CBOrigin {
-	 State state; 
-	 int failureThreshold;
-	 int retryInterval;
-	 int failureCount;
-	 long lastFailure;
+	 State state; 	 
 	 
-	 
-	 public Response makeRequest(TestSummary ts) {
-		 
-		 return new Response();
+	 public CBOrigin(){
+		 this.state = new State();
+	 }
+	 	 
+	 public Response makeRequest(OriginTS ts,String url,String us) {
+		 return this.state.makeRequest(ts, url, us);
 	 }
 
-	 public void open() {}
-
-	 public void close() {}
-
-	 public void halfOpen() {}
-
-	 public void recordFailures()  {}
-
-	 public void recordSuccess() {}
-
-	 public boolean isThresholdReached() {
-		 return true;
-	 }
 }

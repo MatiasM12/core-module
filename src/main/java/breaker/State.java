@@ -5,21 +5,21 @@ import Interfaces.TestSummary;
 
 public class State {
 
-	public Response makeRequest(TestSummary ts,String url,String us) {
+	public Response makeRequest(OriginTS ts,String url,String us) {
 		 
-		 if(((OriginTS)ts).connectTS(url, us)) this.open();
-		 
-		 
-		 
+		 if(ts.connectTS(url, us)) return this.close();
+		 		 
+		 return this.open();
 		
-		 return new Response();
+
 	 }
 
-	 public void open() {}
+	 public Response open() {
+		 return new Response(false);
+	 }
 
-	 public void close() {}
+	 public Response close() {
+		 return new Response(true);
+	 }
 
-	 public void halfOpen() {}
-
-	 public void recordFailures()  {}
 }

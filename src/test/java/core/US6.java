@@ -15,29 +15,25 @@ class US6 {
 
 	private static Core c;
 	
-//	@BeforeAll
-//	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
-//		String path = "plugin";
-//		String Imp = "TSConnectionPositive";
-//		String url = "url";
-//		String us = "US1";
-//		String [] args  = new String [] {url,us,Imp,path};
-//		c  = new Core();
-//		c.init(args);
-//		
-//	}
-	@Test
-	 void closeConnection () {
-		//assertEquals(c.getConnectionState(),"Cerrado");
+	@BeforeAll
+	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
+	String [] args = new String[]  {"www.github/proyecto1/","US1","TSConexionExitosa"};
+	Core c  = new Core();
+	c.init(args);
+
+		
 	}
 	@Test
-	 void openConnection() {
-		//assertEquals(c.getConnectionState(),"Abierto");
+	 void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
+	}
+	@Test
+	 void openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),false);
 	}
 	@Test
 	 void halfOpen() {
-		//assertEquals(c.amountOfRetrys(), 5);
-		//assertEquals(c.getConnectionState(), "Abierto");
+		
 	}
 	@Test
 	 void halfOpenToOpen() {
