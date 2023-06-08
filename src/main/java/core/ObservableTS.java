@@ -1,6 +1,5 @@
 package core;
 
-
 import Interfaces.Observable;
 import Interfaces.Observer;
 import Interfaces.TestSummary;
@@ -8,13 +7,13 @@ import Interfaces.TestSummary;
 import java.util.Iterator;
 
 public class ObservableTS extends TSDecorator implements Observable {
-	
+
 	TestSummary lastTS;
-	
+
 	public ObservableTS(TestSummary concrete) {
 		super(concrete);
 	}
-	
+
 	@Override
 	public TestSummary update(TestSummary ts) {
 		this.lastTS = ts;
@@ -22,7 +21,6 @@ public class ObservableTS extends TSDecorator implements Observable {
 		notifyObservers(tsUpdate);
 		return tsUpdate;
 	}
-
 
 	@SuppressWarnings("static-access")
 	@Override

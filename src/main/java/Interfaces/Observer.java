@@ -1,5 +1,7 @@
 package Interfaces;
 
-public interface  Observer {
-	 void update(TestSummary ts);
+public interface Observer {
+	
+	void update(TestSummary ts);
+	
 }

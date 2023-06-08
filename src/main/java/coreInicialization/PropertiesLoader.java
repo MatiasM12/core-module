@@ -5,23 +5,22 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesLoader {
-	
-    private Properties props;
 
-    public PropertiesLoader() {
-        this.props = new Properties();
-    }
+	private Properties props;
 
-    public void loadDefaultProperties(String file) throws IOException {
-        props.load(new FileInputStream(file));
-    }
+	public PropertiesLoader() {
+		this.props = new Properties();
+	}
 
-    public String getDefaultPlugin() {
-        return props.getProperty("defaultPlugin");
-    }
+	public void loadDefaultProperties(String file) throws IOException {
+		props.load(new FileInputStream(file));
+	}
 
-    public String getDefaultPluginPath() {
-        return props.getProperty("defaultPluginPath");
-    }
+	public String getDefaultPlugin() {
+		return props.getProperty("defaultPlugin");
+	}
+
+	public String getDefaultPluginPath() {
+		return props.getProperty("defaultPluginPath");
+	}
 }
-

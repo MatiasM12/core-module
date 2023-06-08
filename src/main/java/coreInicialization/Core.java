@@ -8,11 +8,9 @@ import breaker.CBOrigin;
 import breaker.Response;
 import core.TSNameExtractor;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Properties;
 
 public class Core {
 
@@ -31,32 +29,30 @@ public class Core {
 	}
 
 	public Observable init(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
-		//args = {repo, US, PluginElegido, pluginsPath
+		// args = {repo, US, PluginElegido, pluginsPath
 		propertiesLoader.loadDefaultProperties("defaultArgs.properties");
 		this.args = args;
 		String repo = args[0];
 		String userStory = args[1];
-		String pluginElegido = args.length<3 ? propertiesLoader.getDefaultPlugin() : args[2];
-		String pluginPath = args.length<4 ? propertiesLoader.getDefaultPluginPath() : args[3];
+		String pluginElegido = args.length < 3 ? propertiesLoader.getDefaultPlugin() : args[2];
+		String pluginPath = args.length < 4 ? propertiesLoader.getDefaultPluginPath() : args[3];
 		this.otsFactory = new OriginTSFactory(pluginPath);
 		ObservableTS ret = this.obstsFactory.create();
 		this.initImplementation(pluginElegido, repo, userStory);
 		return ret;
 	}
 
-
-	public String[] getImplementationNames(){
+	public String[] getImplementationNames() {
 		return extractor.extractNames(this.otsFactory.getSet());
 	}
-	
-	public Response initImplementation(String pluginElegido,String repo,String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-		String pluginPath = this.args.length<4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
+
+	public Response initImplementation(String pluginElegido, String repo, String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException,IllegalAccessException, NoSuchMethodException {
+		String pluginPath = this.args.length < 4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
 		TestSummary plugin = otsFactory.init(repo, us, pluginElegido, this.obstsFactory.getTs());
 		System.out.println(plugin == null ? "NULL PLUGIN" : "NO NULL PLUGIN");
-		return this.origin.makeRequest((OriginTS)plugin,repo,us);
-		
-	}
+		return this.origin.makeRequest((OriginTS) plugin, repo, us);
 
+	}
 
 	public String getConnectionState() {
 		return "";
@@ -68,11 +64,9 @@ public class Core {
 		return null;
 	}
 
-
 	public void retry(String url, String us) {
 		// TODO Auto-generated method stub
 
 	}
-
 
 }
