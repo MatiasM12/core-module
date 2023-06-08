@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class ObservableTS extends TSDecorator implements Observable {
 
-	TestSummary lastTS;
+	public TestSummary lastTS;
 
 	public ObservableTS(TestSummary concrete) {
 		super(concrete);
