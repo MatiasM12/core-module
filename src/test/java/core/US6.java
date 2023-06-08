@@ -13,38 +13,28 @@ import coreInicialization.Core;
 
 class US6 {
 
-	private static Core c;
+	public static Core c;
 	
 	@BeforeAll
-	public void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
-	String [] args = new String[]  {"www.github/proyecto1/","US1","TSConexionExitosa"};
-	Core c  = new Core();
+	public static void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, IOException {
+	String [] args = new String[]  {"www.github/proyecto1/","US1","DefaultTS"};
+	c  = new Core();
 	c.init(args);
+	System.out.println(c==null ? "soy nulo" : "no soy nulo");
 
-		
 	}
 	@Test
-	 void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
+	 static void closeConnection () throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+		
+		System.out.println(c==null ? "soy nulo" : "no soy nulo");
+		assertEquals(c.initImplementation("imp.TSExistente","www.github/proyecto1/","US1").isSuccess(),true);
 	}
 	@Test
 	 void openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.initImplementation("TSExistente","www.github/proyecto1/","US1").isSuccess(),false);
+		System.out.println(c==null ? "soy nulo" : "no soy nulo");
+		assertEquals(c.initImplementation("imp.TSInexistente","www.github/proyecto1/","US1").isSuccess(),false);
 	}
-	@Test
-	 void halfOpen() {
-		
-	}
-	@Test
-	 void halfOpenToOpen() {
-		//c.retry("urlNueva","NuevaUS");
-		//assertEquals(c.getConnectionState(), "Abierto");
-	}
-	@Test
-	 void halfOpenToClose() {
-		//c.retry("urlNueva","NuevaUS");
-		//assertEquals(c.getConnectionState(), "Cerrado");
-	}
+
 	
 	
 

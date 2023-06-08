@@ -21,8 +21,10 @@ public class DefaultTS extends OriginTS {
 		Map<String,Boolean> ca = new HashMap<String,Boolean>();
 		Map<String,String> categoria = new HashMap<String,String>();
 		ca.put("CA1", true);
-		categoria.put("CA1", "FUNCIONAL");		
-		new TSResultDefault(us,ca,categoria);
+		categoria.put("CA1", "FUNCIONAL");	
+		
+		this.update(new TSResultDefault(us,ca,categoria));
+		
 		return true;
 	}
 

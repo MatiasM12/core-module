@@ -30,7 +30,7 @@ public class US2 {
     	NOT_A_SOURCE = "src/test/java/directoriesMock/noEsFuente/";
     	ONE_SOURCE = "src/test/java/directoriesMock/fuenteSimple/";
     	MULTIPLE_SOURCES = "src/test/java/directoriesMock/multiplesFuentes/";
-    	//SPECIFIC_PROVIDER = "DefaultTS";
+    	SPECIFIC_PROVIDER = "imp.DefaultTS";
     }
    
     @Test 
@@ -67,8 +67,14 @@ public class US2 {
     @Test
     public void CA6() throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
     	finder = new OriginFinder(MULTIPLE_SOURCES);
+    	
+    
+    	
     	Set<TestSummary> setTS = finder.find(new TSVacio());
-        assertTrue(setTS.size() >= 2);
+    
+    	System.out.println(setTS.size());
+    	
+    	assertTrue(setTS.size() >= 2);
     }
     
     @Test

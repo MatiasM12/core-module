@@ -24,10 +24,11 @@ public class OriginFinder {
         
         File[] files = file.listFiles();
         for (File f : files) {
+        	
+        	System.out.println(f.getName()+" Toy aca basuraaaaaaaaaaaaaaaaaaas");
+        	
             if (f.getName().endsWith(".class")) {
-                String fileName = f.getName().replace(".class", "");
-                
-                System.out.println(fileName);                
+                String fileName = f.getName().replace(".class", "");           
                 Class<?> cls = Class.forName("imp."+fileName);
                 if (!OriginTS.class.isAssignableFrom(cls)) continue;
                 

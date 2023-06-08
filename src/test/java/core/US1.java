@@ -32,7 +32,11 @@ public class US1 {
     	String [] args  = new String[] {path,url,ImplPlugin};
     	Observable obv=  new  Core().init(args);
     	Observer o = new ObAT(obv);
+    
+    	
     	ts = ((ObAT)o).getTS();
+    	
+    	System.out.println(ts==null);
     }
 
 	@Test

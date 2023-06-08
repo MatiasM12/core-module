@@ -16,6 +16,7 @@ public class ObAT implements Observer{
 	
 	@Override
 	public void update(TestSummary ts) {
+		System.out.println(ts.toString()+" ts del update");
 		this.ts = ts;
 	}
 	
