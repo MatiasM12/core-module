@@ -26,7 +26,7 @@ import com.google.gson.JsonElement;
 
 public class BadgeTS extends OriginTS implements HttpHandler {
 
-	//HttpServer server;
+	HttpServer server;
 	
 	public BadgeTS(TestSummary ts) {
 		super(ts);
@@ -148,7 +148,7 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 		
 		
 		try {
-			HttpServer server;
+			//HttpServer server;
 			System.out.println("Todo salio bien");
 			//server.stop(0);
 			server = HttpServer.create(new InetSocketAddress(8095), 0);
