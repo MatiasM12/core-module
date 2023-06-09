@@ -26,6 +26,8 @@ import com.google.gson.JsonElement;
 
 public class BadgeTS extends OriginTS implements HttpHandler {
 
+	HttpServer server;
+	
 	public BadgeTS(TestSummary ts) {
 		super(ts);
 		System.out.println("Me creee");
@@ -143,14 +145,16 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	
 
 	private boolean crearEndpoint() {
-		HttpServer server;
+		
+		
 		try {
 			System.out.println("Todo salio bien");
-			server = HttpServer.create(new InetSocketAddress(8093), 0);
-			server.createContext("/mi-endpoint", this);
-	        server.setExecutor(null);
-	        server.start();
-	        System.out.println("Servidor iniciado en el puerto 8093");
+			this.server.stop(0);
+			this.server = HttpServer.create(new InetSocketAddress(8095), 0);
+			this.server.createContext("/mi-endpoint", this);
+	        this.server.setExecutor(null);
+	        this.server.start();
+	        System.out.println("Servidor iniciado en el puerto 8095");
 			return true;
 		} catch (IOException e) {
 			System.out.println(e.getStackTrace().getClass().getName());
