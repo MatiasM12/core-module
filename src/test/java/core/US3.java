@@ -38,7 +38,7 @@ public class US3 {
 		assertEquals(((TSBadge) ts.update(newTS)).getState(), true);
 	}
 	@Test
-	void CA2FailedBadge() {
+	void CA2FailedBadge () {
 		TestSummary newTS = createTS("US1", false);
 		assertEquals(((TSBadge) ts.update(newTS)).getState(), false);
 	}
