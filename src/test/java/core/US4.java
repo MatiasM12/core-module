@@ -27,7 +27,7 @@ public class US4 {
 
 	@Test
 	public void CA1() {
-		assertEquals(implementations1.length, 3);
+		assertEquals(implementations1.length, 4);
 	}
 
 	@Test
