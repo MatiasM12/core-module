@@ -25,6 +25,7 @@ public class OriginFinder {
 		File[] files = file.listFiles();
 
 		for (File f : files) {
+			System.out.println(f.getName());
 			if (f.getName().endsWith(".class")) {
 				String fileName = f.getName().replace(".class", "");
 				Class<?> cls = Class.forName(fileName);

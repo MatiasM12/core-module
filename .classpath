@@ -6,7 +6,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="directoriesMock/|directoriesMock/|directoriesMock/fuenteSimple/|directoriesMock/multiplesFuentes/|Imp/|directoriesMock/multiplesFuentes/|directoriesMock/fuenteSimple/|directoriesMock/multiplesFuentes/" kind="src" output="bin/test" path="src/test/java">
+	<classpathentry excluding="directoriesMock/|directoriesMock/|directoriesMock/fuenteSimple/|directoriesMock/multiplesFuentes/|Imp/|directoriesMock/multiplesFuentes/|directoriesMock/fuenteSimple/|directoriesMock/multiplesFuentes/|directoriesMock/|directoriesMock/carpetaVacia/|directoriesMock/fuenteSimple/|directoriesMock/multiplesFuentes/|directoriesMock/noEsFuente/" kind="src" output="bin/test" path="src/test/java">
 		<attributes>
 			<attribute name="test" value="true"/>
 			<attribute name="gradle_scope" value="test"/>
@@ -32,5 +32,6 @@
 			<attribute name="gradle_used_by_scope" value=""/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="src/test/java/directoriesMock"/>
 	<classpathentry kind="output" path="bin/default"/>
 </classpath>
