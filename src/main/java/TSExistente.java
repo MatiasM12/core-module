@@ -1,4 +1,5 @@
-
+import java.util.HashMap;
+import java.util.Map;
 
 import Interfaces.OriginTS;
 import Interfaces.TestSummary;
@@ -13,7 +14,13 @@ public class TSExistente extends OriginTS {
 
 	@Override
 	public boolean connectTS(String url, String us) {
-		this.update(new TSBADGE(us,true));
+		Map<String, Boolean> cA = new HashMap<String, Boolean>();
+		cA.put("CA1", true);
+		cA.put("CA2", true);
+		Map<String, String> cACategories = new HashMap<String, String>();
+		cACategories.put("CA1", "Seguridad");
+		cACategories.put("CA2", "Seguridad");
+		this.update(new TSBADGE(us,cA,cACategories,true));
 		return true;
 	}
 

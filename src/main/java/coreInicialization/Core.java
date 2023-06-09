@@ -41,7 +41,7 @@ public class Core {
 		this.initImplementation(pluginElegido, repo, userStory);
 		return ret;
 	}
-
+ 
 	public String[] getImplementationNames() {
 		return extractor.extractNames(this.otsFactory.getSet());
 	}

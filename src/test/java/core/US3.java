@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +44,8 @@ public class US3 {
 	}
 
 	private TestSummary createTS(String us, Boolean b) {
-		return new TSBadge("US1", b);
+		Map<String, Boolean> cA = new HashMap<String, Boolean>();
+		Map<String, String> cACategories = new HashMap<String, String>();
+		return new TSBadge(us, cA, cACategories, b);
 	}
 }
