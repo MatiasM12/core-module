@@ -4,6 +4,7 @@ import java.util.Map;
 import Interfaces.OriginTS;
 import Interfaces.TestSummary;
 import core.TSBADGE;
+import core.TSResultDefault;
 
 public class TSExistente extends OriginTS {
 
@@ -20,7 +21,7 @@ public class TSExistente extends OriginTS {
 		Map<String, String> cACategories = new HashMap<String, String>();
 		cACategories.put("CA1", "Seguridad");
 		cACategories.put("CA2", "Seguridad");
-		this.update(new TSBADGE(us,cA,cACategories,true));
+		this.update(new TSResultDefault(us,cA,cACategories));
 		return true;
 	}
 

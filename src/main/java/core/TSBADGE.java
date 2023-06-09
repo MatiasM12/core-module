@@ -27,11 +27,7 @@ public class TSBADGE implements TestSummary {
 		 return badgeResult;
 	 }
 	 
-	@Override
-	public TestSummary update(TestSummary ts) {
-		// TODO Auto-generated method stub
-		return ts;
-	}
+
 	
 	public String getUS() {
 		return this.us;
@@ -61,6 +57,11 @@ public class TSBADGE implements TestSummary {
 			}
 		}
 		return keys;
+	}
+
+	@Override
+	public TestSummary update(TestSummary ts) {
+		return ts;
 	}
 
 }
