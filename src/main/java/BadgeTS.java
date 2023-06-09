@@ -104,7 +104,6 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 			 
 		String conexion =  "https://api.github.com/repos/" + "MatiasM12" + "/" + "core-module" + "/actions/runs";
 		
-		System.out.println(conexion+"");
 		
 		 try {
 	            URL apiUrl = new URL(conexion);
