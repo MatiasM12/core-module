@@ -37,12 +37,12 @@ public class US3 {
 		TestSummary newTS = createTS("US1", true);
 		assertEquals(((TSBadge) ts.update(newTS)).getState(), true);
 	}
-
+	@Test
 	void CA2FailedBadge() {
 		TestSummary newTS = createTS("US1", false);
 		assertEquals(((TSBadge) ts.update(newTS)).getState(), false);
 	}
-
+	@Test
 	private TestSummary createTS(String us, Boolean b) {
 		Map<String, Boolean> cA = new HashMap<String, Boolean>();
 		Map<String, String> cACategories = new HashMap<String, String>();
