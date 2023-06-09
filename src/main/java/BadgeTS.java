@@ -34,6 +34,8 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	@Override
 	public boolean connectTS(String url, String us) {
 		
+		System.out.println("Estoy aca");
+		
 		JsonElement s = parseRespuesta(conectarAGithub(url,us)).getAsJsonObject().get("workflow_runs").getAsJsonArray().get(0).getAsJsonObject().get("conclusion");
 		
 		if(s.toString().equals('"'+"success"+'"')) this.update(new TSBadgeProyecto(true));
@@ -105,6 +107,9 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	private String conectarAGithub(String url,String us) {
 			 
 		String conexion =  "https://api.github.com/repos/" + url + "/" + us + "/actions/runs";
+		
+		System.out.println(conexion+"");
+		
 		 try {
 	            URL apiUrl = new URL(conexion);
 	            HttpURLConnection connection = (HttpURLConnection) apiUrl.openConnection();
