@@ -35,7 +35,7 @@ class US7 {
 	}
 
 	@Test
-	void testSummaryAnterior() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	void CA1lastTS() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").isSuccess(), false);
 		assertEquals(ts.equals(((ObAT) o).getTS()), true);

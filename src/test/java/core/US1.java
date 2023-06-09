@@ -33,21 +33,21 @@ public class US1 {
 	}
 
 	@Test
-	void CA1() {
+	void CA1AddCA() {
 		Map<String, Boolean> test = createMap("CA1", true); // [CA1 : TRUE]
 		TestSummary newTS = createTS(test);
 		assertEquals(((TSStub) ts.update(newTS)).sizeCA(), 1);
 	}
 
 	@Test
-	void CA2() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+	void CA2EraseTest() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 		Map<String, Boolean> test = new HashMap<String, Boolean>(); // []
 		TestSummary newTS = createTS(test);
 		assertEquals(((TSStub) ts.update(newTS)).sizeCA(), 0);
 	}
 
 	@Test
-	void CA3() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
+	void CA3ChangeState() throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException {
 		Map<String, Boolean> test1 = createMap("CA1", true); // [CA1 : TRUE]
 		Map<String, Boolean> test2 = createMap("CA1", false); // [CA1 : FALSE]
 		TestSummary newTSTrue = createTS(test1);

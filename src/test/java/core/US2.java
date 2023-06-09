@@ -33,33 +33,33 @@ public class US2 {
 	}
 
 	@Test
-	public void CA1() {
+	public void CA1NonExistentPath() {
 		finder = new OriginFinder(NON_EXISTENT_PATH);
 		assertThrows(FileNotFoundException.class, () -> finder.find(new TSVacio()));
 	}
 
 	@Test
-	public void CA2() {
+	public void CA2InvalidPath() {
 		finder = new OriginFinder(INVALID_PATH);
 		assertThrows(FileNotFoundException.class, () -> finder.find(new TSVacio()));
 	}
 
 	@Test
-	public void CA3() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
+	public void CA3EmptyDirectory() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		finder = new OriginFinder(EMPTY_DIRECTORY);
 		assertTrue(finder.find(new TSVacio()).isEmpty());
 	}
 
 	@Test
-	public void CA4() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
+	public void CA4NotASource() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		finder = new OriginFinder(NOT_A_SOURCE);
 		assertTrue(finder.find(new TSVacio()).isEmpty());
 	}
 
 	@Test
-	public void CA5() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
+	public void CA5OneSource() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		finder = new OriginFinder(ONE_SOURCE);
 		Set<TestSummary> setTS = finder.find(new TSVacio());
@@ -67,18 +67,12 @@ public class US2 {
 	}
 
 	@Test
-	public void CA6() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
+	public void CA6MultipleSources() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
 			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
 		finder = new OriginFinder(MULTIPLE_SOURCES);
 		Set<TestSummary> setTS = finder.find(new TSVacio());
 		assertTrue(setTS.size() >= 2);
-	}
-
-	@Test
-	public void CA7() throws FileNotFoundException, ClassNotFoundException, InstantiationException,
-			IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-		finder = new OriginFinder(ONE_SOURCE);
-		Set<TestSummary> setTS = finder.find(new TSVacio());
 		assertTrue(setTS.stream().anyMatch(t -> t.getClass().getName().equals(SPECIFIC_PROVIDER)));
 	}
+
 }

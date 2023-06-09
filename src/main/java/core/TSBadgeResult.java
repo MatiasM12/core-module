@@ -8,14 +8,14 @@ import java.util.Set;
 
 import Interfaces.TestSummary;
 
-public class TSBADGE implements TestSummary {
+public class TSBadgeResult implements TestSummary {
 
 	String us;
 	Map<String, Boolean> CA;
 	Map<String, String> caCategories;
 	Boolean badgeResult;
 
-	public TSBADGE(String us, Map<String, Boolean> cA, Map<String, String> caCategories, Boolean badge) {
+	public TSBadgeResult(String us, Map<String, Boolean> cA, Map<String, String> caCategories, Boolean badge) {
 		super();
 		this.us = us;
 		this.CA = cA;

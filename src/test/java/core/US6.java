@@ -26,13 +26,13 @@ class US6 {
 	}
 
 	@Test
-	void closeConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	void CA1closeConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(c.initImplementation("TSExistente", "www.github/proyecto1/", "US1").isSuccess(), true);
 	}
 
 	@Test
-	void openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	void CA2openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").isSuccess(), false);
 	}

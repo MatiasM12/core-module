@@ -3,7 +3,7 @@ import java.util.Map;
 
 import Interfaces.OriginTS;
 import Interfaces.TestSummary;
-import core.TSBADGE;
+import core.TSBadgeResult;
 import core.TSResultDefault;
 
 public class TSExistente extends OriginTS {

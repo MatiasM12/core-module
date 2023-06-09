@@ -43,25 +43,25 @@ public class US5 {
 	}
 
 	@Test
-	public void CA1() {
+	public void CA1ValidCategory() {
 		assertEquals(((TSWithCategories) ts.update(newValidCategoryTS)).getSizeOfCategories(), 1);
 		assertEquals(((TSWithCategories) ts.update(newValidCategoryTS)).getCategoryOf("CA1"), "Seguridad");
 		assertTrue(validCategories.contains(((TSWithCategories) ts.update(newValidCategoryTS)).getCategoryOf("CA1")));
 	}
 
 	@Test
-	public void CA2() {
+	public void CA2WithoutCategory() {
 		assertEquals(((TSWithCategories) ts.update(newEmptyCategoryTS)).getSizeOfCategories(), 0);
 		assertEquals(((TSWithCategories) ts.update(newEmptyCategoryTS)).getCategoryOf("CA1"), null);
 	}
 
 	@Test
-	public void CA3() {
+	public void CA3InvalidCategory() {
 		assertFalse(validCategories.contains(((TSWithCategories) ts.update(newInvalidCategoryTS)).getCategoryOf("CA1")));
 	}
 
 	@Test
-	public void CA4() {
+	public void CA4CategoryFilter() {
 		List<String> caOfCategory = ((TSWithCategories) ts.update(tsWithMultipleCategories)).getCAsByCategory("Seguridad");
 		assertEquals(caOfCategory.size(), 2);
 		assertEquals(caOfCategory.get(0), "CA1");
@@ -69,7 +69,7 @@ public class US5 {
 	}
 
 	@Test
-	public void CA5() {
+	public void CA5CategoryEmptyFilter() {
 		List<String> caEmptyCategory = ((TSWithCategories) ts.update(tsWithMultipleCategories)).getCAsByCategory("");
 		assertEquals(caEmptyCategory.size(), 0);
 	}

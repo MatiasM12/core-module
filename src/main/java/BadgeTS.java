@@ -2,7 +2,7 @@
 
 import Interfaces.OriginTS;
 import Interfaces.TestSummary;
-import core.TSBADGE;
+import core.TSBadgeResult;
 import core.TSBadgeProyecto;
 
 import java.io.BufferedReader;

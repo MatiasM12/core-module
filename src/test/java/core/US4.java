@@ -26,18 +26,18 @@ public class US4 {
 	}
 
 	@Test
-	public void CA1() {
+	public void CA1ObtenerImplementacion() {
 		assertEquals(implementations1.length, 4);
 	}
 
 	@Test
-	public void CA2() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	public void CA2ElegirImplementacion() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(coreOK.initImplementation("TSExistente", "www.github/proyecto1/", "US1").isSuccess(), true);
 	}
 
 	@Test
-	public void CA3() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	public void CA3ElegirYFallo() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(coreOK.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").isSuccess(), false);
 	}
