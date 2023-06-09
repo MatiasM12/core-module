@@ -18,13 +18,13 @@ public class Core {
 	private String[] args;
 	private OriginTSFactory otsFactory;
 	private ObservableTSFactory obstsFactory;
-	private TSNameExtractor extractor;
+	private ExtractorFactory factoryExtractor;
 	private PropertiesLoader propertiesLoader;
 
 	public Core() {
 		this.obstsFactory = new ObservableTSFactory();
-		this.extractor = new TSNameExtractor();
 		this.propertiesLoader = new PropertiesLoader();
+		this.factoryExtractor = new ExtractorFactory();
 		this.factoryCBOrigin = new CBOriginFactory();
 	}
 
@@ -36,6 +36,7 @@ public class Core {
 		String userStory = args[1];
 		String pluginElegido = args.length < 3 ? propertiesLoader.getDefaultPlugin() : args[2];
 		String pluginPath = args.length < 4 ? propertiesLoader.getDefaultPluginPath() : args[3];
+		this.factoryExtractor.create();
 		this.otsFactory = new OriginTSFactory(pluginPath);
 		ObservableTS ret = this.obstsFactory.create();
 		this.factoryCBOrigin.createBreaker();
@@ -44,7 +45,7 @@ public class Core {
 	}
  
 	public String[] getImplementationNames() {
-		return extractor.extractNames(this.otsFactory.getSet());
+		return factoryExtractor.getExtractor().extractNames(this.otsFactory.getSet());
 	}
 
 	public Response initImplementation(String pluginElegido, String repo, String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException,IllegalAccessException, NoSuchMethodException {
