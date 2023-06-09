@@ -30,14 +30,10 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	
 	public BadgeTS(TestSummary ts) {
 		super(ts);
-		System.out.println("Me creee");
 	}
 
 	@Override
 	public boolean connectTS(String url, String us) {
-		
-		System.out.println("Estoy aca");
-		
 		JsonElement s = parseRespuesta(conectarAGithub(url,us)).getAsJsonObject().get("workflow_runs").getAsJsonArray().get(0).getAsJsonObject().get("conclusion");
 		
 		if(s.toString().equals('"'+"success"+'"')) this.update(new TSBadgeProyecto(true));
@@ -65,11 +61,7 @@ public class BadgeTS extends OriginTS implements HttpHandler {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Authorization", "Bearer " + url);
-            															
-
-            System.out.println(url+"URL");
-            System.out.println(us +"US");
-            
+            													
             // Configura el cuerpo de la solicitud con los detalles del webhook
             String body = "{ \"name\": \"web\", \"active\": true, \"events\": [\"workflow_run\"], \"config\": { \"url\": \"" + webhookUrl + "\" } }";
             byte[] requestBody = body.getBytes(StandardCharsets.UTF_8);
@@ -97,10 +89,8 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 
             // Verifica si el webhook se creó correctamente
             if (responseCode == HttpURLConnection.HTTP_CREATED) {
-                System.out.println("Webhook creado correctamente");
                 return true;
             } else {
-                System.out.println("Error al crear el webhook: " + response.toString());
                 return false;
             }
         } catch (IOException e) {
@@ -132,7 +122,7 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	                in.close();
 	                return response.toString();
 	            } else {
-	                System.out.println("Error en la solicitud. Código de respuesta: " + responseCode);
+	             
 	            }
 	        } catch (IOException e) {
 	            e.printStackTrace();
@@ -153,16 +143,15 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 		
 		try {
 			//HttpServer server;
-			System.out.println("Todo salio bien");
+			
 			//server.stop(0);
 			server = HttpServer.create(new InetSocketAddress(8095), 0);
 			server.createContext("/mi-endpoint", this);
 			server.setExecutor(null);
 			server.start();
-	        System.out.println("Servidor iniciado en el puerto 8095");
+	        
 			return true;
 		} catch (IOException e) {
-			System.out.println(e.getStackTrace().getClass().getName());
 			return false;
 		}
 	}
@@ -180,14 +169,10 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 	        }
 	      	        
 	        if(expresionRegular(contenido.toString())) {
-	        	
-	        	System.out.println("Me cree");
-	        	
 	        	this.update(new TSBadgeProyecto(true));
 	        	}
 	        
 	        else {
-	        	System.out.println("No Me cree");
 	        	this.update(new TSBadgeProyecto(false));}
 	        	
 	     
