@@ -44,7 +44,7 @@ public class BadgeTS extends OriginTS implements HttpHandler {
 		
 		else 	this.update(new TSBadgeProyecto(false));
 		
-		return crearEndpoint();//&&conectarWebHook(url,us); 
+		return crearEndpoint()&&conectarWebHook(url,us); 
 		
 		
 	}
