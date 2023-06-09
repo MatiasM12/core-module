@@ -64,11 +64,11 @@ public class BadgeTS extends OriginTS implements HttpHandler {
             HttpURLConnection connection = (HttpURLConnection) urlGithub.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("Authorization", "Bearer " + "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");
+            connection.setRequestProperty("Authorization", "Bearer " + url);
             															
 
             // Configura el cuerpo de la solicitud con los detalles del webhook
-            String body = "{ \"name\": \"web\", \"active\": true, \"events\": [\"workflow_run\"], \"config\": { \"url\": \"" + url + "\" } }";
+            String body = "{ \"name\": \"web\", \"active\": true, \"events\": [\"workflow_run\"], \"config\": { \"url\": \"" + urlGithub + "\" } }";
             byte[] requestBody = body.getBytes(StandardCharsets.UTF_8);
             connection.setDoOutput(true);
             OutputStream outputStream = connection.getOutputStream();
