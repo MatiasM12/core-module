@@ -16,6 +16,7 @@ public class TSBADGE implements TestSummary {
 	Boolean badgeResult;
 
 	public TSBADGE(String us, Map<String, Boolean> cA, Map<String, String> caCategories, Boolean badge) {
+		super();
 		this.us = us;
 		this.CA = cA;
 		this.caCategories = caCategories;
@@ -25,7 +26,8 @@ public class TSBADGE implements TestSummary {
 	 public Boolean getState() {
 		 return badgeResult;
 	 }
-
+	 
+	@Override
 	public TestSummary update(TestSummary ts) {
 		// TODO Auto-generated method stub
 		return ts;
