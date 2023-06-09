@@ -67,7 +67,8 @@ public class BadgeTS extends OriginTS implements HttpHandler {
             connection.setRequestProperty("Authorization", "Bearer " + url);
             															
 
-            System.out.println(url);
+            System.out.println(url+"URL");
+            System.out.println(us +"US");
             
             // Configura el cuerpo de la solicitud con los detalles del webhook
             String body = "{ \"name\": \"web\", \"active\": true, \"events\": [\"workflow_run\"], \"config\": { \"url\": \"" + webhookUrl + "\" } }";
