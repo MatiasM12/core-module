@@ -2,13 +2,11 @@ package breaker;
 
 public class Response {
 
-	Boolean success;
+	public String responseMsg;
 
-	Response(Boolean success) {
-		this.success = success;
+	Response(String responseMsg) {
+		this.responseMsg = responseMsg;
 	}
+	
 
-	public Boolean isSuccess() {
-		return success;
-	}
 }

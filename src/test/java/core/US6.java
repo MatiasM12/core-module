@@ -9,11 +9,13 @@ import java.lang.reflect.InvocationTargetException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import breaker.Response;
 import coreInicialization.Core;
 
 class US6 {
 
 	public static Core c;
+	public static Response resultConnection;
 
 	@BeforeAll
 	public static void escenario() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
@@ -23,18 +25,22 @@ class US6 {
 		String[] args = new String[] { url, us };
 		c = new Core();
 		c.init(args);
+		resultConnection = c.selectImplementation("TSInexistente", url, us);
 	}
-
+	
+	//Primer conexión fallida
 	@Test
-	void CA1closeConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	void CA1firstConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.initImplementation("TSExistente", "www.github/proyecto1/", "US1").isSuccess(), true);
+		assertEquals(resultConnection.responseMsg, "Fallo en la primera conexión");
 	}
-
+	
+	//Reintento de conexión
 	@Test
-	void CA2openConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+	void CA2Reconnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").isSuccess(), false);
+		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
 	}
+	
 
 }
