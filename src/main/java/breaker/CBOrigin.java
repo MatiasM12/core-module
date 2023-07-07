@@ -16,11 +16,13 @@ public class CBOrigin {
 
 
 
-	public Response makeRequest(OriginTS ts, String url, String us) {
+	public Response connectionHandler(OriginTS ts, String url, String us) {
 		Boolean resultConnection = ts.connectTS(url, us);
 
-		if(resultConnection)
-			return state.closed();
+		if(resultConnection) {
+			this.firstConnection=true;
+					return state.closed();
+		}
 		else if(resultConnection == false && firstConnection == true){
 			this.firstConnection = false;
 			return state.open();}

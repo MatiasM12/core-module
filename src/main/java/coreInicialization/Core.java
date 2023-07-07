@@ -51,7 +51,7 @@ public class Core {
 	public Response selectImplementation(String pluginElegido, String repo, String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException,IllegalAccessException, NoSuchMethodException {
 		String pluginPath = this.args.length < 4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
 		TestSummary plugin = otsFactory.init(repo, us, pluginElegido, this.obstsFactory.getTs());
-		return this.factoryCBOrigin.getBreaker().makeRequest((OriginTS) plugin, repo, us);
+		return this.factoryCBOrigin.getBreaker().connectionHandler((OriginTS) plugin, repo, us);
 
 	}
 

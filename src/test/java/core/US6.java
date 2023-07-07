@@ -42,5 +42,13 @@ class US6 {
 		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
 	}
 	
+	@Test
+	void CA3AfterSuccessConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
+			InstantiationException, IllegalAccessException, NoSuchMethodException {
+		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
+		assertEquals(c.selectImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg, "Conexión Exitosa");
+		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
+	}
+	
 
 }
