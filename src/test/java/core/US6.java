@@ -28,14 +28,12 @@ class US6 {
 		resultConnection = c.selectImplementation("TSInexistente", url, us);
 	}
 	
-	//Primer conexión fallida
 	@Test
 	void CA1firstConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
 		assertEquals(resultConnection.responseMsg, "Fallo en la primera conexión");
 	}
 	
-	//Reintento de conexión
 	@Test
 	void CA2Reconnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
