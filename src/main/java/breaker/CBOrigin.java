@@ -18,6 +18,7 @@ public class CBOrigin {
 
 	public Response connectionHandler(OriginTS ts, String url, String us) {
 		Boolean resultConnection = ts.connectTS(url, us);
+		this.cont = 0;
 
 		if(resultConnection) {
 			this.firstConnection=true;
