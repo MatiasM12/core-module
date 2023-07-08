@@ -49,6 +49,4 @@ class US6 {
 		assertEquals(c.selectImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg, "Conexión Exitosa");
 		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
 	}
-	
-
 }
