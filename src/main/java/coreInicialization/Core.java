@@ -40,7 +40,7 @@ public class Core {
 		this.otsFactory = new OriginTSFactory(pluginPath);
 		ObservableTS ret = this.obstsFactory.create();
 		this.factoryCBOrigin.createBreaker();
-		this.selectImplementation(pluginElegido, repo, userStory);
+		this.initImplementation(pluginElegido, repo, userStory);
 		return ret;
 	}
  
@@ -48,7 +48,7 @@ public class Core {
 		return factoryExtractor.getExtractor().extractNames(this.otsFactory.getSet());
 	}
 
-	public Response selectImplementation(String pluginElegido, String repo, String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException,IllegalAccessException, NoSuchMethodException {
+	public Response initImplementation(String pluginElegido, String repo, String us) throws FileNotFoundException, ClassNotFoundException, InvocationTargetException, InstantiationException,IllegalAccessException, NoSuchMethodException {
 		String pluginPath = this.args.length < 4 ? propertiesLoader.getDefaultPluginPath() : this.args[3];
 		TestSummary plugin = otsFactory.init(repo, us, pluginElegido, this.obstsFactory.getTs());
 		return this.factoryCBOrigin.getBreaker().connectionHandler((OriginTS) plugin, repo, us);

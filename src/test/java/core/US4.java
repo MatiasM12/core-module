@@ -33,12 +33,12 @@ public class US4 {
 	@Test
 	public void CA2ElegirImplementacion() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(coreOK.selectImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg,"Conexión Exitosa");
+		assertEquals(coreOK.initImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg,"Conexión Exitosa");
 	}
 
 	@Test
 	public void CA3ElegirYFallo() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(coreOK.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
+		assertEquals(coreOK.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
 	}
 }

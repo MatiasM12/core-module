@@ -37,7 +37,7 @@ class US7 {
 	@Test
 	void CA1lastTS() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
+		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
 		assertEquals(ts.equals(((ObAT) o).getTS()), true);
 	}
 

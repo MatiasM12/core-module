@@ -25,7 +25,7 @@ class US6 {
 		String[] args = new String[] { url, us };
 		c = new Core();
 		c.init(args);
-		resultConnection = c.selectImplementation("TSInexistente", url, us);
+		resultConnection = c.initImplementation("TSInexistente", url, us);
 	}
 	
 	@Test
@@ -37,14 +37,14 @@ class US6 {
 	@Test
 	void CA2Reconnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
+		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
 	}
 	
 	@Test
 	void CA3AfterSuccessConnection() throws FileNotFoundException, ClassNotFoundException, InvocationTargetException,
 			InstantiationException, IllegalAccessException, NoSuchMethodException {
-		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
-		assertEquals(c.selectImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg, "Conexión Exitosa");
-		assertEquals(c.selectImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
+		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en el reintento de conexión");
+		assertEquals(c.initImplementation("TSExistente", "www.github/proyecto1/", "US1").responseMsg, "Conexión Exitosa");
+		assertEquals(c.initImplementation("TSInexistente", "www.github/proyecto1/", "US1").responseMsg, "Fallo en la primera conexión");
 	}
 }
